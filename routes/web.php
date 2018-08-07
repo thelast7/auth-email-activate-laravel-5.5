@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('layouts._home.index');
+//});
+
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 //routes yang menangani aktivasi
