@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Header-top -->
+@include('layouts.partials.header-top')
+<!-- end header-top -->
+<body>
+
+  <!-- Page div nya jangan dihapus--> 
+<div class="page"> 
+
+  <!-- Header -->
   <header class="header-container">
     <div class="header-top">
       <div class="container">
@@ -34,18 +46,8 @@
               <div class="links">
                 <div class="myaccount"><a title="My Account" href=""><span class="hidden-xs">My Account</span></a></div>
                 <div class="wishlist"><a title="My Wishlist"  href="#"><span class="hidden-xs">Wishlist</span></a></div>
-                @if (Route::has('login'))
-                @auth
-                <div class="check"><a title="Logout" href="{{ route('logout') }}"
-                                            onclick="event.preventDefault();
-                                            document.getElementById('logout-form').submit();">Logout</a>
-                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                                          {{ csrf_field() }}
-                                        </form></div>
-                @else
+                <div class="check"><a title="Logout" href="{{ route('logout') }}"><span class="hidden-xs">Logout</span></a></div>
                 <div class="login"><a title="Login" href="{{ route('login') }}"><span  class="hidden-xs">Akun</span></a></div>
-                @endauth
-                @endif
               </div>
             </div>
             <!-- End Header Top Links --> 
@@ -129,3 +131,26 @@
       </div>
     </div>
   </header>
+  <!-- end header -->
+
+   <!-- Navbar -->
+@include('layouts.partials.navbar')
+  <!-- end nav --> 
+
+<div class="container">
+    @include('layouts.partials._alert')
+</div>
+@yield('content')
+
+  <!-- Footer --> 
+@include('layouts.partials.footer')
+  <!-- End Footer -->
+
+</div>
+  <!-- End Page div nya jangan dihapus --> 
+
+<!-- JavaScript --> 
+@include('layouts.partials.script-body')
+
+</body>
+</html>

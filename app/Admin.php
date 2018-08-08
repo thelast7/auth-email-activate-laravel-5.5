@@ -18,7 +18,7 @@ class Admin extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'username', 'jenis_kelamin', 'no_hp', 'tanggal_lahir', 'kota', 'alamat', 'foto_profil', 'name', 'email', 'password', 'active', 'activation_token', 'role', 'cash'
+        'name', 'email', 'password',
     ];
 
     /**
@@ -29,9 +29,4 @@ class Admin extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-
-    public function scopeByActivationColumns(Builder $builder, $email, $token)
-    {
-        return $builder->where('email', $email)->where('activation_token', $token);
-    }
 }

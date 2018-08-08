@@ -42,19 +42,29 @@
 					<p class="alert-danger">
 					
 				   </p>
-					<h2>Login to your account</h2>
-					<form class="form-horizontal" action="{{ route('admin.login.submit') }}" method="post">
+					<h2>Login Admin</h2>
+					<form class="form-horizontal" method="post" action="{{ route('admin.login.submit') }}">
 						{{ csrf_field() }}
 						<fieldset>					
 							<div class="input-prepend" title="Username">
 								<span class="add-on"><i class="halflings-icon user"></i></span>
-								<input class="input-large span10" name="admin_email"  type="text" placeholder="type email address"/>
+								<input class="input-large span10" name="email"  type="email" value="{{ old('email') }}" placeholder="email admin"/>
+			                    @if ($errors->has('email'))
+			                        <span class="help-block">
+			                            <strong>{{ $errors->first('email') }}</strong>
+			                        </span>
+			                    @endif
 							</div>
 							<div class="clearfix"></div>
 
 							<div class="input-prepend" title="Password">
 								<span class="add-on"><i class="halflings-icon lock"></i></span>
-								<input class="input-large span10" name="admin_password" id="password" type="password" placeholder="type password"/>
+								<input class="input-large span10" name="password" id="password" type="password" placeholder="password admin"/>
+			                    @if ($errors->has('password'))
+			                        <span class="help-block">
+			                            <strong>{{ $errors->first('password') }}</strong>
+			                        </span>
+			                    @endif
 							</div>
 						
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Backend\AuthAdmin;
+namespace App\Http\Controllers\AuthAdmin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Validation\Rule;
@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 class LoginController extends Controller
 {
 
+    #protected $redirectTo = '/admin/dashboard';
     /**
      * Create a new controller instance.
      *
@@ -52,15 +53,21 @@ class LoginController extends Controller
             'password' => 'required|string',
         ]);
 
-        $credentials = [
+        $credential = [
             'email' => $request->email,
             'password' => $request->password
         ];
 
         if (Auth::guard('admin')->attempt($credential, $request->member)){
-            return redirect()->intended(route('admin.home'));
+            return redirect()->intended(route('admin.dashboard'));
         }
 
         return redirect()->back()->withInput($request->only('email', 'remember'));
+    }
+
+    public function logout()
+    {
+        Auth::guard('admin')->logout();
+        return redirect('/');
     }
 }
