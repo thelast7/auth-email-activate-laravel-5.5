@@ -29,19 +29,19 @@ class CreateUsersTable extends Migration
 
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('username')->unique();
+            $table->string('username');
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
-            $table->string('jenis_kelamin');
+            $table->string('gender');
             $table->date('tanggal_lahir')->nullable();
             $table->string('no_hp');
             $table->string('kota')->nullable();
             #$table->string('kecamatan')->nullable();
             $table->string('alamat')->nullable();
-            $table->string('cash')->nullable();
-            $table->string('role')->nullable()->default(false);
-            $table->string('foto_profil')->nullable();
+            $table->integer('cash')->nullable();
+            $table->enum('role', ['admin', 'user', 'author', 'penjual'])->default('user');
+            $table->string('avatar')->nullable();
             $table->boolean('active')->default(false);
             $table->string('activation_token')->nullable();
             $table->rememberToken();

@@ -24,6 +24,6 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('backend.index');
+        return view('backend.home');
     }
 }

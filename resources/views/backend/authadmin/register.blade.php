@@ -1,153 +1,81 @@
-@extends('layouts.master')
+<!DOCTYPE html>
+<html lang="en">
 
-@section('content')
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="IDBlog - IDStack Sample Blog Project from https://idstack.net">
+  <meta name="author" content="https://idstack.net">
+  <title>IDBlog - IDStack Sample Blog Project Admin</title>
+  <!-- Bootstrap core CSS-->
+  <link href="{{ asset('assets/blog-admin/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="{{ asset('assets/blog-admin/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="{{ asset('assets/blog-admin/css/sb-admin.css') }}" rel="stylesheet">
+</head>
 
-<section class="main-container col1-layout">
-<div class="main container">
-  <div class="account-login">
-    <div class="page-title">
-      <h2>Login or Create an Account</h2>
-    </div>
-
-    <fieldset class="col2-set">
-      <legend>Login or Create an Account</legend>
-      <div class="col-1 new-users"><strong>Daftar Akun Baru</strong>
-
-        <form class="form-horizontal" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
-        {{ csrf_field() }}
-        <div class="content">
-          <div class="buttons-set">
-              <ul class="form-list">
-
-                <li>
-                  <label for="username">Username </label>
-                    <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username Anda" required autofocus>
-                    @if ($errors->has('name'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('name') }}</strong>
-                        </span>
-                    @endif
-                </li>
-
-                <li>
-                  <label for="name">Nama </label>
-                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nama Anda">
-                    @if ($errors->has('name'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('name') }}</strong>
-                        </span>
-                    @endif
-                </li>
-
-                <li>
-                  <label for="email">Email </label>
-                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email Anda">
-                    @if ($errors->has('email'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
-                    @endif
-                </li>
-
-                <li>
-                  <label for="password">Password </label>
-                    <input id="password" type="password" class="form-control" name="password" placeholder="Password Anda" required>
+<body class="bg-dark">
+  <div class="container">
+    <div class="card card-register mx-auto mt-5">
+      <div class="card-header">Register an Account</div>
+      <div class="card-body">
+        <form class="form-horizontal" method="POST" action="{{ route('register') }}">
+            {{ csrf_field() }}
+            <div class="form-group">
+                <div class="form-row">
+                    <div class="col-md-12">
+                        <label for="name" class="control-label">Name</label>
+                        <input id="name" type="text" class="form-control{{ $errors->has('name') ? ' is-invalid' : '' }}" name="name" value="{{ old('name') }}" required autofocus>
+                        @if ($errors->has('name'))
+                            <span class="invalid-feedback">
+                                <strong>{{ $errors->first('name') }}</strong>
+                            </span>
+                        @endif
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="email" class="control-label">E-Mail Address</label>
+                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+                @if ($errors->has('email'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                @endif
+            </div>
+            <div class="form-group">
+                <div class="form-row">
+                <div class="col-md-6">
+                    <label for="password" class="control-label">Password</label>
+                    <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
                     @if ($errors->has('password'))
-                        <span class="help-block">
+                        <span class="invalid-feedback">
                             <strong>{{ $errors->first('password') }}</strong>
                         </span>
                     @endif
-                </li>
-
-                <li>
-                  <label for="password-confirm">Konfirmasi Pasword </label>
-                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" placeholder="Ulangi Password Anda" required>
-                    @if ($errors->has('password-confirm'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('password-confirm') }}</strong>
-                        </span>
-                    @endif
-                </li>
-
-                <li class="radio-buttons">
-                    <label for="name">Jenis Kelamin <span class="required">*</span></label>
-                    @if ($errors->has('jenis_kelamin'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('jenis_kelamin') }}</strong>
-                        </span>
-                    @endif
-                    <li>
-                        <input type="radio" class="input-radio" name="jenis_kelamin" id="radio1">
-                    <label for="radio1">Laki-Laki</label>
-                    </li>
-                    <li>
-                        <input type="radio" class="input-radio" name="jenis_kelamin" id="radio2">
-                    <label for="radio2">Perempuan</label>
-                    </li>
-                </li>
-
-                <li>
-                  <label for="no_hp">Nomor HP <span class="required">*</span></label>
-                    <input id="no_hp" type="number" class="form-control" name="no_hp" value="{{ old('no_hp') }}" placeholder="Nomor HP yang Aktif">
-                    @if ($errors->has('no_hp'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('no_hp') }}</strong>
-                        </span>
-                    @endif
-                </li>
-
-                <li>
-                  <label for"tanggal_lahir">Tanggal Lahir <span class="required">*</span></label>
-                    <input id="tanggal_lahir" type="date" class="form-control" name="tanggal_lahir" value="{{ old('tanggal_lahir') }}">
-                    @if ($errors->has('tanggal_lahir'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('tanggal_lahir') }}</strong>
-                        </span>
-                    @endif
-                </li>
-
-                <li>
-                  <label for="kota">Kota <span class="required">*</span></label>
-                    <input id="kota" type="text" class="form-control" placeholder="Kota Anda" value="{{ old('kota') }}">
-                    @if ($errors->has('kota'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('kota') }}</strong>
-                        </span>
-                    @endif
-                </li>
-
-                <li>
-                  <label for="alamat">Alamat Lengkap <span class="required">*</span></label>
-                    <textarea class="form-control" id="alamat" name="alamat" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamat') }}"></textarea>
-                    @if ($errors->has('alamat'))
-                        <span class="help-block">
-                          <strong>{{ $errors->first('alamat') }}</strong>
-                        </span>
-                    @endif
-                </li>
-
-                <li>
-                  <label for="foto_profil">Foto Profil (Max:3MB) <span class="required">*</span></label>
-                    <input id="foto_profil" type="file" class="form-control" name="foto_profil">
-                    @if ($errors->has('foto_profil'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('foto_profil') }}</strong>
-                        </span>
-                    @endif
-                </li>
-
-              </ul>
-              <p class="required">* Optional</p>
-            <button type="submit" class="button create-account">
-                <span>Buat Akun Baru</span>
-            </button>
-          </div>
-        </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="password-confirm" class="control-label">Confirm Password</label>
+                    <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                </div>
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Register</button>
         </form>
+        <div class="text-center">
+          <a class="d-block small mt-3" href="{{ route('login') }}">Login Page</a>
+          <a class="d-block small" href="{{ route('password.request') }}">Forgot Password?</a>
+        </div>
       </div>
-    </fieldset>
+    </div>
   </div>
-</div>
-</section>
+  <!-- Bootstrap core JavaScript-->
+  <script src="{{ asset('assets/blog-admin/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('assets/blog-admin/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="{{ asset('assets/blog-admin/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
+</body>
 
-@endsection
+</html>

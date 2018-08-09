@@ -1,103 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>	
-	<!-- start: Meta -->
-	<meta charset="utf-8">
-	<title>Admin login</title>
-	<meta name="description" content="Metro Admin Template.">
-	<meta name="author" content="Łukasz Holeczek">
-	<meta name="keyword" content="Metro, Metro UI, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
-	<!-- end: Meta -->
-	
-	<!-- start: Mobile Specific -->
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- end: Mobile Specific -->
-	
-	<!-- start: CSS -->
-	<link id="bootstrap-style" href="{{asset('backend/css/bootstrap.min.css')}}" rel="stylesheet">
-	<link href="{{asset('backend/css/bootstrap-responsive.min.css')}}" rel="stylesheet">
-	<link id="base-style" href="{{asset('backend/css/style.css')}}" rel="stylesheet">
-	<link id="base-style-responsive" href="{{asset('backend/css/style-responsive.css')}}" rel="stylesheet">
-	<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800&amp;subset=latin,cyrillic-ext,latin-ext' rel='stylesheet' type='text/css'>
-	<!-- end: CSS -->
 
-	<!-- start: Favicon -->
-	<link rel="shortcut icon" href="{{URL::to('backend/img/favicon.ico')}}">
-	<!-- end: Favicon -->
-	
-			<style type="text/css">
-			body { background: url({{URL::to('backend/img/bg-login.jpg')}}) !important; }
-		</style>
-				
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+  <title>Login Admin Dashboard</title>
+  <!-- Bootstrap core CSS-->
+  <link href="{{ asset('backend/vendor/bootstrap/css/bootstrap.min.css') }}" rel="stylesheet">
+  <!-- Custom fonts for this template-->
+  <link href="{{ asset('backend/vendor/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
+  <!-- Custom styles for this template-->
+  <link href="{{ asset('backend/css/sb-admin.css') }}" rel="stylesheet">
 </head>
-<body>
-		<div class="container-fluid-full">
-		<div class="row-fluid">				
-			<div class="row-fluid">
-				<div class="login-box">
-					<div class="icons">
-						<a href="index.html"><i class="halflings-icon home"></i></a>
-						<a href="#"><i class="halflings-icon cog"></i></a>
-					</div>
-					<p class="alert-danger">
-					
-				   </p>
-					<h2>Login Admin</h2>
-					<form class="form-horizontal" method="post" action="{{ route('admin.login.submit') }}">
-						{{ csrf_field() }}
-						<fieldset>					
-							<div class="input-prepend" title="Username">
-								<span class="add-on"><i class="halflings-icon user"></i></span>
-								<input class="input-large span10" name="email"  type="email" value="{{ old('email') }}" placeholder="email admin"/>
-			                    @if ($errors->has('email'))
-			                        <span class="help-block">
-			                            <strong>{{ $errors->first('email') }}</strong>
-			                        </span>
-			                    @endif
-							</div>
-							<div class="clearfix"></div>
 
-							<div class="input-prepend" title="Password">
-								<span class="add-on"><i class="halflings-icon lock"></i></span>
-								<input class="input-large span10" name="password" id="password" type="password" placeholder="password admin"/>
-			                    @if ($errors->has('password'))
-			                        <span class="help-block">
-			                            <strong>{{ $errors->first('password') }}</strong>
-			                        </span>
-			                    @endif
-							</div>
-						
-
-							<div class="button-login">	
-								<button type="submit" class="btn btn-primary">Login</button>
-							</div>
-							<div class="clearfix"></div>
-					</form>
-					<hr>
-					<h3>Forgot Password?</h3>
-					<p>
-						No problem, <a href="#">click here</a> to get a new password.
-					</p>	
-				</div><!--/span-->
-			</div><!--/row-->
-			
-
-	</div><!--/.fluid-container-->
-	
-		</div><!--/fluid-row-->
-	
-	<!-- start: JavaScript-->
-
-		<script src="{{asset('backend/js/jquery-1.9.1.min.js')}}"></script>
-	    <script src="{{asset('backend/js/jquery-migrate-1.0.0.min.js')}}"></script>	
-		<script src="{{asset('backend/js/jquery-ui-1.10.0.custom.min.js')}}"></script>	
-		<script src="{{asset('backend/js/modernizr.j')}}s"></script>	
-		<script src="{{asset('backend/Js/bootstrap.min.js')}}"></script>	
-		<script src="{{asset('backend/js/jquery.cookie.js')}}"></script>
-		<script src="{{asset('backend/js/excanvas.js')}}"></script>		
-		<script src="{{asset('backend/js/jquery.uniform.min.js')}}"></script>
-		<script src="{{asset('backend/js/custom.js')}}"></script>
-	<!-- end: JavaScript-->
-	
+<body class="bg-dark">
+  <div class="container">
+    <div class="card card-login mx-auto mt-5">
+      <div class="card-header">Login</div>
+      <div class="card-body">
+        <form class="form-horizontal" method="POST" action="{{ route('admin.login.submit') }}">
+            {{ csrf_field() }}
+            <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
+                @if ($errors->has('email'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('email') }}</strong>
+                    </span>
+                @endif
+            </div>
+            <div class="form-group">
+                <label for="password" class="control-label">Password</label>
+                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+                @if ($errors->has('password'))
+                    <span class="invalid-feedback">
+                        <strong>{{ $errors->first('password') }}</strong>
+                    </span>
+                @endif
+            </div>
+            <div class="form-group">
+                <div class="form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" type="checkbox" name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
+                </div>
+            </div>
+            <button class="btn btn-primary btn-block" type="submit">Login</button>
+        </form>
+        <div class="text-center">
+            <a class="d-block small mt-3" href="{{ route('password.request') }}">Forgot Password?</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Bootstrap core JavaScript-->
+  <script src="{{ asset('backend/vendor/jquery/jquery.min.js') }}"></script>
+  <script src="{{ asset('backend/vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
+  <!-- Core plugin JavaScript-->
+  <script src="{{ asset('backend/vendor/jquery-easing/jquery.easing.min.js') }}"></script>
 </body>
+
 </html>

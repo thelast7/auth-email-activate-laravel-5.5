@@ -31,6 +31,9 @@ Route::group(['prefix' => 'admin'], function() {
     Route::post('/login', 'AuthAdmin\LoginController@login')->name('admin.login.submit');
     Route::get('/', 'Backend\AdminController@index')->name('admin.dashboard');
     Route::get('/logout', 'AuthAdmin\LoginController@logout')->name('admin.logout');
+    Route::resource('/categories', 'Backend\CategoriesController');
+    #Route::get('/categories', 'Backend\CategoriesController@index')->name('admin.categories');
+    #Route::post('/categories/create', 'Backend\CategoriesController@store')->name('admin.categories.store');
 });
 
 //routes yang menangani resend aktivasi email

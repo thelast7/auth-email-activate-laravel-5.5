@@ -8,7 +8,8 @@
                 <div class="panel-heading">Admin</div>
 
                 <div class="panel-body">
-                    dashboard admin
+                    <h1>dashboard admin</h1>
+                    <p><a class="btn btn-primary" href="{{ route('categories.create') }}">Tambah</a></p>
                 </div>
             </div>
         </div>
