@@ -22,9 +22,9 @@
                 <li>
                   <label for="username">Username </label>
                     <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username Anda" required autofocus>
-                    @if ($errors->has('name'))
+                    @if ($errors->has('username'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('name') }}</strong>
+                            <strong>{{ $errors->first('username') }}</strong>
                         </span>
                     @endif
                 </li>
@@ -70,28 +70,38 @@
                 </li>
 
                 <li class="radio-buttons">
-                    <label for="name">Jenis Kelamin <span class="required">*</span></label>
-                    @if ($errors->has('jenis_kelamin'))
+                    <label for="gender">Jenis Kelamin </label>
+                    @if ($errors->has('gender'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('jenis_kelamin') }}</strong>
+                            <strong>{{ $errors->first('gender') }}</strong>
                         </span>
                     @endif
                     <li>
-                        <input type="radio" class="input-radio" name="jenis_kelamin" id="radio1">
+                        <input type="radio" class="input-radio" name="gender" id="radio1" value="laki-laki">
                     <label for="radio1">Laki-Laki</label>
                     </li>
                     <li>
-                        <input type="radio" class="input-radio" name="jenis_kelamin" id="radio2">
+                        <input type="radio" class="input-radio" name="gender" id="radio2" value="perempuan">
                     <label for="radio2">Perempuan</label>
                     </li>
                 </li>
 
                 <li>
-                  <label for="no_hp">Nomor HP <span class="required">*</span></label>
+                  <label for="no_hp">Nomor HP </label>
                     <input id="no_hp" type="number" class="form-control" name="no_hp" value="{{ old('no_hp') }}" placeholder="Nomor HP yang Aktif">
                     @if ($errors->has('no_hp'))
                         <span class="help-block">
                             <strong>{{ $errors->first('no_hp') }}</strong>
+                        </span>
+                    @endif
+                </li>
+
+                <li>
+                  <label for="kota">Kota </label>
+                    <input id="kota" type="text" class="form-control" name="kota" value="{{ old('kota') }}" placeholder="Kota Anda">
+                    @if ($errors->has('kota'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('kota') }}</strong>
                         </span>
                     @endif
                 </li>
@@ -107,16 +117,6 @@
                 </li>
 
                 <li>
-                  <label for="kota">Kota <span class="required">*</span></label>
-                    <input id="kota" type="text" class="form-control" placeholder="Kota Anda" value="{{ old('kota') }}">
-                    @if ($errors->has('kota'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('kota') }}</strong>
-                        </span>
-                    @endif
-                </li>
-
-                <li>
                   <label for="alamat">Alamat Lengkap <span class="required">*</span></label>
                     <textarea class="form-control" id="alamat" name="alamat" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamat') }}"></textarea>
                     @if ($errors->has('alamat'))
@@ -127,11 +127,11 @@
                 </li>
 
                 <li>
-                  <label for="foto_profil">Foto Profil (Max:3MB) <span class="required">*</span></label>
-                    <input id="foto_profil" type="file" class="form-control" name="foto_profil">
-                    @if ($errors->has('foto_profil'))
+                  <label for="avatar">Foto Profil (Max:3MB) <span class="required">*</span></label>
+                    <input id="avatar" type="file" class="form-control" name="avatar">
+                    @if ($errors->has('avatar'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('foto_profil') }}</strong>
+                            <strong>{{ $errors->first('avatar') }}</strong>
                         </span>
                     @endif
                 </li>

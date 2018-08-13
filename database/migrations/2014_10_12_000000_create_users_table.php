@@ -34,9 +34,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('gender');
-            $table->date('tanggal_lahir')->nullable();
             $table->string('no_hp');
-            $table->string('kota')->nullable();
+            $table->string('kota');
+            $table->date('tanggal_lahir')->nullable();
             $table->text('alamat')->nullable();
             $table->integer('cash')->nullable();
             $table->enum('role', ['admin', 'user', 'author', 'penjual'])->default('user');
