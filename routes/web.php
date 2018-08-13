@@ -26,7 +26,9 @@ Route::post('auth/activate/resend', 'Auth\ActivationResendController@resend');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+
 //routes yang menangani backend
+Route::resource('/backend/users', 'UsersController', ['as' => 'backend']);
 Route::resource('/backend/categories', 'CategoriesController', ['as' => 'backend']);
 Route::get('/backend/home', 'HomeController@index')->name('backend.home');
 

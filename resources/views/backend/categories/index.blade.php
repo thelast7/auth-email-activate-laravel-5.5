@@ -69,8 +69,8 @@
             ajax: "{{ route('api.datatable.categories') }}",
             columns: [
                 {data: 'id', name: 'id'},
-                {data: 'slug', name: 'slug'},
                 {data: 'name', name: 'name'},
+                {data: 'slug', name: 'slug'},
                 {data: 'action', name: 'action', orderable: false, searchable: false}
             ]
         });

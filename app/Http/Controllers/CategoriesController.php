@@ -37,9 +37,9 @@ class CategoriesController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|string|min:3|unique:categories'
+            'name' => 'required|string|min:3|unique:categories'
         ]);
-        $request['slug'] = str_slug($request->get('title'), '-');
+        $request['slug'] = str_slug($request->get('name'), '-');
 
         Category::create($request->all());
 
@@ -80,9 +80,9 @@ class CategoriesController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' => 'required|string|min:3|unique:categories,title,' . $id
+            'name' => 'required|string|min:3|unique:categories,name,' . $id
         ]);
-        $request['slug'] = str_slug($request->get('title'), '-');
+        $request['slug'] = str_slug($request->get('name'), '-');
 
         $category = Category::findOrFail($id);
         $category->update($request->all());
