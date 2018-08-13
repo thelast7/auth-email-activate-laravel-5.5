@@ -30,6 +30,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 //routes yang menangani backend
 Route::resource('/backend/users', 'UsersController', ['as' => 'backend']);
 Route::resource('/backend/categories', 'CategoriesController', ['as' => 'backend']);
+Route::resource('/backend/products', 'ProductsController', ['as' => 'backend']);
 Route::get('/backend/home', 'HomeController@index')->name('backend.home');
 
 
@@ -37,6 +38,6 @@ Route::get('/backend/home', 'HomeController@index')->name('backend.home');
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/api/datatable/users', 'UsersController@dataTable')->name('api.datatable.users');
     Route::get('/api/datatable/categories', 'CategoriesController@dataTable')->name('api.datatable.categories');
-    Route::get('/api/datatable/posts', 'PostsController@dataTable')->name('api.datatable.posts');
+    Route::get('/api/datatable/products', 'ProductsController@dataTable')->name('api.datatable.products');
     Route::get('/api/datatable/comments', 'CommentsController@dataTable')->name('api.datatable.comments');
 });

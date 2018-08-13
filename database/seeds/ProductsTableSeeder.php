@@ -20,7 +20,8 @@ class ProductsTableSeeder extends Seeder
                 'description' => 'Telur ayam Telur ayam Telur ayam Telur ayam Telur ayam Telur ayam Telur ayam Telur ayam',
                 'cover' => 'backend/images/featured-image.jpg',
                 'quantity' => 5,
-                'price' => 10000
+                'price' => 10000,
+                'status' => true
             ],
         ];
         DB::table('products')->insert($products);

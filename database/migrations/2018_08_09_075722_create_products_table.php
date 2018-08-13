@@ -24,7 +24,8 @@ class CreateProductsTable extends Migration
             $table->text('description');
             $table->string('cover');
             $table->integer('quantity');
-            $table->decimal('price');
+            $table->integer('price');
+            $table->boolean('status');
             $table->boolean('active')->default(false);
             $table->integer('review')->default(0);
             $table->timestamps();

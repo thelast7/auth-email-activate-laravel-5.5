@@ -4,8 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Product;
 use Illuminate\Http\Request;
+use Yajra\Datatables\Datatables;
 
-class ProductController extends Controller
+class ProductsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('backend.products.index');
     }
 
     /**
@@ -24,7 +25,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return view('backend.products.create');
     }
 
     /**
@@ -81,5 +82,27 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public function dataTable()
+    {
+        $products = Product::query();
+        return DataTables::of($products)
+            ->addColumn('penjual', function ($products) {
+                return $products->user->name;
+            })
+            ->addColumn('category', function ($products) {
+                return $products->category->name;
+            })
+            ->addColumn('action', function ($products) {
+                return view('backend.partials._action', [
+                    'model' => $products,
+                    'show_url' => route('backend.products.show', $products->id),
+                    'edit_url' => route('backend.products.edit', $products->id),
+                    'delete_url' => route('backend.products.destroy', $products->id)
+                ]);
+            })
+            ->rawColumns(['action'])
+            ->make(true);
     }
 }
