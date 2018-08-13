@@ -37,10 +37,13 @@ class UsersController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|string|max:255',
             'username' => 'required|min:5',
+            'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
+            'gender' => 'required',
+            'no_hp' => 'required|string|min:10',
             'password' => 'required|string|min:6',
+            'kota' => 'required|string',
             'role' => 'required'
         ]);
 
@@ -112,7 +115,8 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        //
+        if (! User::destroy($id)) return redirect()->back();
+        return redirect()->route('backend.users.index');
     }
 
     public function dataTable()

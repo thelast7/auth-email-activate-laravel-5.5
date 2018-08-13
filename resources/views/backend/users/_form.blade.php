@@ -1,19 +1,19 @@
 <div class="card-body">
     <div class="form-group">
-        <label for="name">Nama Lengkap</label>
-        {!! Form::text('name', null, ['class' => $errors->has('name') ? 'form-control is-invalid' : 'form-control', 'required', 'autofocus']) !!}
-        @if ($errors->has('name'))
+        <label for="username">Username</label>
+        {!! Form::text('username', null, ['class' => $errors->has('username') ? 'form-control is-invalid' : 'form-control', 'required', 'autofocus']) !!}
+        @if ($errors->has('username'))
             <span class="invalid-feedback">
-                <strong>{{ $errors->first('name') }}</strong>
+                <strong>{{ $errors->first('username') }}</strong>
             </span>
         @endif
     </div>
     <div class="form-group">
-        <label for="username">Username</label>
-        {!! Form::text('username', null, ['class' => $errors->has('username') ? 'form-control is-invalid' : 'form-control', 'required']) !!}
-        @if ($errors->has('username'))
+        <label for="name">Nama Lengkap</label>
+        {!! Form::text('name', null, ['class' => $errors->has('name') ? 'form-control is-invalid' : 'form-control', 'required']) !!}
+        @if ($errors->has('name'))
             <span class="invalid-feedback">
-                <strong>{{ $errors->first('username') }}</strong>
+                <strong>{{ $errors->first('name') }}</strong>
             </span>
         @endif
     </div>
@@ -50,6 +50,15 @@
         @if ($errors->has('no_hp'))
             <span class="invalid-feedback">
                 <strong>{{ $errors->first('no_hp') }}</strong>
+            </span>
+        @endif
+    </div>
+    <div class="form-group">
+        <label for="kota">Kota</label>
+        {!! Form::text('kota', null, ['class' => $errors->has('kota') ? 'form-control is-invalid' : 'form-control', 'required']) !!}
+        @if ($errors->has('kota'))
+            <span class="invalid-feedback">
+                <strong>{{ $errors->first('kota') }}</strong>
             </span>
         @endif
     </div>

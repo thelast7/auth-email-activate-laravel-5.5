@@ -28,13 +28,13 @@
                 <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Name</th>
-                    {{-- <th>Email</th --}}>
-                    {{-- <th>Gender</th --}}>
-                    {{-- <th>Tanggal Lahir --}}</th>
-                    {{-- <th>No HP --}}</th>
+                    <th>Nama</th>
+                    {{-- <th>Email</th> --}}
+                    {{-- <th>Gender</th> --}}
+                    {{-- <th>Tanggal Lahir</th> --}}
+                    {{-- <th>No HP</th> --}}
                     <th>Kota</th>
-                    {{-- <th>Cash</th --}}>
+                    {{-- <th>Cash</th> --}}
                     {{-- <th>Avatar</th> --}}
                     <th>Role</th>
                     <th></th>
@@ -43,13 +43,13 @@
                 <tfoot>
                    <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Nama</th>
                     {{-- <th>Email</th> --}}
                     {{-- <th>Gender</th> --}}
                     {{-- <th>Tanggal Lahir</th> --}}
                     {{-- <th>No HP</th> --}}
                     <th>Kota</th>
-                    {{-- <th>Cash</th --}}>
+                    {{-- <th>Cash</th> --}}
                     {{-- <th>Avatar</th> --}}
                     <th>Role</th>
                     <th></th>
