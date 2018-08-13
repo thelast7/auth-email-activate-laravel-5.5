@@ -1,5 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="{{ route('backend.home') }}">{{ config('app.name', 'IDBlog') }}</a>
+    <a class="navbar-brand" href="{{ route('backend.home') }}"><img src="{{ asset('frontend/images/logo.png') }}" alt="logo"></a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -29,13 +29,13 @@
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Product">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2" data-parent="#exampleAccordion">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-pencil"></i>
             <span class="nav-link-text">Product</span>
             </a>
             <ul class="sidenav-second-level collapse" id="collapseMulti2">
             <li>
-                <a href="{{ route('backend.products.index') }}">Semua Product</a>
+                <a href="#">Semua Product</a>
             </li>
             <li>
                 <a href="#">Tambahkan Product</a>
