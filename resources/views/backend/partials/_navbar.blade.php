@@ -29,7 +29,7 @@
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Product">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-pencil"></i>
             <span class="nav-link-text">Product</span>
             </a>
