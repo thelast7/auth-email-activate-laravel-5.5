@@ -41,3 +41,9 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/api/datatable/products', 'ProductsController@dataTable')->name('api.datatable.products');
     Route::get('/api/datatable/comments', 'CommentsController@dataTable')->name('api.datatable.comments');
 });
+
+//cart routes are here----------------
+Route::post('/add-to-cart','CartController@add_to_cart');
+Route::get('/show-cart','CartController@show_cart');
+Route::get('/delete-to-cart/{rowId}','CartController@delete_to_cart');
+Route::post('/update-cart','CartController@update_cart');
