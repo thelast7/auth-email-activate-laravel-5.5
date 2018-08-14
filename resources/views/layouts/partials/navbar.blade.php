@@ -121,7 +121,7 @@
 
         <!--navmenu--> 
         <ul id="nav" class="hidden-xs">
-          <li id="nav-home" class="level0 parent drop-menu"><a href="#" class="active"><span>Home</span> </a>
+          <li id="nav-home" class="level0 parent drop-menu"><a href="{{ route('home') }}" class="active"><span>Home</span> </a>
           </li>
           <li class="level0 parent drop-menu"><a href="{{ route('abouts') }}"><span>Tentang</span> </a>
           </li>
