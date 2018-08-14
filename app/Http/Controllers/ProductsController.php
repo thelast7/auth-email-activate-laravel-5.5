@@ -37,9 +37,9 @@ class ProductsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            //'category_id' => 'required',
-            //'name' => 'required|string|min:5|unique:products',
-            //'description' => 'required',
+            'category_id' => 'required',
+            'name' => 'required|string|min:5|unique:products',
+            'description' => 'required',
             'status' => 'required',
             //'price' => 'required|string|min:4',
             //'quantity' => 'required|string|max:3',
@@ -59,9 +59,10 @@ class ProductsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function show(Product $product)
+    public function show($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('backend.products.show', compact('product'));
     }
 
     /**
@@ -70,9 +71,10 @@ class ProductsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit($id)
     {
-        //
+        $product = Product::findOrFail($id);
+        return view('backend.products.edit', compact('product'));
     }
 
     /**
@@ -82,9 +84,20 @@ class ProductsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Product $product)
+    public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'category_id' => 'required',
+            'name' => 'required|string|min:5|unique:products,name,' . $id,
+            'description' => 'required',
+            'status' => 'required',
+        ]);
+        $request['slug'] = str_slug($request->get('name'), '-');
+
+        $product = Product::findOrFail($id);
+        $product->update($request->all());
+
+        return redirect()->route('backend.products.index');
     }
 
     /**
@@ -93,9 +106,10 @@ class ProductsController extends Controller
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy($id)
     {
-        //
+        if (! Product::destroy($id)) return redirect()->back();
+            return redirect()->route('backend.products.index');
     }
 
     public function dataTable()

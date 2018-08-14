@@ -19,7 +19,7 @@
 
         <div class="card mb-3">
             <div class="card-header">
-                <i class="fa fa-lisbt"></i> Products
+                <i class="fa fa-list"></i> Products
                 <a href="{{ route('backend.products.create') }}" class="btn btn-sm btn-primary">Tambahkan</a>
             </div>
             <div class="card-body table-responsive">

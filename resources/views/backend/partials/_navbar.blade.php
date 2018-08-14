@@ -38,7 +38,7 @@
                 <a href="{{ route('backend.products.index') }}">Semua Product</a>
             </li>
             <li>
-                <a href="#">Tambahkan Product</a>
+                <a href="{{ route('backend.products.create') }}">Tambahkan Product</a>
             </li>
             </ul>
         </li>

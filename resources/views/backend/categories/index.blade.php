@@ -1,7 +1,5 @@
 @extends('backend.app')
 
-@section('content')
-
 @section('assets-top')
 
 <!-- Page level plugin CSS-->
