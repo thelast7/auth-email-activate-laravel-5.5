@@ -41,3 +41,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/api/datatable/products', 'ProductsController@dataTable')->name('api.datatable.products');
     Route::get('/api/datatable/comments', 'CommentsController@dataTable')->name('api.datatable.comments');
 });
+
+Route::get('/abouts', 'AboutsController@index')->name('abouts');

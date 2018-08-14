@@ -68,7 +68,7 @@ p { text-align: justify; }
             kepada pembeli di hari yang sama.</b></p>
           </div>                            
            <br><!-- Nav Tabs -->
-                <div class="align-center mb-40 mb-xxs-30">
+          <div class="align-center mb-40 mb-xxs-30">
                     <ul class="nav nav-tabs tpl-minimal-tabs animate">
                         
                         <li class="active">
@@ -84,57 +84,34 @@ p { text-align: justify; }
                         </li>
                         
                     </ul>
-                </div>
+          </div>
                 <!-- End Nav Tabs -->
                 
                 <!-- Tab panes -->
-                <div class="tab-content tpl-minimal-tabs-cont section-text align-center">
-                    
-                    <div class="tab-pane fade in active" id="mini-one">
-                    Menjadi Penyedia sarana transaksi
-                    online sektor pangan terbesar di
-                    Indonesia dan mengantarkan produk
-                        asli Indonesia ke pasar global 
-                    </div>
-                    
-                    <div class="tab-pane fade" id="mini-two">
-                        <ul class="bullets">
-                        <li>Membangun mitra kerjasama dengan supermarket ternama untuk meningkatkan
-                        daya jual dari supermarket kepada pasar yang tidak terbatas</li>
-<li>Menggunakan dan mengembangkan teknologi informasi secara tepat</li>
-<li>Meningkatkan kemampuan karyawan untuk dapat bersaing secara internal maupun
-eksternal sehingga dapat meningkatkan nilai karyawan dan perusahaan</li>
-</ul>
-</div>
-                    
-                    <div class="tab-pane fade" id="mini-three">
-                        Menciptakan trend
-baru dalam memenuhi
-kebutuhan pangan<br>
-Sebagai pelopor sosial
-marketplace pertama
-dalam dunia kuliner<br>
-
-
-Memberikan efisiensi
-waktu dalam berbelanja
-                    </div>
-                    
-                </div>
-                 <div class="offer-banner-section wow bounceInUp animated">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4 col-xs-12 col-sm-4"><a href="#"><img alt="offer banner1" src="{{('frontend/images/banner-left-01.jpg')}}"></a>
-          <div class="overlay"><a class="info" href="#">Learn More</a></div>
-        </div>
-        <div class="col-lg-4 col-xs-12 col-sm-4"><a href="#"><img alt="offer banner2" src="{{('frontend/images/banner-mid-01.jpg')}}"></a>
-          <div class="overlay"><a class="info" href="#">Learn More</a></div>
-        </div>
-        <div class="col-lg-4 col-xs-12 col-sm-4"><a href="#"><img alt="offer banner3" src="{{('frontend/images/banner-right-01.jpg')}}"></a>
-          <div class="overlay"><a class="info" href="#">Learn More</a></div>
-        </div>
+      <div class="tab-content tpl-minimal-tabs-cont section-text align-center">        
+            <div class="tab-pane fade in active" id="mini-one">
+             Menjadi Penyedia sarana transaksi online sektor pangan terbesar di
+             Indonesia dan mengantarkan produk asli Indonesia ke pasar global 
+            </div>
+          <div class="tab-pane fade" id="mini-two">
+            <ul class="bullets">
+                <li>Membangun mitra kerjasama dengan supermarket ternama untuk meningkatkan daya jual dari supermarket kepada pasar yang tidak terbatas</li>
+                <li>Menggunakan dan mengembangkan teknologi informasi secara tepat</li>
+                <li>Meningkatkan kemampuan karyawan untuk dapat bersaing secara internal maupun eksternal sehingga dapat meningkatkan nilai karyawan dan perusahaan</li>
+            </ul>
+          </div>
+          <div class="tab-pane fade" id="mini-three">
+            Menciptakan tren baru dalam memenuhi kebutuhan pangan<br>
+            Sebagai pelopor sosial marketplace pertama dalam dunia kuliner<br>
+            Memberikan efisiensi waktu dalam berbelanja
+          </div>     
       </div>
+                 <div class="offer-banner-section wow bounceInUp animated">
+    <div class="promo-banner-section container wow bounceInUp animated">
+    <div class="row">
+      <div class="col-lg-12"> <img alt="promo-banner3" src="{{asset('frontend/images/banner-01.jpg')}}"></div>
     </div>
+  </div>
   </div>
                 
             </div>
