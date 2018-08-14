@@ -54,7 +54,7 @@ p { text-align: justify; }
 }
 </style>
           <div class="static-contain">
-            <p><b><img alt="#" src="{{ asset('frontend/images/logo.png') }}"> hadir untuk menjawab permasalahan masyarakat urban yang
+            <p><b><img alt="#" src="{{ asset('frontend/images/logo.png') }}"> Hadir untuk menjawab permasalahan masyarakat urban yang
             memiliki tingkat mobilitas tinggi, sehingga tidak memiliki cukup waktu
             untuk memenuhi kebutuhan mereka dalam mendapatkan bahan makanan
             yang segar dan berkualitas serta peralatan dapur yang mendukung.
@@ -92,6 +92,7 @@ p { text-align: justify; }
             <div class="tab-pane fade in active" id="mini-one">
              Menjadi Penyedia sarana transaksi online sektor pangan terbesar di
              Indonesia dan mengantarkan produk asli Indonesia ke pasar global 
+             <br><br><br>
             </div>
           <div class="tab-pane fade" id="mini-two">
             <ul class="bullets">
@@ -109,7 +110,7 @@ p { text-align: justify; }
                  <div class="offer-banner-section wow bounceInUp animated">
     <div class="promo-banner-section container wow bounceInUp animated">
     <div class="row">
-      <div class="col-lg-12"> <img alt="promo-banner3" src="{{asset('frontend/images/banner-01.jpg')}}"></div>
+      <div class="col-lg-12"> <img alt="promo-banner3" src="{{asset('frontend/images/thevalues2.png')}}"></div>
     </div>
   </div>
   </div>
