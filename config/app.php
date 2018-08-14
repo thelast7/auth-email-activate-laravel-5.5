@@ -167,12 +167,6 @@ return [
         /*
          * Package Service Providers...
          */
-        Collective\Html\HtmlServiceProvider::class,
-        Yajra\DataTables\DataTablesServiceProvider::class,
-        TeamTNT\Scout\TNTSearchScoutServiceProvider::class,
-        Laravel\Scout\ScoutServiceProvider::class,
-        Intervention\Image\ImageServiceProvider::class,
-        UniSharp\LaravelFilemanager\LaravelFilemanagerServiceProvider::class,
 
         /*
          * Application Service Providers...
@@ -231,9 +225,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Form' => Collective\Html\FormFacade::class,
-        'Html' => Collective\Html\HtmlFacade::class,
-        'Image' => Intervention\Image\Facades\Image::class,
+
     ],
 
 ];
