@@ -35,7 +35,7 @@
             </a>
             <ul class="sidenav-second-level collapse" id="collapseMulti2">
             <li>
-                <a href="#">Semua Product</a>
+                <a href="{{ route('backend.products.index') }}">Semua Product</a>
             </li>
             <li>
                 <a href="#">Tambahkan Product</a>

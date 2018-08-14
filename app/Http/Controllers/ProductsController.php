@@ -36,7 +36,21 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            //'category_id' => 'required',
+            //'name' => 'required|string|min:5|unique:products',
+            //'description' => 'required',
+            'status' => 'required',
+            //'price' => 'required|string|min:4',
+            //'quantity' => 'required|string|max:3',
+            //'review' => 'required'
+        ]);
+        $request['slug'] = str_slug($request->get('name'), '-');
+        $request['user_id'] = $request->user()->id;
+
+        Product::create($request->all());
+
+        return redirect()->route('backend.products.index');
     }
 
     /**
