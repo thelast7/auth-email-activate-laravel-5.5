@@ -11,9 +11,10 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+//Route::get('/', function () {
+//    return view('welcome');
+//});
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 //routes yang menangani aktivasi
@@ -24,3 +25,21 @@ Route::get('auth/activate/resend', 'Auth\ActivationResendController@showResendFo
 Route::post('auth/activate/resend', 'Auth\ActivationResendController@resend');
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+
+//routes yang menangani backend
+Route::resource('/backend/users', 'UsersController', ['as' => 'backend']);
+Route::resource('/backend/categories', 'CategoriesController', ['as' => 'backend']);
+Route::resource('/backend/products', 'ProductsController', ['as' => 'backend']);
+Route::get('/backend/home', 'HomeController@index')->name('backend.home');
+
+
+//routes yang menangani api
+Route::group(['middleware' => 'auth'], function () {
+    Route::get('/api/datatable/users', 'UsersController@dataTable')->name('api.datatable.users');
+    Route::get('/api/datatable/categories', 'CategoriesController@dataTable')->name('api.datatable.categories');
+    Route::get('/api/datatable/products', 'ProductsController@dataTable')->name('api.datatable.products');
+    Route::get('/api/datatable/comments', 'CommentsController@dataTable')->name('api.datatable.comments');
+});
+
+Route::get('/abouts', 'AboutsController@index')->name('abouts');
