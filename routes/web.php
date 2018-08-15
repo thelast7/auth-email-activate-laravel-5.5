@@ -14,7 +14,8 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/', 'HomeController@index')->name('home');
+Route::get('/', 'IndexController@index');
+
 
 Auth::routes();
 //routes yang menangani aktivasi
