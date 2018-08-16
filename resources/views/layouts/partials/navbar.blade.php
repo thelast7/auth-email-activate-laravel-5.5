@@ -125,7 +125,7 @@
           </li>
           <li class="level0 parent drop-menu"><a href="{{ route('abouts') }}"><span>Tentang</span> </a>
           </li>
-          <li class="level0 nav-6 level-top parent"> <a href="{{ route('all-produk') }}" class="level-top"> <span>Produk</span> </a>
+          <li class="level0 nav-6 level-top parent"> <a href="#" class="level-top"> <span>Produk</span> </a>
           </li>
           <li class="level0 nav-5 level-top first"> <a class="level-top" href="#"> <span>Recipe</span> </a>
           </li>

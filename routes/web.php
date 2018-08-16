@@ -14,8 +14,7 @@
 //Route::get('/', function () {
 //    return view('welcome');
 //});
-Route::get('/', 'IndexController@index');
-
+Route::get('/', 'HomeController@index')->name('home');
 
 Auth::routes();
 //routes yang menangani aktivasi
@@ -44,4 +43,3 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/abouts', 'AboutsController@index')->name('abouts');
-Route::get('/all-produk', 'AllprodukController@index')->name('all-produk');
