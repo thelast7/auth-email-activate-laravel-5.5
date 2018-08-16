@@ -43,3 +43,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 Route::get('/abouts', 'AboutsController@index')->name('abouts');
+Route::get('/all-product', 'AllproductController@index')->name('all-product');
