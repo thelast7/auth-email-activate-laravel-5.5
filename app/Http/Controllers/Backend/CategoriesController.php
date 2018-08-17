@@ -1,12 +1,13 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Backend;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Category;
 use Yajra\Datatables\Datatables;
 
-class CategoriesController extends Controller
+class CategoriesController extends BackendController
 {
     /**
      * Display a listing of the resource.

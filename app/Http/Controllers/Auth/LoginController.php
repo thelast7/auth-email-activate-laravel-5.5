@@ -39,6 +39,14 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 
+    protected function authendticated(Request $request, $user)
+    {
+        if ($user->role === 'admin') {
+            return redirect()->intented('backend/dashboard');
+        }
+        return redirect()->intented('/');
+    }
+
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
