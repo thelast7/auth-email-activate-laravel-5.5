@@ -4,28 +4,11 @@
         <div class="row"> 
           <!-- Header Language -->
           <div class="col-xs-6">
-            <!-- <div class="dropdown block-language-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-language dropdown-toggle" href="#"> <img src="images/english.png" alt="language"> English <span class="caret"></span> </a>
-              <ul class="dropdown-menu" role="menu">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/english.png" alt="language"> English </a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/francais.png" alt="language"> French </a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"><img src="images/german.png" alt="language"> German </a></li>
-              </ul>
-            </div> -->
-            
-            <!-- End Header Language --> 
-            
-            <!-- Header Currency -->
-            <!-- <div class="dropdown block-currency-wrapper"> <a role="button" data-toggle="dropdown" data-target="#" class="block-currency dropdown-toggle" href="#"> USD <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> $ - Dollar </a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> £ - Pound </a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#"> € - Euro </a></li>
-              </ul>
-            </div> -->
-            
-            <!-- End Header Currency -->
-            
+            @guest
             <div class="welcome-msg hidden-xs">Hello Awesome People, Welcome to SEMBAPUR! </div>
+            @else
+            <div class="welcome-msg hidden-xs">Hello {{ Auth::user()->name }}, Welcome to SEMBAPUR! </div>
+            @endguest
           </div>
           <div class="col-xs-6"> 
             
@@ -35,7 +18,14 @@
                 <div class="myaccount"><a title="My Account" href=""><span class="hidden-xs">My Account</span></a></div>
                 <div class="wishlist"><a title="My Wishlist"  href="#"><span class="hidden-xs">Wishlist</span></a></div>
                 <div class="check"><a title="Checkout" href="#"><span class="hidden-xs">Checkout</span></a></div>
+                @guest
                 <div class="login"><a title="Login" href="{{ route('login') }}"><span  class="hidden-xs">Akun</span></a></div>
+                @else
+                <div class="logout"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout
+                  <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                      {{ csrf_field() }}
+                  </form></a></div>
+                @endguest
               </div>
             </div>
             <!-- End Header Top Links --> 
@@ -53,18 +43,7 @@
         <div class="col-lg-8 col-sm-6 col-md-8"> 
           <!-- Search-col -->
           <div class="search-box">
-            <form action="cat" method="POST" id="search_mini_form" name="Categories">
-              <select name="category_id" class="cate-dropdown hidden-xs">
-                <option value="0">Categories</option>
-                <option value="36">Organic Product</option>
-                <option value="37">Produk Segar</option>
-                <option value="42">&nbsp;&nbsp;&nbsp;Buah Segar</option>
-                <option value="43">&nbsp;&nbsp;&nbsp;Sayuran Segar</option>
-                <option value="38">Olahan Susu & Telur</option>
-                <option value="39">Keperluan Dapur</option>
-                <option value="40">Produk Beku</option>
-                <option value="41">Makanan Olahan</option>
-              </select>
+            <form action="cat" method="POST" id="search_mini_form">
               <input type="text" placeholder="Search here..." value="" maxlength="70" class="" name="search" id="search">
               <button id="submit-button" class="search-btn-bg"><span>Search</span></button>
             </form>

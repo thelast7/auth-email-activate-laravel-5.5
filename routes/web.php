@@ -12,8 +12,12 @@
 */
 
 //routes yang menangani tampilan user
+
+//routes yang memnangani halaman awal
 Route::get('/', 'IndexController@index')->name('home');
 Route::get('/home', 'IndexController@index')->name('home');
+Route::get('/all-product', 'IndexController@all_product')->name('all_product');
+
 //routes yang menangani about
 Route::get('/abouts', 'AboutsController@index')->name('abouts');
 
@@ -46,7 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 //routes yang menangani layouts
-Route::get('/all-product', 'AllproductController@index')->name('all-product');
+//Route::get('/all-product', 'AllproductController@index')->name('all-product');
 Route::get('/recipe', 'RecipeController@index')->name('recipe');
 Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
 Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');

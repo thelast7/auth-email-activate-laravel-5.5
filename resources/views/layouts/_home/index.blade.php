@@ -126,28 +126,8 @@
 </div>
 
   <!-- end  brand logo -->
-<!-- offer banner section -->
 
-
-
-<div class="offer-banner-section wow bounceInUp animated">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4 col-xs-12 col-sm-4"><a href="#"><img alt="offer banner1" src="{{('frontend/images/banner-left-01.jpg') }}"></a>
-        <div class="overlay"><a class="info" href="#">Learn More</a></div>
-      </div>
-      <div class="col-lg-4 col-xs-12 col-sm-4"><a href="#"><img alt="offer banner2" src="{{('frontend/images/banner-mid-01.jpg') }}"></a>
-        <div class="overlay"><a class="info" href="#">Learn More</a></div>
-      </div>
-      <div class="col-lg-4 col-xs-12 col-sm-4"><a href="#"><img alt="offer banner3" src="{{('frontend/images/banner-right-01.jpg') }}"></a>
-        <div class="overlay"><a class="info" href="#">Learn More</a></div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end offer banner section --> 
-
-<!-- Featured Slider -->
+<!-- All product -->
 <section class="featured-pro container wow bounceInUp animated">
   <div class="slider-items-products">
     <div class="new_title center">
@@ -161,7 +141,7 @@
           <div class="col-item">
             <div class="sale-label sale-top-right">Sale</div>
             <div class="product-image-area"> <a class="product-image" title="Sample Product" href="{{ route('detail') }}"> <img src="{{ $product->cover }}" class="img-responsive" alt="sembapur" /> </a>
-              <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="{{ route('detail') }}"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="{{ route('detail') }}"><span>Add to Compare</span></a></span> </div>
+              <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="{{ route('detail') }}"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="{{ route('detail') }}"><span>Add to Compare</span></a></span> </div>
             </div>
             <div class="info">
               <div class="info-inner">
@@ -195,14 +175,13 @@
     </div>
   </div>
 </section>
-<!-- End Featured Slider --> 
+<!-- End All product --> 
+
 <!-- promo banner section -->
-<div class="promo-banner-section container wow bounceInUp animated">
-  <div class="row">
-    <div class="col-lg-12"> <img alt="promo-banner3" src="{{ asset('frontend/images/banner-01.jpg') }}"></div>
-  </div>
-</div>
-<!-- End promo banner section --> 
+@include('layouts._banner.index')
+<!-- End promo banner section -->
+
+@foreach($products as $product)
 <!-- middle slider -->
 <section class="middle-slider container wow bounceInUp animated">
   <div class="row">
@@ -210,7 +189,7 @@
       <div class="bag-product-slider small-pr-slider cat-section">
         <div class="slider-items-products">
           <div class="new_title center">
-            <h2>Telur Ayam Negeri</h2>
+            <h2>{{ $product->category->name }}</h2>
           </div>
           <div id="bag-seller-slider" class="product-flexslider hidden-buttons">
             <div class="slider-items slider-width-col3"> 
@@ -218,12 +197,12 @@
               <!-- Item -->
               <div class="item">
                 <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/product3.jpg') }}" class="img-responsive" alt="a" /> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="#"> <img src="{{ $product->cover }}" class="img-responsive" alt="a" /> </a>
+                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="#"><span>Add to Compare</span></a></span> </div>
                   </div>
                   <div class="info">
                     <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
+                      <div class="item-title"> <a title=" Sample Product" href="#"> {{ $product->name }} </a> </div>
                       <!--item-title-->
                       <div class="item-content">
                         <div class="ratings">
@@ -232,8 +211,7 @@
                           </div>
                         </div>
                         <div class="price-box">
-                          <p class="special-price"> <span class="price"> Rp45.000 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Rp50.000 </span> </p>
+                          <p class="special-price"> <span class="price"> Rp {{$product->price}} </span> </p>
                         </div>
                       </div>
                       <!--item-content--> 
@@ -241,172 +219,6 @@
                     <!--info-inner-->
                     <div class="actions">
                       <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/product3.jpg') }}" class="img-responsive" alt="a" /> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">Rp422.000</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product3.jpg') }}"> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">Rp50.000</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product3.jpg') }}"> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> Rp45.000 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Rp50.000 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product3.jpg') }}"> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> Rp45.000 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Rp50.000 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product3.jpg') }}"> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">Rp422.000</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
                     </div>
                     <!--actions-->
                     
@@ -425,7 +237,7 @@
       <div class="shoes-product-slider small-pr-slider cat-section">
         <div class="slider-items-products">
           <div class="new_title center">
-            <h2>Telur Ayam Kampung</h2>
+            <h2>{{ $product->category->name }}</h2>
           </div>
           <div id="shoes-slider" class="product-flexslider hidden-buttons">
             <div class="slider-items slider-width-col3"> 
@@ -433,12 +245,12 @@
               <!-- Item -->
               <div class="item">
                 <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset ('frontend/products-images/product2.jpg') }}" class="img-responsive" alt="a" /> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="#"> <img src="{{ asset ('frontend/products-images/product2.jpg') }}" class="img-responsive" alt="a" /> </a>
+                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="#"><span>Add to Compare</span></a></span> </div>
                   </div>
                   <div class="info">
                     <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
+                      <div class="item-title"> <a title=" Sample Product" href="#"> Sample Product </a> </div>
                       <!--item-title-->
                       <div class="item-content">
                         <div class="ratings">
@@ -468,12 +280,12 @@
               <!-- Item -->
               <div class="item">
                 <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/product2.jpg') }}" class="img-responsive" alt="a" /> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="#"> <img src="{{ asset('frontend/products-images/product2.jpg') }}" class="img-responsive" alt="a" /> </a>
+                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="#"><span>Add to Compare</span></a></span> </div>
                   </div>
                   <div class="info">
                     <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
+                      <div class="item-title"> <a title=" Sample Product" href="#"> Sample Product </a> </div>
                       <!--item-title-->
                       <div class="item-content">
                         <div class="ratings">
@@ -500,12 +312,12 @@
               <!-- Item -->
               <div class="item">
                 <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset ('frontend/products-images/product2.jpg') }}"> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="#"> <img alt="a" class="img-responsive" src="{{ asset ('frontend/products-images/product2.jpg') }}"> </a>
+                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="#"><span>Add to Compare</span></a></span> </div>
                   </div>
                   <div class="info">
                     <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
+                      <div class="item-title"> <a title=" Sample Product" href="#"> Sample Product </a> </div>
                       <!--item-title-->
                       <div class="item-content">
                         <div class="ratings">
@@ -532,47 +344,12 @@
               <!-- Item -->
               <div class="item">
                 <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product2.jpg') }}"> </a> 
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="#"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product2.jpg') }}"> </a> 
+                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="#"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="#"><span>Add to Compare</span></a></span> </div>
                   </div>
                   <div class="info">
                     <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> Rp45.000 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Rp50.000 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product.jpg') }}"> </a> 
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
+                      <div class="item-title"> <a title=" Sample Product" href="#"> Sample Product </a> </div>
                       <!--item-title-->
                       <div class="item-content">
                         <div class="ratings">
@@ -606,408 +383,7 @@
     </div>
   </div>
 </section>
-
-<section class="middle-slider container wow bounceInUp animated">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="bag-product-slider small-pr-slider cat-section">
-        <div class="slider-items-products">
-          <div class="new_title center">
-            <h2>Telur Bebek</h2>
-          </div>
-          <div id="bag-seller-slider" class="product-flexslider hidden-buttons">
-            <div class="slider-items slider-width-col3"> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/telurbebek.jpg') }}" class="img-responsive" alt="a" /> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> Rp45.000 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Rp50.000 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/telurbebek.jpg') }}" class="img-responsive" alt="a" /> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">Rp422.000</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telurbebek.jpg') }}"> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">Rp50.000</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telurbebek.jpg') }}"> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> Rp45.000 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Rp50.000 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telurbebek.jpg') }}"> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> Rp45.000 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Rp50.000 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telurbebek.jpg') }}"> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">Rp422.000</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-6">
-      <div class="shoes-product-slider small-pr-slider cat-section">
-        <div class="slider-items-products">
-          <div class="new_title center">
-            <h2>Telur Puyuh</h2>
-          </div>
-          <div id="shoes-slider" class="product-flexslider hidden-buttons">
-            <div class="slider-items slider-width-col3"> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/telorpuyuh.jpg') }}" class="img-responsive" alt="a" /> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> Rp45.000 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Rp50.000 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/telorpuyuh.jpg') }}" class="img-responsive" alt="a" /> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">Rp422.000</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button type="button" title="Add to Cart" class="button btn-cart"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telorpuyuh.jpg') }}"> </a>
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">Rp50.000</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telorpuyuh.jpg') }}"> </a> 
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> Rp45.000 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Rp50.000 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-              <!-- Item -->
-              <div class="item">
-                <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src=" {{ asset('frontend/products-images/telorpuyuh.jpg') }}> </a> 
-                    <div class="actions-links"><span class="add-to-links"> <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> <a title="Add to Wishlist" class="link-wishlist" href="wishlist.html"><span>Add to Wishlist</span></a> <a title="Add to Compare" class="link-compare" href="compare.html"><span>Add to Compare</span></a></span> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> Rp45.000 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> Rp50.000 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    <div class="actions">
-                      <button class="button btn-cart" title="Add to Cart" type="button"><span>Add to Cart</span></button>
-                    </div>
-                    <!--actions-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </div>
-              <!-- End Item --> 
-              
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+@endforeach
+<br>
 <!-- End middle slider --> 
 @endsection

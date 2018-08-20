@@ -8,7 +8,7 @@
       <div class="row">
         <ul>
           <li class="home"> <a href="index.html" title="Go to Home Page">Home</a><span>&mdash;›</span></li>
-          <li class=""> <a href="grid.html" title="Go to Home Page">Produk</a><span>&mdash;›</span></li>
+          <li class=""> <a href="#" title="Go to Home Page">Produk</a><span>&mdash;›</span></li>
           <li class="category13"><strong>Semua Produk</strong></li>
         </ul>
       </div>
@@ -88,10 +88,11 @@
               </div>
             </div>
             <ul class="products-grid">
+                  @foreach($products as $product)
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/product1.jpg') }}" class="img-responsive" alt="a" /> </a>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="#"> <img src="{{ $product->cover }}" class="img-responsive" alt="a" /> </a>
                     <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                       </a> <a class="quick-view" href="quick_view.html">
@@ -104,7 +105,7 @@
                   </div>
                   <div class="info">
                     <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
+                      <div class="item-title"> <a title=" Sample Product" href="#"> {{ $product->name }} </a> </div>
                       <!--item-title-->
                       <div class="item-content">
                         <div class="ratings">
@@ -113,8 +114,7 @@
                           </div>
                         </div>
                         <div class="price-box">
-                          <p class="special-price"> <span class="price"> $45.00 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
+                          <p class="special-price"> <span class="price"> Rp {{ $product->price }} </span> </p>
                         </div>
                       </div>
                       <!--item-content--> 
@@ -125,293 +125,11 @@
                   </div>
                 </div>
               </li>
-              <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <div class="col-item">
-                  <div class="new-label new-top-right">New</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/telurbebek.jpg') }}" class="img-responsive" alt="a" /> </a>
-                    <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
-                      <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                      </a> <a class="quick-view" href="quick_view.html">
-                      <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                      </a> <a class="add_to_compare" href="compare.html">
-                      <div><i class="icon-random"></i><span>Add to compare</span></div>
-                      </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                      <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                      </a> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">$422.00</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <div class="col-item">
-                  <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product1.jpg') }}"> </a>
-                    <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
-                      <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                      </a> <a class="quick-view" href="quick_view.html">
-                      <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                      </a> <a class="add_to_compare" href="compare.html">
-                      <div><i class="icon-random"></i><span>Add to compare</span></div>
-                      </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                      <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                      </a> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">$50.00</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <div class="col-item">
-                  <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telurayamkampung.jpg') }}"> </a>
-                    <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
-                      <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                      </a> <a class="quick-view" href="quick_view.html">
-                      <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                      </a> <a class="add_to_compare" href="compare.html">
-                      <div><i class="icon-random"></i><span>Add to compare</span></div>
-                      </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                      <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                      </a> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> $45.00 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <div class="col-item">
-                  <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telorpuyuh.jpg') }}"> </a>
-                    <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
-                      <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                      </a> <a class="quick-view" href="quick_view.html">
-                      <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                      </a> <a class="add_to_compare" href="compare.html">
-                      <div><i class="icon-random"></i><span>Add to compare</span></div>
-                      </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                      <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                      </a> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> $45.00 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <div class="col-item">
-                  <div class="new-label new-top-right">New</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product3.jpg') }}"> </a>
-                    <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
-                      <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                      </a> <a class="quick-view" href="quick_view.html">
-                      <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                      </a> <a class="add_to_compare" href="compare.html">
-                      <div><i class="icon-random"></i><span>Add to compare</span></div>
-                      </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                      <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                      </a> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">$422.00</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <div class="col-item">
-                  <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telurayam.jpg') }}"> </a>
-                    <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
-                      <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                      </a> <a class="quick-view" href="quick_view.html">
-                      <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                      </a> <a class="add_to_compare" href="compare.html">
-                      <div><i class="icon-random"></i><span>Add to compare</span></div>
-                      </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                      <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                      </a> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box"> <span class="regular-price"> <span class="price">$50.00</span> </span> </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <div class="col-item">
-                  <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product2.jpg') }}"> </a>
-                    <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
-                      <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                      </a> <a class="quick-view" href="quick_view.html">
-                      <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                      </a> <a class="add_to_compare" href="compare.html">
-                      <div><i class="icon-random"></i><span>Add to compare</span></div>
-                      </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                      <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                      </a> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> $45.00 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </li>
-              <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
-                <div class="col-item">
-                  <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/product1.jpg') }}" class="img-responsive" alt="a" /> </a>
-                    <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
-                      <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                      </a> <a class="quick-view" href="quick_view.html">
-                      <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                      </a> <a class="add_to_compare" href="compare.html">
-                      <div><i class="icon-random"></i><span>Add to compare</span></div>
-                      </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
-                      <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                      </a> </div>
-                  </div>
-                  <div class="info">
-                    <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="product_detail.html"> Sample Product </a> </div>
-                      <!--item-title-->
-                      <div class="item-content">
-                        <div class="ratings">
-                          <div class="rating-box">
-                            <div class="rating"></div>
-                          </div>
-                        </div>
-                        <div class="price-box">
-                          <p class="special-price"> <span class="price"> $45.00 </span> </p>
-                          <p class="old-price"> <span class="price-sep">-</span> <span class="price"> $50.00 </span> </p>
-                        </div>
-                      </div>
-                      <!--item-content--> 
-                    </div>
-                    <!--info-inner-->
-                    
-                    <div class="clearfix"> </div>
-                  </div>
-                </div>
-              </li>
+                @endforeach
             </ul>
           </div>
         </section>
+
         <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9 wow bounceInUp animated">
           <div class="side-nav-categories">
             <div class="block-title"> Categories </div>
@@ -419,51 +137,12 @@
             <!-- BEGIN BOX-CATEGORY -->
             <div class="box-content box-category">
               <ul>
-                <li class="active"> <a  href="grid.html">Telur</a> <span class="subDropdown minus"></span>
+                <li class="active"> <a  href="#">Telur</a> <span class="subDropdown minus"></span>
                   <ul class="level0_415">
-                    <li> <a href="grid.html"> Telur Ayam Kampung</a> <span class="subDropdown plus"></span>
-                      <ul class="level1">
-                        <li> <a href="grid.html"> Evening Tops </a> </li>
-                        <li> <a href="grid.html"> Shirts &amp; Blouses </a> </li>
-                        <li> <a href="grid.html"> Tunics </a> </li>
-                        <li> <a href="grid.html"> Vests </a> </li>
-                        <!--end for-each -->
-                      </ul>
-                      <!--level1--> 
+                    @foreach($products as $product)
+                    <li> <a href="#"> {{ $product->category->name }}</a>
                     </li>
-                    <!--level1-->
-                    <li> <a href="grid.html"> Telur Ayam Negeri </a> <span class="subDropdown plus"></span>
-                      <ul class="level1">
-                        <li> <a href="grid.html"> Bags </a> </li>
-                        <li> <a href="grid.html"> Designer Handbags </a> </li>
-                        <li> <a href="grid.html"> Purses </a> </li>
-                        <li> <a href="grid.html"> Shoulder Bags </a> </li>
-                        <!--end for-each -->
-                      </ul>
-                      <!--level1--> 
-                    </li>
-                    <!--level1-->
-                    <li> <a href="grid.html"> Telur Bebek </a> <span class="subDropdown plus"></span>
-                      <ul class="level1">
-                        <li> <a href="grid.html"> Flat Shoes </a> </li>
-                        <li> <a href="grid.html"> Flat Sandals </a> </li>
-                        <li> <a href="grid.html"> Boots </a> </li>
-                        <li> <a href="grid.html"> Heels </a> </li>
-                        <!--end for-each -->
-                      </ul>
-                      <!--level1--> 
-                    </li>
-                    <!--level1-->
-                    <li> <a href="grid.html"> Telur Puyuh </a>
-                      <ul class="level1">
-                        <li> <a href="grid.html"> Bracelets </a> </li>
-                        <li> <a href="grid.html"> Necklaces &amp; Pendants </a> </li>
-                        <li> <a href="grid.html"> Pins &amp; Brooches </a> </li>
-                        <!--end for-each -->
-                      </ul>
-                      <!--level1--> 
-                    </li>
-                    <!--level1-->
+                    @endforeach
               </ul>
             </div>
             <!--box-content box-category--> 
