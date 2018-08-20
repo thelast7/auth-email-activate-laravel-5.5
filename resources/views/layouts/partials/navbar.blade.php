@@ -1,7 +1,7 @@
   <nav>
     <div class="container">
       <div class="nav-inner">
-        <div class="logo-small"> <a class="logo" title="SEMBAPUR" href="index.html"><img alt="Magento Commerce" src="{{ asset('frontend/images/logo.png') }}"></a> </div>
+        <div class="logo-small"> <a class="logo" title="SEMBAPUR" href="{{route ('home')}}"><img alt="Magento Commerce" src="{{ asset('frontend/images/logo.png') }}"></a> </div>
         <!-- mobile-menu -->
         <div class="hidden-desktop" id="mobile-menu">
           <ul class="navmenu">
@@ -138,7 +138,7 @@
               </li>
             </ul>
           </li>
-          <li class="level0 parent drop-menu"> <a class="level-top" href="grid.html"><span>Kontak Kami</span></a></li>
+          <li class="level0 parent drop-menu"> <a class="level-top" href="{{ route('contactus') }}"><span>Kontak Kami</span></a></li>
       </div>
     </div>
     </div>
