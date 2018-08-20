@@ -127,14 +127,14 @@
           </li>
           <li class="level0 nav-6 level-top parent"> <a href="{{ route('all-product') }}" class="level-top"> <span>Produk</span> </a>
           </li>
-          <li class="level0 nav-5 level-top first"> <a class="level-top" href="#"> <span>Recipe</span> </a>
+          <li class="level0 nav-5 level-top first"> <a class="level-top" href="{{ route('recipe') }}"> <span>Recipe</span> </a>
           </li>
           
           </li>
           <li class="level0 parent drop-menu"><a href="grid.html"><span>Layanan </span> </a>
             <ul class="level1">
-              <li class="level1 first parent"><a href="grid"><span>How To Buy</span></a>
-               <li class="level2 first parent"><a href="grid"><span>How To Pay</span></a> 
+              <li class="level1 first parent"><a href="{{ route('howtobuy') }}"><span>How To Buy</span></a>
+               <li class="level2 first parent"><a href="{{ route('howtopay') }}"><span>How To Pay</span></a> 
               </li>
             </ul>
           </li>

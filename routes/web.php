@@ -42,5 +42,10 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/api/datatable/comments', 'CommentsController@dataTable')->name('api.datatable.comments');
 });
 
+
+//routes yang menangani halaman
 Route::get('/abouts', 'AboutsController@index')->name('abouts');
 Route::get('/all-product', 'AllproductController@index')->name('all-product');
+Route::get('/recipe', 'RecipeController@index')->name('recipe');
+Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
+Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
