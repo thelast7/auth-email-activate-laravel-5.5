@@ -43,9 +43,11 @@ Route::group(['middleware' => 'auth'], function () {
 });
 
 
-//routes yang menangani halaman
+//routes yang menangani layouts
 Route::get('/abouts', 'AboutsController@index')->name('abouts');
 Route::get('/all-product', 'AllproductController@index')->name('all-product');
 Route::get('/recipe', 'RecipeController@index')->name('recipe');
 Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
 Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
+Route::get('/contactus', 'ContactusController@index')->name('contactus');
+Route::get('/detail', 'DetprodController@index')->name('detail');
