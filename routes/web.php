@@ -44,3 +44,6 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/api/datatable/comments', 'Backend\CommentsController@dataTable')->name('api.datatable.comments');
 });
 
+
+//routes yang menangani halaman
+Route::get('/abouts', 'AboutsController@index')->name('abouts');

@@ -26,10 +26,8 @@
                 <div class="slider-items slider-width-col1"> 
                   
                   <!-- Item -->
-                  <div class="item"> <a href="#x"><img alt="" src="{{ asset('frontend/images/category-banner1.jpg')}}"></a>
+                  <div class="item"> <a href="#x"><img alt="" src="{{ asset('frontend/images/banner.png')}}"></a>
                     <div class="cat-img-title cat-bg cat-box">
-                      <h2 class="cat-heading">Category Banner</h2>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                     </div>
                   </div>
                   <!-- End Item --> 
@@ -93,7 +91,7 @@
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="products-images/product1.jpg" class="img-responsive" alt="a" /> </a>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/product1.jpg') }}" class="img-responsive" alt="a" /> </a>
                     <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                       </a> <a class="quick-view" href="quick_view.html">
@@ -130,7 +128,7 @@
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="new-label new-top-right">New</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="products-images/product1.jpg" class="img-responsive" alt="a" /> </a>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/telurbebek.jpg') }}" class="img-responsive" alt="a" /> </a>
                     <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                       </a> <a class="quick-view" href="quick_view.html">
@@ -164,7 +162,7 @@
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product1.jpg"> </a>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product1.jpg') }}"> </a>
                     <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                       </a> <a class="quick-view" href="quick_view.html">
@@ -198,7 +196,7 @@
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product1.jpg"> </a>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telurayamkampung.jpg') }}"> </a>
                     <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                       </a> <a class="quick-view" href="quick_view.html">
@@ -235,7 +233,7 @@
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product1.jpg"> </a>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telorpuyuh.jpg') }}"> </a>
                     <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                       </a> <a class="quick-view" href="quick_view.html">
@@ -272,7 +270,7 @@
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="new-label new-top-right">New</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product1.jpg"> </a>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product3.jpg') }}"> </a>
                     <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                       </a> <a class="quick-view" href="quick_view.html">
@@ -306,7 +304,7 @@
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product1.jpg"> </a>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/telurayam.jpg') }}"> </a>
                     <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                       </a> <a class="quick-view" href="quick_view.html">
@@ -340,7 +338,7 @@
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="products-images/product1.jpg"> </a>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img alt="a" class="img-responsive" src="{{ asset('frontend/products-images/product2.jpg') }}"> </a>
                     <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                       </a> <a class="quick-view" href="quick_view.html">
@@ -377,7 +375,7 @@
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="products-images/product1.jpg" class="img-responsive" alt="a" /> </a>
+                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="product_detail.html"> <img src="{{ asset('frontend/products-images/product1.jpg') }}" class="img-responsive" alt="a" /> </a>
                     <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                       </a> <a class="quick-view" href="quick_view.html">
