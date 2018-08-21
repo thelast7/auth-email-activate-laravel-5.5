@@ -81,7 +81,7 @@
                   <div class="top-subtotal">Subtotal: <span class="price">Rp </span></div>
                   <div class="actions">
                     <button class="btn-checkout" type="button"><a href="#"><span>Checkout</span></button></a>
-                    <button class="view-cart" type="button"><a href="{{ route('cart.index') }}"><span>View Cart</span></button></a>
+                    <button class="view-cart" type="button"><a href="#"><span>View Cart</span></button></a>
                   </div>
                 </div>
               </div>

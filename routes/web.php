@@ -55,10 +55,9 @@ Route::get('/recipe', 'RecipeController@index')->name('recipe');
 Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
 Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
 Route::get('/contactus', 'ContactusController@index')->name('contactus');
-Route::get('/detail', 'DetprodController@index')->name('detail');
 
 
 
 //routes yang menangani cart
 Route::resource('cart', 'CartController');
-Route::delete('/kosong', 'CartController@emptyCart');
+Route::delete('emptyCart', 'CartController@emptyCart');

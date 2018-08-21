@@ -81,16 +81,15 @@
                       </div>
                     </div>
 
-                    <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart">
-                      <form action="{{ url('/cart') }}" method="POST">
+{{--                     <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart"> --}}
+                      <form action="{{ url('/layouts._cart.cart') }}" method="POST">
                         {!! csrf_field() !!}
                         <input type="hidden" name="id" value="{{ $products->id }}">
                         <input type="hidden" name="name" value="{{ $products->name }}">
                         <input type="hidden" name="price" value="{{ $products->price }}">
-                        <input type="submit" class="btn btn-success btn-lg" value="Add to Cart">
-                        <span><i class="icon-basket"></i> Add to Cart</span>
+                        <input type="submit" class="button btn-cart" value="Add to Cart">
                       </form>
-                    </button>
+{{--                     </button> --}}
 
                     <div class="email-addto-box">
                       <ul class="add-to-links">
