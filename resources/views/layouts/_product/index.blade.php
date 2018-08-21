@@ -7,8 +7,8 @@
     <div class="container">
       <div class="row">
         <ul>
-          <li class="home"> <a href="index.html" title="Go to Home Page">Home</a><span>&mdash;›</span></li>
-          <li class=""> <a href="#" title="Go to Home Page">Produk</a><span>&mdash;›</span></li>
+          <li class="home"> <a href="{{ route('home') }}" title="Go to Home Page">Home</a><span>&mdash;›</span></li>
+          <li class=""> <a href="{{ route('all_product') }}" title="Go to Home Page">Produk</a><span>&mdash;›</span></li>
           <li class="category13"><strong>Semua Produk</strong></li>
         </ul>
       </div>
@@ -45,9 +45,6 @@
           </div>
           <div class="category-products">
             <div class="toolbar">
-              <div class="sorter">
-                <div class="view-mode"> <span title="Grid" class="button button-active button-grid">Grid</span><a href="list.html" title="List" class="button button-list">List</a> </div>
-              </div>
               <div id="sort-by">
                 <label class="left">Sort By: </label>
                 <ul>
@@ -88,24 +85,25 @@
               </div>
             </div>
             <ul class="products-grid">
-                  @foreach($products as $product)
+              @foreach($products as $product)
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="Sample Product" href="#"> <img src="{{ $product->cover }}" class="img-responsive" alt="a" /> </a>
+                  <div class="product-image-area"> <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> <img src="{{ $product->cover }}" class="img-responsive" alt="a" /> </a>
                     <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                      </a> <a class="quick-view" href="quick_view.html">
+                      </a> <a class="quick-view" href="#">
                       <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                      </a> <a class="add_to_compare" href="compare.html">
+                      </a> <a class="add_to_compare" href="#">
                       <div><i class="icon-random"></i><span>Add to compare</span></div>
-                      </a> <a class="addToWishlist wishlistProd_5" href="wishlist.html" >
+                      </a> <a class="addToWishlist wishlistProd_5" href="#" >
                       <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                      </a> </div>
+                      </a> 
+                    </div>
                   </div>
                   <div class="info">
                     <div class="info-inner">
-                      <div class="item-title"> <a title=" Sample Product" href="#"> {{ $product->name }} </a> </div>
+                      <div class="item-title"> <a title="{{ $product->name }}" href="{{ route('show', $product->slug) }}">{{ $product->name }}</a> </div>
                       <!--item-title-->
                       <div class="item-content">
                         <div class="ratings">
@@ -114,7 +112,7 @@
                           </div>
                         </div>
                         <div class="price-box">
-                          <p class="special-price"> <span class="price"> Rp {{ $product->price }} </span> </p>
+                          <p class="special-price"> <span class="price">Rp {{ $product->price }}</span> </p>
                         </div>
                       </div>
                       <!--item-content--> 
@@ -125,7 +123,7 @@
                   </div>
                 </div>
               </li>
-                @endforeach
+              @endforeach
             </ul>
           </div>
         </section>
@@ -140,18 +138,14 @@
                 <li class="active"> <a  href="#">Telur</a> <span class="subDropdown minus"></span>
                   <ul class="level0_415">
                     @foreach($products as $product)
-                    <li> <a href="#"> {{ $product->category->name }}</a>
+                    <li> <a href="#">{{ $product->category->name }}</a>
                     </li>
                     @endforeach
-              </ul>
+                  </ul>
             </div>
-            <!--box-content box-category--> 
           </div>
-          
               </div>
-            </form>
           </div>
-          
         </aside>
       </div>
     </div>

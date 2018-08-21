@@ -29,16 +29,16 @@
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>Slug</th>
                                 <th>Nama</th>
+                                <th>Slug</th>
                                 <th></th>
                             </tr>
                         </thead>
                         <tfoot>
                             <tr>
                                 <th>ID</th>
-                                <th>Slug</th>
                                 <th>Nama</th>
+                                <th>Slug</th>
                                 <th></th>
                             </tr>
                         </tfoot>

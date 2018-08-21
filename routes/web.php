@@ -16,7 +16,8 @@
 //routes yang memnangani halaman awal
 Route::get('/', 'IndexController@index')->name('home');
 Route::get('/home', 'IndexController@index')->name('home');
-Route::get('/all-product', 'IndexController@all_product')->name('all_product');
+Route::get('/show/{slug}', 'IndexController@show')->name('show');
+Route::get('/all_product', 'IndexController@all_product')->name('all_product');
 
 //routes yang menangani about
 Route::get('/abouts', 'AboutsController@index')->name('abouts');

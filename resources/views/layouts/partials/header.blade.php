@@ -37,7 +37,7 @@
       <div class="row">
         <div class="col-lg-2 col-sm-3 col-md-2"> 
           <!-- Header Logo --> 
-          <a class="logo" title="logo diskon" href="index.html"><img alt="logo diskon" src="{{ asset('frontend/images/logo.png') }}"></a> 
+          <a class="logo" title="logo diskon" href="#"><img alt="logo diskon" src="{{ asset('frontend/images/logo.png') }}"></a> 
           <!-- End Header Logo --> 
         </div>
         <div class="col-lg-8 col-sm-6 col-md-8"> 
@@ -64,7 +64,7 @@
                     <li class="item even"> <a class="product-image" href="#" title="Downloadable Product "><img alt="Downloadable Product " src="{{ asset('frontend/products-images/product1.jpg') }}" width="80"></a>
                       <div class="detail-item">
                         <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
-                          <p class="product-name"> <a href="product_detail.html" title="Downloadable Product">Sample Product </a> </p>
+                          <p class="product-name"> <a href="#" title="Downloadable Product">Sample Product </a> </p>
                         </div>
                         <div class="product-details-bottom"> <span class="price">$100.00</span> <span class="title-desc">Qty:</span> <strong>1</strong> </div>
                       </div>
