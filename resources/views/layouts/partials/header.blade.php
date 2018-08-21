@@ -55,7 +55,7 @@
           <div class="top-cart-contain">
             <div class="mini-cart">
               <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="#"> <i class="glyphicon glyphicon-shopping-cart"></i>
-                <div class="cart-box"><span class="title">cart</span><span id="cart-total">2 item </span></div>
+                <div class="cart-box"><span class="title">cart</span><span id="cart-total">({{ Cart::instance('default')->count(false) }})</span></div>
                 </a></div>
               <div>
                 <div class="top-cart-content arrow_box">
@@ -81,7 +81,7 @@
                   <div class="top-subtotal">Subtotal: <span class="price">Rp </span></div>
                   <div class="actions">
                     <button class="btn-checkout" type="button"><a href="#"><span>Checkout</span></button></a>
-                    <button class="view-cart" type="button"><a href="{{ route('keranjang.index') }}"><span>View Cart</span></button></a>
+                    <button class="view-cart" type="button"><a href="{{ route('cart.index') }}"><span>View Cart</span></button></a>
                   </div>
                 </div>
               </div>

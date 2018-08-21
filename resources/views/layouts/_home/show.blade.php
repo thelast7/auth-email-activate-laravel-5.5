@@ -80,7 +80,18 @@
                         <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i></button>
                       </div>
                     </div>
-                    <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart" type="button"><span><i class="icon-basket"></i> Add to Cart</span></button>
+
+                    <button onClick="productAddToCartForm.submit(this)" class="button btn-cart" title="Add to Cart">
+                      <form action="{{ url('/cart') }}" method="POST">
+                        {!! csrf_field() !!}
+                        <input type="hidden" name="id" value="{{ $products->id }}">
+                        <input type="hidden" name="name" value="{{ $products->name }}">
+                        <input type="hidden" name="price" value="{{ $products->price }}">
+                        <input type="submit" class="btn btn-success btn-lg" value="Add to Cart">
+                        <span><i class="icon-basket"></i> Add to Cart</span>
+                      </form>
+                    </button>
+
                     <div class="email-addto-box">
                       <ul class="add-to-links">
                         <li> <a class="link-wishlist" href="#"><span>Add to Wishlist</span></a></li>

@@ -60,4 +60,5 @@ Route::get('/detail', 'DetprodController@index')->name('detail');
 
 
 //routes yang menangani cart
-Route::resource('/keranjang', 'CartController', ['only' => ['index', 'store', 'update', 'destroy']]);
+Route::resource('cart', 'CartController');
+Route::delete('/kosong', 'CartController@emptyCart');
