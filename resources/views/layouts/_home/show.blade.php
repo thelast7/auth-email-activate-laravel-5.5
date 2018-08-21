@@ -84,7 +84,7 @@
                     <div class="email-addto-box">
                       <ul class="add-to-links">
                         <li> <a class="link-wishlist" href="#"><span>Add to Wishlist</span></a></li>
-                        <li><span class="separator">|</span> <a class="link-compare" href="compare.html"><span>Add to Compare</span></a></li>
+                        <li><span class="separator">|</span> <a class="link-compare" href="#"><span>Add to Compare</span></a></li>
                       </ul>
                       <p class="email-friend"><a href="#" class=""><span>Email to a Friend</span></a></p>
                     </div>
@@ -352,9 +352,9 @@
                             <div class="product-image-area"> <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> <img src="{{ $product->cover }}" class="img-responsive" alt="a" /> </a>
                               <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
                                 <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                                </a> <a class="quick-view" href="quick_view.html">
+                                </a> <a class="quick-view" href="#">
                                 <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                                </a> <a class="add_to_compare" href="compare.html">
+                                </a> <a class="add_to_compare" href="#">
                                 <div><i class="icon-random"></i><span>Add to compare</span></div>
                                 </a> <a class="addToWishlist wishlistProd_5" href="#" >
                                 <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>

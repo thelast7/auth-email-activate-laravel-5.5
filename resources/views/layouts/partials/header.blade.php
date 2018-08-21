@@ -44,8 +44,8 @@
           <!-- Search-col -->
           <div class="search-box">
             <form action="cat" method="POST" id="search_mini_form">
-              <input type="text" placeholder="Search here..." value="" maxlength="70" class="" name="search" id="search">
-              <button id="submit-button" class="search-btn-bg"><span>Search</span></button>
+              <input type="text" placeholder="Cari Product..." value="" maxlength="70" class="" name="search" id="search">
+              <button id="submit-button" class="search-btn-bg"><span>Cari</span></button>
             </form>
           </div>
           <!-- End Search-col --> 
@@ -66,7 +66,7 @@
                         <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
                           <p class="product-name"> <a href="#" title="Downloadable Product">Sample Product </a> </p>
                         </div>
-                        <div class="product-details-bottom"> <span class="price">$100.00</span> <span class="title-desc">Qty:</span> <strong>1</strong> </div>
+                        <div class="product-details-bottom"> <span class="price">Rp </span> <span class="title-desc">Qty:</span> <strong>1</strong> </div>
                       </div>
                     </li>
                     <li class="item last odd"> <a class="product-image" href="#" title="  Sample Product "><img alt="  Sample Product " src="{{ asset('frontend/products-images/product1.jpg') }}" width="80"></a>
@@ -74,14 +74,14 @@
                         <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
                           <p class="product-name"> <a href="#" title="  Sample Product "> Sample Product </a> </p>
                         </div>
-                        <div class="product-details-bottom"> <span class="price">$320.00</span> <span class="title-desc">Qty:</span> <strong>2</strong> </div>
+                        <div class="product-details-bottom"> <span class="price">Rp </span> <span class="title-desc">Qty:</span> <strong>2</strong> </div>
                       </div>
                     </li>
                   </ul>
-                  <div class="top-subtotal">Subtotal: <span class="price">$420.00</span></div>
+                  <div class="top-subtotal">Subtotal: <span class="price">Rp </span></div>
                   <div class="actions">
-                    <button class="btn-checkout" type="button"><span>Checkout</span></button>
-                    <button class="view-cart" type="button"><span>View Cart</span></button>
+                    <button class="btn-checkout" type="button"><a href="#"><span>Checkout</span></button></a>
+                    <button class="view-cart" type="button"><a href="{{ route('keranjang.index') }}"><span>View Cart</span></button></a>
                   </div>
                 </div>
               </div>

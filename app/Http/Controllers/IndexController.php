@@ -4,13 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Product;
-use App\Category; //ini doang mas
+use App\Category;
 
 class IndexController extends Controller
 {
     public function index()
     {
-        // dah ini harusnya udah bisa looping category, ok mas
         $products = Product::where('status', 1)->with('category')->limit(10)->get();
         return view('layouts._home.index', compact('products'));
     }
@@ -24,7 +23,6 @@ class IndexController extends Controller
     public function all_product()
     {
         $products = Product::where('status', 1)->limit(10)->get();
-        return view('layouts._product.index', compact('products'));   
-        // mana category nya yang di outputkan ke view??
+        return view('layouts._product.index', compact('products'));
     }
 }
