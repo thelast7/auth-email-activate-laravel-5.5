@@ -57,7 +57,24 @@ Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
 Route::get('/contactus', 'ContactusController@index')->name('contactus');
 
 
+/*
+routes yang menangani cart
+Route::resource('/show/{id}/cart', 'CartController');
+Route::get('emptyCart', 'CartController@emptyCart');
 
-//routes yang menangani cart
-Route::resource('cart', 'CartController');
-Route::delete('emptyCart', 'CartController@emptyCart');
+Route::get('test', function(){
+    Cart::add('293ad', 'Product 1', 1, 1000, ['size' => 'large']);
+});
+
+Route::get('cart', function(){
+    return Cart::content();
+});
+
+Route::get('total', function(){
+    return Cart::total();
+});
+*/
+
+Route::get('cart', 'CartController@index');
+Route::get('cart/add/{id}', 'CartController@addItem');
+Route::get('cart/remove/{id}', 'CartController@removeItem');

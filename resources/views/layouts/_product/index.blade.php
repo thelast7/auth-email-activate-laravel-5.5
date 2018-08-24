@@ -90,7 +90,8 @@
                 <div class="col-item">
                   <div class="sale-label sale-top-right">Sale</div>
                   <div class="product-image-area"> <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> <img src="{{ $product->cover }}" class="img-responsive" alt="a" /> </a>
-                    <div class="hover_fly"> <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
+                    <div class="hover_fly">
+                      <a class="exclusive ajax_add_to_cart_button" href="{{ url('/cart/add') }}/{{ $product->id }}" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
                       </a> <a class="quick-view" href="#">
                       <div><i class="icon-eye-open"></i><span>Quick view</span></div>

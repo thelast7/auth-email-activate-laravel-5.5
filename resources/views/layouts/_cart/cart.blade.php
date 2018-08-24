@@ -28,26 +28,36 @@
                   <tfoot>
                     <tr class="first last">
                       <td class="a-right last" colspan="7"><button onclick="setLocation('#')" class="button btn-continue" title="Continue Shopping" type="button"><span><span>Lanjut Berbelanja</span></span></button>
-                        <button class="button btn-update" title="Update Keranjang" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Keranjang</span></span></button>
-                        <button id="empty_cart_button" class="button btn-empty" title="Kosongkan Keranjang" value="empty_cart" name="update_cart_action" type="submit"><span><span>Kosongkan Keranjang</span></span></button></td>
+                        <button class="button btn-update" title="Update Keranjang" value="update_qty" name="update_cart_action" type="submit"><span><span>Update Keranjang</span></span>
+                        </button>
+                        <button id="empty_cart_button" class="button btn-empty" title="Kosongkan Keranjang" value="empty_cart" name="update_cart_action" type="submit"><span><span>Kosongkan Keranjang</span></span>
+                        </button>
+                      </td>
                     </tr>
                   </tfoot>
                   <tbody>
+                    @if(Cart::count()!="0")
+                    @foreach($data as $product)
                     <tr class="first odd">
-                      <td class="image"><a class="product-image" title="Sample Product" href="#"><img width="75" alt="Sample Product" src="products-images/product1.jpg"></a></td>
-                      <td><h2 class="product-name"> <a href="#">Sample Product</a> </h2></td>
+                      <td class="image"><a class="product-image" title="{{ $product->name }}" href="#"><img width="75" alt="{{ $product->name }}" src="{{ $product->cover }}"></a></td>
+                      <td><h2 class="product-name"> <a href="#">{{ $product->name }}</a> </h2></td>
                       <td class="a-center"><a href="#configure/id/15945/"></a></td>
-                      <td class="a-right"><span class="cart-price"> <span class="price">Rp 0</span> </span></td>
+                      <td class="a-right"><span class="cart-price"> <span class="price">Rp {{ $product->price }}</span> </span></td>
                       <td class="a-center">
                         <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty ) &amp;&amp; qty &gt; 0 ) result.value--;return false;" class="reduced items-count" type="button"><i class="icon-minus">&nbsp;</i>
+                          {{-- href="{{ url('/cart/remove') }}/{{ $product->rowId }}" --}}
                         </button>
-                        <input type="text" class="input-text qty" title="Qty" value="1" maxlength="12" id="qty" name="qty">
+                        <input type="text" class="input-text qty" title="Qty" value="{{ $product->qty }}" maxlength="12" id="qty" name="qty">
                         <button onClick="var result = document.getElementById('qty'); var qty = result.value; if( !isNaN( qty )) result.value++;return false;" class="increase items-count" type="button"><i class="icon-plus">&nbsp;</i>
                         </button>
                       </td>
-                      <td class="a-right movewishlist"><span class="cart-price"> <span class="price">Rp 0</span> </span></td>
+                      <td class="a-right movewishlist"><span class="cart-price"> <span class="price">Rp {{ $product->price * $product->qty }}</span> </span></td>
                       <td class="a-center last"><a class="button remove-item" title="Hapus Product" href="#"><span><span>Hapus Product</span></span></a></td>
                     </tr>
+                    @endforeach
+                    @else
+                    <div class="container"><h3>Keranjang Kosong</h3></div>
+                    @endif
                   </tbody>
                 </table>
               </fieldset>
@@ -68,13 +78,13 @@
                   <tbody>
                     <tr>
                       <td class="a-left" colspan="1"> Subtotal </td>
-                      <td class="a-right"><span class="price">Rp </span></td>
+                      <td class="a-right"><span class="price">Rp {{ Cart::subtotal() }}</span></td>
                     </tr>
                   </tbody>
                   <tfoot>
                     <tr>
                       <td class="a-left" colspan="1"><strong>Grand Total</strong></td>
-                      <td class="a-right"><strong><span class="price">Rp </span></strong></td>
+                      <td class="a-right"><strong><span class="price">Rp {{ Cart::total() }}</span></strong></td>
                     </tr>
                   </tfoot>
                 </table>
