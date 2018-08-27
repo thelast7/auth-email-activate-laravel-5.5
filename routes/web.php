@@ -75,6 +75,7 @@ Route::get('total', function(){
 });
 */
 
-Route::get('cart', 'CartController@index');
+Route::get('cart', 'CartController@index')->name('cart');
 Route::get('cart/add/{id}', 'CartController@addItem');
 Route::get('cart/remove/{id}', 'CartController@removeItem');
+Route::post('cart/update', 'CartController@update');

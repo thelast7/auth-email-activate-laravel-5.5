@@ -54,13 +54,19 @@
         <div class="col-lg-2 col-sm-3 col-md-2">
           <div class="top-cart-contain">
             <div class="mini-cart">
-              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle"> <a href="#"> <i class="glyphicon glyphicon-shopping-cart"></i>
-                <div class="cart-box"><span class="title">cart</span><span id="cart-total">({{ Cart::instance('default')->count(false) }})</span></div>
-                </a></div>
-              <div>
+              <div class="basket dropdown-toggle">
+                <a href="{{ route('cart') }}"> <i class="glyphicon glyphicon-shopping-cart"></i>
+                  <div class="cart-box"><span class="title">cart</span>
+                    <span id="cart-total">({{ Cart::count() }})</span>
+                  </div>
+                </a>
+              </div>
+{{--               <div>
                 <div class="top-cart-content arrow_box">
                   <div class="block-subtitle">Recently added item(s)</div>
                   <ul id="cart-sidebar" class="mini-products-list">
+                    @if(Cart::count()!="0")
+                    @foreach($data as $product)
                     <li class="item even"> <a class="product-image" href="#" title="Downloadable Product "><img alt="Downloadable Product " src="{{ asset('frontend/products-images/product1.jpg') }}" width="80"></a>
                       <div class="detail-item">
                         <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
@@ -69,14 +75,10 @@
                         <div class="product-details-bottom"> <span class="price">Rp </span> <span class="title-desc">Qty:</span> <strong>1</strong> </div>
                       </div>
                     </li>
-                    <li class="item last odd"> <a class="product-image" href="#" title="  Sample Product "><img alt="  Sample Product " src="{{ asset('frontend/products-images/product1.jpg') }}" width="80"></a>
-                      <div class="detail-item">
-                        <div class="product-details"> <a href="#" title="Remove This Item" onClick="" class="glyphicon glyphicon-remove">&nbsp;</a> <a class="glyphicon glyphicon-pencil" title="Edit item" href="#">&nbsp;</a>
-                          <p class="product-name"> <a href="#" title="  Sample Product "> Sample Product </a> </p>
-                        </div>
-                        <div class="product-details-bottom"> <span class="price">Rp </span> <span class="title-desc">Qty:</span> <strong>2</strong> </div>
-                      </div>
-                    </li>
+                    @endforeach
+                    @else
+                    <div class="container"><h3>Keranjang Kosong</h3></div>
+                    @endif
                   </ul>
                   <div class="top-subtotal">Subtotal: <span class="price">Rp </span></div>
                   <div class="actions">
@@ -84,14 +86,14 @@
                     <button class="view-cart" type="button"><a href="#"><span>View Cart</span></button></a>
                   </div>
                 </div>
-              </div>
+              </div> --}}
             </div>
-            <div id="ajaxconfig_info"> <a href="#/"></a>
+{{--             <div id="ajaxconfig_info"> <a href="#"></a>
               <input value="" type="hidden">
               <input id="enable_module" value="1" type="hidden">
               <input class="effect_to_cart" value="1" type="hidden">
               <input class="title_shopping_cart" value="Go to shopping cart" type="hidden">
-            </div>
+            </div> --}}
           </div>
         </div>
         <!-- End Top Cart --> 

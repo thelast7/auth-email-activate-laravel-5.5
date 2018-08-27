@@ -20,6 +20,29 @@ class CartController extends Controller
     {
         $products = Product::find($id);
         Cart::add(['id' => $products->id, 'name' => $products->name, 'qty' => 1, 'price' => $products->price]);
+        //        Cart::add(['id' => $products->id, 'name' => $products->name, 'qty' => 1, 'price' => $products->price,
+        //'option' => [
+        //            'img' => $products->cover 
+        //        ]]);
+        return back();
+    }
+    /*
+    public function update(Request $request)
+    {
+        $qty = $request->newQty;
+        $rowId = $request->rowID;
+
+        Cart::update($rowId,$qty);
+        return back();
+    }
+    */
+
+    public function update(Request $request)
+    {
+        //Cart::update($id, $request->qty);
+        $qty=$request->qty;
+        $rowId=$request->rowId;
+        Cart::update($rowId,$qty);
         return back();
     }
 

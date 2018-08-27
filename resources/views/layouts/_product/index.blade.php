@@ -19,7 +19,7 @@
   <div class="main-container col2-left-layout">
     <div class="main container">
       <div class="row">
-        <section class="col-main col-sm-9 col-sm-push-3 wow bounceInUp animated">
+        <section class="col-main col-sm-12 wow bounceInUp animated">
           <div class="category-description std">
             <div class="slider-items-products">
               <div id="category-desc-slider" class="product-flexslider hidden-buttons">
@@ -89,7 +89,7 @@
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
                   <div class="sale-label sale-top-right">Sale</div>
-                  <div class="product-image-area"> <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> <img src="{{ $product->cover }}" class="img-responsive" alt="a" /> </a>
+                  <div class="product-image-area"> <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> <img src="{{ $product->cover }}" height="300" width="300" class="img-responsive" alt="a" /> </a>
                     <div class="hover_fly">
                       <a class="exclusive ajax_add_to_cart_button" href="{{ url('/cart/add') }}/{{ $product->id }}" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
@@ -107,11 +107,11 @@
                       <div class="item-title"> <a title="{{ $product->name }}" href="{{ route('show', $product->slug) }}">{{ $product->name }}</a> </div>
                       <!--item-title-->
                       <div class="item-content">
-                        <div class="ratings">
+                        {{-- <div class="ratings">
                           <div class="rating-box">
                             <div class="rating"></div>
                           </div>
-                        </div>
+                        </div> --}}
                         <div class="price-box">
                           <p class="special-price"> <span class="price">Rp {{ $product->price }}</span> </p>
                         </div>
@@ -129,12 +129,12 @@
           </div>
         </section>
 
-        <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9 wow bounceInUp animated">
+        {{-- <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9 wow bounceInUp animated">
           <div class="side-nav-categories">
-            <div class="block-title"> Categories </div>
+            <div class="block-title"> Categories </div> --}}
             <!--block-title--> 
             <!-- BEGIN BOX-CATEGORY -->
-            <div class="box-content box-category">
+            {{-- <div class="box-content box-category">
               <ul>
                 <li class="active"> <a  href="#">Telur</a> <span class="subDropdown minus"></span>
                   <ul class="level0_415">
@@ -147,7 +147,7 @@
           </div>
               </div>
           </div>
-        </aside>
+        </aside> --}}
       </div>
     </div>
   </div>
