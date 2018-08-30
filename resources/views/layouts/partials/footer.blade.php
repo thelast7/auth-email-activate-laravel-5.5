@@ -19,6 +19,7 @@
             <ul>
               <li class="fb"><a href="#"></a></li>
               <li class="tw"><a href="#"></a></li>
+              <li class="googleplus"><a href="#"></a></li>
               <li class="youtube"><a href="#"></a></li>
             </ul>
           </div>
@@ -29,8 +30,8 @@
   <div class="footer-middle container">
     <div class="row">
       <div class="col-md-3 col-sm-4">
-        <div class="footer-logo"><a href="index.html" title="Logo"><img src="{{ asset('frontend/images/logo.png') }}" alt="logo"></a></div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus diam arcu. </p>
+        <div class="footer-logo"><a href="{{route('home')}}" title="Logo"><img src="{{ asset('frontend/images/logo.png') }}" alt="logo"></a></div>
+        <p>Sembapur hadir untuk menjawab permasalahan masyarakat urban yang memiliki tingkat mobilitas tinggi, sehingga tidak memiliki cukup waktu untuk memenuhi kebutuhan mereka dalam mendapatkan bahan makanan yang segar dan berkualitas serta peralatan dapur yang mendukung. </p>
         <div class="payment-accept">
           <div><img src="{{ asset('frontend/images/payment-1.png') }}" alt="payment"> <img src="{{ asset('frontend/images/payment-2.png') }}" alt="payment"> <img src="{{ asset('frontend/images/payment-3.png') }}" alt="payment"> <img src="{{ asset('frontend/images/payment-4.png') }}" alt="payment"></div>
         </div>
@@ -38,34 +39,10 @@
       <div class="col-md-2 col-sm-4">
         <h4>Shopping Guide</h4>
         <ul class="links">
-          <li class="first"><a href="#" title="How to buy">How to buy</a></li>
-          <li><a href="faq.html" title="FAQs">FAQs</a></li>
-          <li><a href="#" title="Payment">Payment</a></li>
-          <li><a href="#" title="Shipment&lt;/a&gt;">Shipment</a></li>
-          <li><a href="#" title="Where is my order?">Where is my order?</a></li>
-          <li class="last"><a href="#" title="Return policy">Return policy</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <h4>Style Advisor</h4>
-        <ul class="links">
-          <li class="first"><a title="Your Account" href="login.html">Your Account</a></li>
-          <li><a title="Information" href="#">Information</a></li>
-          <li><a title="Addresses" href="#">Addresses</a></li>
-          <li><a title="Addresses" href="#">Discount</a></li>
-          <li><a title="Orders History" href="#">Orders History</a></li>
-          <li class="last"><a title=" Additional Information" href="#">Additional Information</a></li>
-        </ul>
-      </div>
-      <div class="col-md-2 col-sm-4">
-        <h4>Information</h4>
-        <ul class="links">
-          <li class="first"><a href="#" title="privacy policy">Privacy policy</a></li>
-          <li><a href="#/" title="Search Terms">Search Terms</a></li>
-          <li><a href="#" title="Advanced Search">Advanced Search</a></li>
-          <li><a href="contact_us.html" title="Contact Us">Contact Us</a></li>
-          <li><a href="#" title="Suppliers">Suppliers</a></li>
-          <li class=" last"><a href="#" title="Our stores" class="link-rss">Our stores</a></li>
+          <li class="first"><a href="{{route('howtobuy')}}" title="How to buy">How to buy</a></li>
+          <li><a href="#" title="FAQs">FAQs</a></li>
+          <li><a href="{{route('howtopay')}}" title="Payment">Payment</a></li>
+          <li><a href="{{route('contactus')}}" title="Contact Us">Contact Us</a></li>
         </ul>
       </div>
       <div class="col-md-3 col-sm-4">

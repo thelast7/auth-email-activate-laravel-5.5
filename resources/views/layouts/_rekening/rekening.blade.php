@@ -8,7 +8,7 @@
       <h2>Pembayaran Via Transfer BANK</h2>
     </div>                 
         <p>
-          Pembayaran dapat dilakukan ke salah satu rekening PT. Sembapur.com berikut ini :
+          Hallo {{ Auth::user()->name }}! Terima Kasih telah melakukan pemesanan. Pembayaran dapat dilakukan ke salah satu rekening PT. Sembapur.com berikut ini :
         </p> 
             <div class="col-sm-6" style="background-color:#F0FFFF;">
              <li>
@@ -67,56 +67,24 @@
             </li>
         </div>
 
-
+        <br>
         <p class="clear-b">
             Setelah melakukan transfer, kamu
-            <strong>HARUS</strong> melakukan konfirmasi pembayaran, agar pembayaran kamu bisa segera diverifikasi
+            <strong>HARUS</strong> melakukan konfirmasi pembayaran melalui email kami di <a href="mailto:cs@sembapur.com">cs@sembapur.com</a> agar pembayaran kamu bisa segera diverifikasi
             dan pesanan langsung diteruskan ke penjual.
         </p>
+
         <p class="mt-10">
             <strong>Catatan : </strong>
             <br> - Untuk transfer ke rekening BCA, Mandiri, BNI dan BRI, proses verifikasi pembayaran maksimal
             1x24 jam.
         </p>
+        <label>PETUNJUK PEMBAYARAN MELALUI TRANSFER </label>
+        <br>
+        <br>
+      <div class="col-sm-6"> <img alt="promo-banner3" src="{{asset('frontend/images/pembayaran.jpg')}}"></div>
+    </div>
     </div>
   </div>
 </section>  
-@endsection
-
-
-@section('assets-bottom')
-<script>
-var seconds     = 119, //Number Of Seconds
-
-    countDiv    = document.getElementById('countdown'),
-
-    secondPass, 
-
-    countdown   = setInterval(function () {
-            "use strict";
-
-            secondPass();
-    }, 1000);
-
-function secondPass() {
-
-    "use strict";
-
-    var minutes = Math.floor((seconds / 60),
-
-        remSeconds = seconds % 60;
-
-    countDiv.innerHTML = minutes + ":" + remSeconds;
-
-    if (seconds > 0) {
-
-        seconds = seconds = 1;
-    } else {
-        clearInterval(countdown);
-        countDiv.innerHTML = "Done";
-    }
-
-}
-</script>
-
 @endsection

@@ -57,6 +57,7 @@ Route::get('/recipe', 'RecipeController@index')->name('recipe');
 Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
 Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
 Route::get('/contactus', 'ContactusController@index')->name('contactus');
+Route::get('/account', 'AccountController@index')->name('account');
 
 
 //routes yang menangani checkout

@@ -8067,7 +8067,7 @@ button.subscribe:before {
 	background: #359BED;
 }
 .social .googleplus a:before {
-	content: "\f0d5";
+	content: "\f16d";
 	font-family: FontAwesome;
 }
 .social .googleplus a {
