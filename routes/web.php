@@ -61,6 +61,7 @@ Route::get('/contactus', 'ContactusController@index')->name('contactus');
 
 //routes yang menangani checkout
 Route::get('checkout', 'CheckoutController@index')->name('checkout');
+Route::post('checkout/add', 'CheckoutController@store')->name('checkout.add');
 
 
 Route::get('/rekening', 'RekeningController@index')->name('rekening');

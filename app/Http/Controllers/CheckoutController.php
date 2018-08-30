@@ -3,6 +3,11 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\User;
+use App\Shipping;
+use Auth;
+use Cart;
+
 
 class CheckoutController extends Controller
 {
@@ -34,7 +39,21 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'namee' => 'required',
+            'no_hpp' => 'required',
+            'kotaa' => 'required',
+            'alamatt' => 'required',
+        ]);
+        $shippings = New Shipping;
+        $shippings->shipping_id = Auth::user()->id;
+        $shippings->namee = $request->namee;
+        $shippings->no_hpp = $request->no_hpp;
+        $shippings->kotaa = $request->kotaa;
+        $shippings->alamatt = $request->alamatt;
+        $shippings->totall = Cart::total();
+        $shippings->save();
+        return redirect()->route('rekening');        
     }
 
     /**

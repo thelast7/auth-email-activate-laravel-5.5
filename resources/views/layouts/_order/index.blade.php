@@ -13,46 +13,59 @@
     <fieldset class="col-md-6">
       <legend>DETAIL PEMBELI</legend>
       <div class="col-1 new-users">
-        <form class="content" method="POST" action="#">
+        <form class="content" method="POST" action="{{ route('checkout.add') }}">
+          {{ csrf_field() }}
           <ul class="form-list">
             <li>
-              <label for="name">Nama Lengkap</label>
-                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nama Lengkap">
-                @if ($errors->has('name'))
+              <label for="namee">Nama Lengkap</label>
+                <input id="namee" type="text" class="form-control" name="namee" value="{{ old('namee') }}" placeholder="Nama Lengkap">
+                @if ($errors->has('namee'))
                     <span class="help-block">
-                        <strong>{{ $errors->first('name') }}</strong>
+                        <strong>{{ $errors->first('namee') }}</strong>
                     </span>
                 @endif
             </li>
             <li>
-              <label for="no_hp">Nomor HP </label>
-                <input id="no_hp" type="number" class="form-control" name="no_hp" value="{{ old('no_hp') }}" placeholder="Nomor HP yang Aktif">
-                @if ($errors->has('no_hp'))
+              <label for="no_hpp">Nomor HP </label>
+                <input id="no_hpp" type="number" class="form-control" name="no_hpp" value="{{ old('no_hpp') }}" placeholder="Nomor HP yang Aktif">
+                @if ($errors->has('no_hpp'))
                     <span class="help-block">
-                        <strong>{{ $errors->first('no_hp') }}</strong>
+                        <strong>{{ $errors->first('no_hpp') }}</strong>
                     </span>
                 @endif
             </li>
             <li>
-                <label for="kota">Kota </label>
-                  <input id="kota" type="text" class="form-control" name="kota" value="{{ old('kota') }}" placeholder="Kota Anda">
-                  @if ($errors->has('kota'))
+                <label for="kotaa">Kota </label>
+                  <input id="kotaa" type="text" class="form-control" name="kotaa" value="{{ old('kotaa') }}" placeholder="Kota Anda">
+                  @if ($errors->has('kotaa'))
                       <span class="help-block">
-                          <strong>{{ $errors->first('kota') }}</strong>
+                          <strong>{{ $errors->first('kotaa') }}</strong>
                       </span>
                   @endif
             </li>
             <li>
-                <label for="alamat">Alamat Lengkap <span class="required">*</span></label>
-                  <textarea class="form-control" id="alamat" name="alamat" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamat') }}"></textarea>
-                  @if ($errors->has('alamat'))
+                <label for="alamatt">Alamat Lengkap <span class="required">*</span></label>
+                  <textarea class="form-control" id="alamatt" name="alamatt" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamatt') }}"></textarea>
+                  @if ($errors->has('alamatt'))
                       <span class="help-block">
-                        <strong>{{ $errors->first('alamat') }}</strong>
+                        <strong>{{ $errors->first('alamatt') }}</strong>
                       </span>
                   @endif
             </li>
-            </ul>
+            <li>
+                  <input id="totall" type="hidden" class="form-control" name="totall" value="{{ Cart::total() }}">
+            </li>
+          </ul>
           <br>
+          <ul class="checkout">
+            <li>
+              <button type="submit" class="button btn-proceed-checkout">
+                  <span>LANJUTKAN PEMBAYARAN</span>
+              </button>
+            </li>
+            <br>
+            <br>
+          </ul>
         </form>
       </div>
     </fieldset>
@@ -82,12 +95,6 @@
                   </tr>
                 </tfoot>
               </table>
-              <ul class="checkout">
-                <li>
-                  <a href="{{route('rekening')}}" title="Bayar Belanjaan" class="button btn-proceed-checkout" ><span>LANJUTKAN PEMBAYARAN</span></button></a>
-                </li>
-                <br>
-              </ul>
             </div>
             <!--inner--> 
           </div>

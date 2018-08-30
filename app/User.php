@@ -31,4 +31,9 @@ class User extends Authenticatable
     {
         return $builder->where('email', $email)->where('activation_token', $token);
     }
+
+    public function shipping()
+    {
+        return $this->hasMany(Shipping::class);
+    } 
 }

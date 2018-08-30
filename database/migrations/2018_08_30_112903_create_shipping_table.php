@@ -15,6 +15,13 @@ class CreateShippingTable extends Migration
     {
         Schema::create('shipping', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('shipping_id')->unsigned();
+            $table->foreign('shipping_id')->references('id')->on('users')->onDelete('cascade');
+            $table->string('namee');
+            $table->string('no_hpp');
+            $table->string('kotaa');
+            $table->string('alamatt');
+            $table->string('totall')->nullable();
             $table->timestamps();
         });
     }
