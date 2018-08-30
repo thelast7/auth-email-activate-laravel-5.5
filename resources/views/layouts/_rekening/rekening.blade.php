@@ -8,7 +8,7 @@
       <h2>Pembayaran Via Transfer BANK</h2>
     </div>                 
         <p>
-          Pembayaran dapat dilakukan ke salah satu rekening PT. Sembapur.com berikut ini :
+          Hallo {{ Auth::user()->name }}! Terima Kasih telah melakukan pemesanan. Pembayaran dapat dilakukan ke salah satu rekening PT. Sembapur.com berikut ini :
         </p> 
             <div class="col-sm-6" style="background-color:#F0FFFF;">
              <li>
@@ -81,42 +81,4 @@
     </div>
   </div>
 </section>  
-@endsection
-
-
-@section('assets-bottom')
-<script>
-var seconds     = 119, //Number Of Seconds
-
-    countDiv    = document.getElementById('countdown'),
-
-    secondPass, 
-
-    countdown   = setInterval(function () {
-            "use strict";
-
-            secondPass();
-    }, 1000);
-
-function secondPass() {
-
-    "use strict";
-
-    var minutes = Math.floor((seconds / 60),
-
-        remSeconds = seconds % 60;
-
-    countDiv.innerHTML = minutes + ":" + remSeconds;
-
-    if (seconds > 0) {
-
-        seconds = seconds = 1;
-    } else {
-        clearInterval(countdown);
-        countDiv.innerHTML = "Done";
-    }
-
-}
-</script>
-
 @endsection
