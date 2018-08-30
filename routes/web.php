@@ -60,6 +60,7 @@ Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
 Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
 Route::get('/contactus', 'ContactusController@index')->name('contactus');
 Route::get('/account', 'AccountController@index')->name('account');
+Route::get('/confirmationpay', 'ConfirmationpayController@index')->name('confirmationpay');
 
 
 //routes yang menangani checkout

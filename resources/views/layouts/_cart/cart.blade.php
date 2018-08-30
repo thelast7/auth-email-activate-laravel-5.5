@@ -44,7 +44,7 @@ $(document).ready(function(){
               <tr class="first last">
                 <td class="a-right last" colspan="7">
                   <a href="{{ url('all_product') }}" class="button btn-continue" title="Continue Shopping" type="button">
-                    <span>Lanjut Berbelanja</span>
+                    <span>LANJUT BELANJA</span>
                   </a>
                 </td>
               </tr>
@@ -128,7 +128,7 @@ $(document).ready(function(){
               <ul class="checkout">
                 <li>
                   <a href="{{ route('checkout') }}" title="Bayar Belanjaan" class="button btn-proceed-checkout" onclick="#">
-                    <span>Lanjut Checkout</span>
+                    <span>PROSES CHECKOUT</span>
                   </a>
                 </li>
                 <br>
