@@ -88,7 +88,10 @@
               @foreach($products as $product)
               <li class="item col-lg-4 col-md-4 col-sm-6 col-xs-6">
                 <div class="col-item">
-                  <div class="product-image-area"> <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> <img src="{{ $product->cover }}" height="300" width="300" class="img-responsive" alt="a" /> </a>
+                  <div class="product-image-area"> 
+                    <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> 
+                      <img src="{{ $product->cover }}" height="300" width="360" class="img-responsive" alt="a" /> 
+                    </a>
                     <div class="hover_fly">
                       <a class="exclusive ajax_add_to_cart_button" href="{{ url('/cart/add') }}/{{ $product->id }}" title="Add to cart">
                       <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
