@@ -25,7 +25,7 @@ class CartController extends Controller
         //'option' => [
         //            'img' => $products->cover 
         //        ]]);
-        return back();
+        return redirect()->route('cart');
     }
     /*
     public function update(Request $request)

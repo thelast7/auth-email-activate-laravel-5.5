@@ -9,7 +9,7 @@
         <div id='rev_slider_4_wrapper' class='rev_slider_wrapper fullwidthbanner-container' >
           <div id='rev_slider_4' class='rev_slider fullwidthabanner'>
             <ul>
-              <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb='images/slide-img2.jpg'><img src="{{ ('frontend/images/slide-img1.jpg') }}" data-bgposition='right top' data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
+              <li data-transition='random' data-slotamount='7' data-masterspeed='1000'><img src="{{ ('frontend/images/slide-img1.jpg') }}" data-bgposition='right top' data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
                 
                 <div class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-x='45'  data-y='30'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'>Fresh From Farmers
                 </div>
@@ -17,7 +17,10 @@
                 <div class='tp-caption LargeTitle sfl  tp-resizeme ' data-x='45'  data-y='70'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3; white-space:nowrap;'>EGG
                 </div>
 
-                <div class='tp-caption sfb  tp-resizeme ' data-x='45'  data-y='360'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'><a href='#' class="view-more">View More</a> <a href='#' class="buy-btn">Buy Now</a></div>
+                <div class='tp-caption sfb  tp-resizeme ' data-x='45'  data-y='360'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>
+                  <a href='#' class="view-more">View More</a> 
+                  <a href='#' class="buy-btn">Buy Now</a>
+                </div>
                 
                 <div class='tp-caption Title sft  tp-resizeme ' data-x='45'  data-y='130'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>In augue urna, nunc, tincidunt, augue,<br>
                   augue facilisis facilisis.
@@ -28,7 +31,7 @@
 
               </li>
 
-              <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb='images/slide-img2.jpg' class="black-text"><img src="{{ asset('frontend/images/slide-img2.jpg') }}"  data-bgposition='left top'  data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
+              <li data-transition='random' data-slotamount='7' data-masterspeed='1000' class="black-text"><img src="{{ asset('frontend/images/slide-img2.jpg') }}"  data-bgposition='left top'  data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
 
                 <div class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-x='45'  data-y='30'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'>Super Hot
                 </div>
@@ -36,7 +39,9 @@
                 <div class='tp-caption LargeTitle sfl  tp-resizeme ' data-x='45'  data-y='70'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3; white-space:nowrap;'>Super Promo
                 </div>
 
-                <div class='tp-caption sfb  tp-resizeme ' data-x='45'  data-y='360'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'><a href='#' class="view-more">View More</a> <a href='#' class="buy-btn">Buy Now</a>
+                <div class='tp-caption sfb  tp-resizeme ' data-x='45'  data-y='360'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>
+                  <a href='#' class="view-more">View More</a> 
+                  <a href='#' class="buy-btn">Buy Now</a>
                 </div>
 
                 <div class='tp-caption Title sft  tp-resizeme ' data-x='45'  data-y='130'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>In augue urna, nunc, tincidunt, augue,<br>
@@ -48,7 +53,7 @@
 
               </li>
 
-              <li data-transition='random' data-slotamount='7' data-masterspeed='1000' data-thumb='images/slide-img3.jpg' class="black-text"><img src="{{ asset('frontend/images/slide-img3.jpg') }}"  data-bgposition='left top'  data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
+              <li data-transition='random' data-slotamount='7' data-masterspeed='1000' class="black-text"><img src="{{ asset('frontend/images/slide-img3.jpg') }}"  data-bgposition='left top'  data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
 
                 <div class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-x='45'  data-y='30'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'>Super Hot
                 </div>
@@ -56,7 +61,9 @@
                 <div class='tp-caption LargeTitle sfl  tp-resizeme ' data-x='45'  data-y='70'  data-endspeed='500'  data-speed='500' data-start='1300' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:3; white-space:nowrap;'>Super Promo
                 </div>
 
-                <div class='tp-caption sfb  tp-resizeme ' data-x='45'  data-y='360'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'><a href='#' class="view-more">View More</a> <a href='#' class="buy-btn">Buy Now</a>
+                <div class='tp-caption sfb  tp-resizeme ' data-x='45'  data-y='360'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>
+                  <a href='#' class="view-more">View More</a> 
+                  <a href='#' class="buy-btn">Buy Now</a>
                 </div>
 
                 <div class='tp-caption Title sft  tp-resizeme ' data-x='45'  data-y='130'  data-endspeed='500'  data-speed='500' data-start='1500' data-easing='Power2.easeInOut' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:4; white-space:nowrap;'>In augue urna, nunc, tincidunt, augue,<br>
@@ -199,7 +206,7 @@
 @include('layouts._banner.index')
 <!-- End promo banner section -->
 
-@foreach($products as $product)
+@foreach($categories as $category)
 <!-- batas row box category kiri dan kanan -->
 <section class="middle-slider container wow bounceInUp animated">
   <div class="row">
@@ -208,11 +215,12 @@
       <div class="bag-product-slider small-pr-slider cat-section">
         <div class="slider-items-products">
           <div class="new_title center">
-            <h2>{{ $product->category->name }}</h2>
+            <h2>{{ $category->name }}</h2>
           </div>
           <div id="bag-seller-slider" class="product-flexslider hidden-buttons">
             <div class="slider-items slider-width-col3"> 
               
+          @foreach($category->product as $product)
               <!-- Item -->
               <div class="item">
                 <div class="col-item">
@@ -225,7 +233,7 @@
                         <a title="magik-btn-quickview" class="magik-btn-quickview" href="#"><span>quickview</span></a> 
                         <a title="Add to Wishlist" class="link-wishlist" href="#"><span>Add to Wishlist</span></a> 
                         <a title="Add to Compare" class="link-compare" href="#"><span>Add to Compare</span></a></span> 
-                      </div>
+                    </div>
                   </div>
                   <div class="info">
                     <div class="info-inner">
@@ -243,7 +251,7 @@
                     <!--info-inner-->
                     <div class="actions">
                       <button type="button" title="Tambahkan ke Keranjang" class="button btn-cart">
-                        <span>Masuk Keranjang</span>
+                        <a href="{{ url('/cart/add') }}/{{ $product->id }}"><span>Masuk Keranjang</span></a>
                       </button>
                     </div>
                     <!--actions-->
@@ -253,14 +261,14 @@
                 </div>
               </div>
               <!-- End Item --> 
-              
+          @endforeach
             </div>
           </div>
         </div>
       </div>
     </div>
     </div> {{-- End box item category sisi kanan--}}
-  </div>
+  </div><br>
 </section>
 @endforeach
 <br>

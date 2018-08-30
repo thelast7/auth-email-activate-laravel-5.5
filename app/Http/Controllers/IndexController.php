@@ -12,7 +12,7 @@ class IndexController extends Controller
     {
         $categories = Category::all();
         $products = Product::where('status', 1)->limit(10)->get();
-        return view('layouts._home.index', compact('products'));
+        return view('layouts._home.index', compact('products', 'categories'));
     }
 
     public function show($slug)
