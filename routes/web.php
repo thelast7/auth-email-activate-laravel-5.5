@@ -38,6 +38,7 @@ Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => 'role:a
     Route::resource('/users', 'Backend\UsersController');
     Route::resource('/categories', 'Backend\CategoriesController');
     Route::resource('/products', 'Backend\ProductsController');
+    Route::resource('/recipes', 'Backend\RecipesController');
 });
 
 
@@ -46,6 +47,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/api/datatable/users', 'Backend\UsersController@dataTable')->name('api.datatable.users');
     Route::get('/api/datatable/categories', 'Backend\CategoriesController@dataTable')->name('api.datatable.categories');
     Route::get('/api/datatable/products', 'Backend\ProductsController@dataTable')->name('api.datatable.products');
+    Route::get('/api/datatable/recipes', 'Backend\RecipesController@dataTable')->name('api.datatable.recipes');
     Route::get('/api/datatable/comments', 'Backend\CommentsController@dataTable')->name('api.datatable.comments');
 });
 
@@ -75,7 +77,13 @@ Route::get('total', function(){
 });
 */
 
+
+//routes yang menangani cart
 Route::get('cart', 'CartController@index')->name('cart');
 Route::get('cart/add/{id}', 'CartController@addItem');
 Route::get('cart/remove/{id}', 'CartController@removeItem');
 Route::post('cart/update', 'CartController@update');
+
+
+//routes yang menangani checkout
+Route::get('checkout', 'CheckoutController@index')->name('checkout');

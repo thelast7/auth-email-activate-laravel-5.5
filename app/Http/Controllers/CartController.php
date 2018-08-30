@@ -10,6 +10,7 @@ class CartController extends Controller
 {
     public function index()
     {
+//        $product = Product::all();
         $cart = Cart::content();
         return view('layouts._cart.cart', [
             'data' => $cart 
@@ -19,7 +20,7 @@ class CartController extends Controller
     public function addItem($id)
     {
         $products = Product::find($id);
-        Cart::add(['id' => $products->id, 'name' => $products->name, 'qty' => 1, 'price' => $products->price]);
+        Cart::add(['id' => $products->id, 'name' => $products->name, 'qty' => 1, 'price' => $products->price, 'options' => ['img' => $products->cover]]);
         //        Cart::add(['id' => $products->id, 'name' => $products->name, 'qty' => 1, 'price' => $products->price,
         //'option' => [
         //            'img' => $products->cover 

@@ -42,7 +42,7 @@ $(document).ready(function(){
                 </thead>
                 <tfoot>
                   <tr class="first last">
-                    <td class="a-right last" colspan="7"><button onclick="setLocation('#')" class="button btn-continue" title="Continue Shopping" type="button"><span><span>Lanjut Berbelanja</span></span></button>
+                    <td class="a-right last" colspan="7"><a href="{{ url('all_product') }}" class="button btn-continue" title="Continue Shopping" type="button"><span><span>Lanjut Berbelanja</span></span></a>
                     </td>
                   </tr>
                 </tfoot>
@@ -51,16 +51,16 @@ $(document).ready(function(){
                   @foreach($data as $product)
                   <tr class="first odd">
                     <td class="cart_product">
-                        <a href=""><img src="{{URL::to($product->cover)}}" height="80px" width="80px" alt=""></a>
+                        <span><img src="{{ $product->options->img }}" height="50px" width="50px" alt=""></span>
                     </td>
-                    <td><h2 class="product-name"> <a href="#">{{ $product->name }}</a> </h2></td>
+                    <td><h2 class="product-name"> <span class="price">{{ $product->name }}</span> </h2></td>
                     {{-- <td class="a-center"><a href="#configure/id/15945/"></a></td> --}}
                     <td class="a-right"><span class="cart-price"> <span class="price">Rp {{ $product->price }}</span> </span></td>
                     <td class="a-center">
                       <form action="{{ url('cart/update') }}" method="POST">
                         {{ csrf_field() }}
                         <select type="text" name="qty" class="quantity">
-                          <option value="{{ $product->qty }}" class="disable selected">{{ $product->qty }}</option>
+                          <option value="{{ $product->qty }}" class="disable selected"> {{ $product->qty }}</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -72,7 +72,7 @@ $(document).ready(function(){
                             <option value="5">9</option>
                             <option value="5">10</option>
                         </select>
-                        <input  type="hidden" name="rowId" value="{{$product->rowId}}">
+                        <input type="hidden" name="rowId" value="{{$product->rowId}}">
                         <input type="submit" class="btn btn-info">
                         {{-- <a href="{{ url('cart/update') }}/{{ $product->rowId }}" class="btn btn-info">tambah</a> --}}
                       </form>
@@ -89,7 +89,7 @@ $(document).ready(function(){
         </div>
       </div>
       <!-- BEGIN CART COLLATERALS -->
-      <div class="cart-collaterals row  wow bounceInUp animated">
+      <div class="cart-collaterals row wow bounceInUp animated">
         <div class="col-md-12">
           <div class="totals">
             <h3>Total Belanja Anda</h3>

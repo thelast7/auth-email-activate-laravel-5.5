@@ -42,6 +42,21 @@
             </li>
             </ul>
         </li>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Recipe">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti3" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-pencil"></i>
+            <span class="nav-link-text">Recipe</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseMulti3">
+            <li>
+                <a href="{{ route('backend.recipes.index') }}">Semua Recipe</a>
+            </li>
+            <li>
+                <a href="{{ route('backend.recipes.create') }}">Tambahkan Recipe</a>
+            </li>
+            </ul>
+        </li>
         {{-- 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Comments">
             <a class="nav-link" href="#">

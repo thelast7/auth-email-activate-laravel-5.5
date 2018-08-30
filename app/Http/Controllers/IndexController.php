@@ -10,7 +10,8 @@ class IndexController extends Controller
 {
     public function index()
     {
-        $products = Product::where('status', 1)->with('category')->limit(10)->get();
+        $categories = Category::all();
+        $products = Product::where('status', 1)->limit(10)->get();
         return view('layouts._home.index', compact('products'));
     }
 
