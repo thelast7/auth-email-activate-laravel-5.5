@@ -1,143 +1,114 @@
 @extends('layouts.master')
 
 @section('content')
+
   <!-- main-container -->
-  <div class="main-container col2-right-layout">
-    <div class="main container">
-      <div class="row">
-        <section class="col-main col-sm-9 wow bounceInUp animated">
-          <div class="my-account">
-            <div class="page-title">
-              <h2>My Dashboard</h2>
-            </div>
-            <div class="dashboard">
-              <div class="welcome-msg"> <strong>Hello, {{ Auth::user()->name }}</strong>
-                <p>From your My Account Dashboard you have the ability to view a snapshot of your recent account activity and update your account information. Select a link below to view or edit information.</p>
-              </div>
-              <div class="recent-orders">
-                <div class="title-buttons"><strong>Recent Orders</strong> <a href="#">View All </a> </div>
-                <div class="table-responsive">
-                  <table class="data-table" id="my-orders-table">
-                    
-                    <thead>
-                      <tr class="first last">
-                        <th>Order #</th>
-                        <th>Date</th>
-                        <th>Ship to</th>
-                        <th><span class="nobr">Order Total</span></th>
-                        <th>Status</th>
-                        <th>&nbsp;</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr class="first odd">
-                        <td>500000002</td>
-                        <td>9/9/10 </td>
-                        <td>pranali d</td>
-                        <td><span class="price">$5.00</span></td>
-                        <td><em>Pending</em></td>
-                        <td class="a-center last"><span class="nobr"> <a href="#">View Order</a> <span class="separator">|</span> <a href="#">Reorder</a> </span></td>
-                      </tr>
-                      <tr class="last even">
-                        <td>500000001</td>
-                        <td>9/9/10 </td>
-                        <td>pranali d</td>
-                        <td><span class="price">$1,397.99</span></td>
-                        <td><em>Pending</em></td>
-                        <td class="a-center last"><span class="nobr"> <a href="#">View Order</a> <span class="separator">|</span> <a href="#">Reorder</a> </span></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-              <div class="box-account">
-                <div class="page-title">
-                  <h2>Account Information</h2>
-                </div>
-                <div class="col2-set">
-                  <div class="col-1">
-                    <h5>Contact Information</h5>
-                    <a href="#">Edit</a>
-                    <p> pranali deshmukh<br>
-                      pranalid15@gmail.com<br>
-                      <a href="#">Change Password</a> </p>
-                  </div>
-                  <div class="col-2">
-                    <h5>Newsletters</h5>
-                    <a href="#">Edit</a>
-                    <p> You are currently not subscribed to any newsletter. </p>
-                  </div>
-                </div>
-                <div class="col2-set">
-                  <h4>Address Book</h4>
-                  <div class="manage_add"><a href="#">Manage Addresses</a> </div>
-                  <div class="col-1">
-                    <h5>Primary Billing Address</h5>
-                    <address>
-                    pranali d<br>
-                    aundh<br>
-                    tyyrt,  Alabama, 46532<br>
-                    United States<br>
-                    T: 454541 <br>
-                    <a href="#">Edit Address</a>
-                    </address>
-                  </div>
-                  <div class="col-2">
-                    <h5>Primary Shipping Address</h5>
-                    <address>
-                    pranali d<br>
-                    aundh<br>
-                    tyyrt,  Alabama, 46532<br>
-                    United States<br>
-                    T: 454541 <br>
-                    <a href="#">Edit Address</a>
-                    </address>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <aside class="col-right sidebar col-sm-3 wow bounceInUp animated">
-          <div class="block block-account">
-            <div class="block-title">My Account</div>
-            <div class="block-content">
-              <ul>
-                <li class="current"><a>Account Dashboard</a></li>
-                <li><a href="http://demo.magentomagik.com/computerstore/customer/account/edit/">Account Information</a></li>
-                <li><a href="http://demo.magentomagik.com/computerstore/customer/address/">Address Book</a></li>
-                <li><a href="http://demo.magentomagik.com/computerstore/sales/order/history/">My Orders</a></li>
-                <li><a href="http://demo.magentomagik.com/computerstore/sales/billing_agreement/">Billing Agreements</a></li>
-                <li><a href="http://demo.magentomagik.com/computerstore/sales/recurring_profile/">Recurring Profiles</a></li>
-                <li><a href="http://demo.magentomagik.com/computerstore/review/customer/">My Product Reviews</a></li>
-                <li><a href="http://demo.magentomagik.com/computerstore/tag/customer/">My Tags</a></li>
-                <li><a href="wishlist.html">My Wishlist</a></li>
-                <li><a href="http://demo.magentomagik.com/computerstore/downloadable/customer/products/">My Downloadable</a></li>
-                <li class="last"><a href="http://demo.magentomagik.com/computerstore/newsletter/manage/">Newsletter Subscriptions</a></li>
+ <section class="main-container col1-layout">
+<div class="main container">
+  <div class="account-login">
+    <div class="page-title">
+      <h2>DETAIL PEMBELI</h2>
+    </div>
+    
+    <fieldset class="col-md-6">
+      <legend>DETAIL PEMBELI</legend>
+      <div class="col-1 new-users">
+        <form class="content" method="POST" action="#">
+              <ul class="form-list">
+                <li>
+                  <label for="name">Nama Lengkap</label>
+                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nama Lengkap">
+                    @if ($errors->has('name'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('name') }}</strong>
+                        </span>
+                    @endif
+                </li>
+                <li>
+                  <label for="email">Email </label>
+                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email Anda">
+                    @if ($errors->has('email'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('email') }}</strong>
+                        </span>
+                    @endif
+                </li>
+                <li>
+                  <label for="no_hp">Nomor HP </label>
+                    <input id="no_hp" type="number" class="form-control" name="no_hp" value="{{ old('no_hp') }}" placeholder="Nomor HP yang Aktif">
+                    @if ($errors->has('no_hp'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('no_hp') }}</strong>
+                        </span>
+                    @endif
+                </li>
+              <li>
+                  <label for="kota">Kota </label>
+                    <input id="kota" type="text" class="form-control" name="kota" value="{{ old('kota') }}" placeholder="Kota Anda">
+                    @if ($errors->has('kota'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('kota') }}</strong>
+                        </span>
+                    @endif
+              </li>
+              <li>
+                  <label for="alamat">Alamat Lengkap <span class="required">*</span></label>
+                    <textarea class="form-control" id="alamat" name="alamat" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamat') }}"></textarea>
+                    @if ($errors->has('alamat'))
+                        <span class="help-block">
+                          <strong>{{ $errors->first('alamat') }}</strong>
+                        </span>
+                    @endif
+                </li>
+                </ul>
+              <br>
+        </form>
+      </div>
+    </fieldset>
+
+    <fieldset class="col-md-6">
+      <legend>DETAIL PEMBELI</legend>
+      <div class="cart-collaterals row wow bounceInUp animated">
+        <div class="col-1">
+          <div class="totals">
+            <h3>Total Belanja Anda</h3>
+            <div class="inner">
+              <table id="shopping-cart-totals-table" class="table shopping-cart-table-total">
+                <colgroup>
+                <col>
+                <col width="1">
+                </colgroup>
+                <tbody>
+                  <tr>
+                    <td class="a-left" colspan="1"> Subtotal </td>
+                    <td class="a-right"><span class="price">Rp {{ Cart::subtotal() }}</span></td>
+                  </tr>
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td class="a-left" colspan="1"><strong>Grand Total</strong></td>
+                    <td class="a-right"><strong><span class="price">Rp {{ Cart::total() }}</span></strong></td>
+                  </tr>
+                </tfoot>
+              </table>
+              <ul class="checkout">
+                <li>
+                  <a href="{{route('howtopay')}}" type="button" title="Bayar Belanjaan" class="button btn-proceed-checkout" ><span>Lanjutkan Pembayaran</span></button></a>
+                </li>
+                <br>
               </ul>
             </div>
+            <!--inner--> 
           </div>
-          <div class="block block-compare">
-            <div class="block-title ">Compare Products (2)</div>
-            <div class="block-content">
-              <ol id="compare-items">
-                <li class="item odd">
-                  <input type="hidden" value="2173" class="compare-item-id">
-                  <a class="btn-remove1" title="Remove This Item" href="#"></a> <a href="#" class="product-name"> Sofa with Box-Edge Polyester Wrapped Cushions</a> </li>
-                <li class="item last even">
-                  <input type="hidden" value="2174" class="compare-item-id">
-                  <a class="btn-remove1" title="Remove This Item" href="#"></a> <a href="#" class="product-name"> Sofa with Box-Edge Down-Blend Wrapped Cushions</a> </li>
-              </ol>
-              <div class="ajax-checkout">
-                <button type="submit" title="Submit" class="button button-compare"><span>Compare</span></button>
-                <button type="submit" title="Submit" class="button button-clear"><span>Clear</span></button>
-              </div>
-            </div>
-          </div>
-        </aside>
+          <!--totals--> 
+        </div>
+        <!--cart-collaterals--> 
+        
       </div>
-    </div>
+    </fieldset>
   </div>
+</div>
+</section>
   <!--End main-container --> 
 
 @endsection
