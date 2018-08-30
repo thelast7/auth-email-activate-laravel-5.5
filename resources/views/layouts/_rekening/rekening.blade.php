@@ -82,8 +82,14 @@
         <label>PETUNJUK PEMBAYARAN MELALUI TRANSFER </label>
         <br>
         <br>
-      <div class="col-sm-6"> <img alt="promo-banner3" src="{{asset('frontend/images/pembayaran.jpg')}}"></div>
+      <div> <img alt="promo-banner3" src="{{asset('frontend/images/pembayaran.jpg')}}"></div>
+      
     </div>
+
+    <div>
+      <a href="{{route('confirmationpay')}}" title="Bayar Belanjaan" class="button btn-proceed-checkout" onclick="#"> <span>KONFIRMASI PEMBAYARAN</span></a></div>
+      <br>
+      <br>
     </div>
   </div>
 </section>  
