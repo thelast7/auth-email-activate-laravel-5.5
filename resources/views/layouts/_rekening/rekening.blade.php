@@ -67,17 +67,23 @@
             </li>
         </div>
 
-
+        <br>
         <p class="clear-b">
             Setelah melakukan transfer, kamu
-            <strong>HARUS</strong> melakukan konfirmasi pembayaran, agar pembayaran kamu bisa segera diverifikasi
+            <strong>HARUS</strong> melakukan konfirmasi pembayaran melalui email kami di <a href="mailto:cs@sembapur.com">cs@sembapur.com</a> agar pembayaran kamu bisa segera diverifikasi
             dan pesanan langsung diteruskan ke penjual.
         </p>
+
         <p class="mt-10">
             <strong>Catatan : </strong>
             <br> - Untuk transfer ke rekening BCA, Mandiri, BNI dan BRI, proses verifikasi pembayaran maksimal
             1x24 jam.
         </p>
+        <label>PETUNJUK PEMBAYARAN MELALUI TRANSFER </label>
+        <br>
+        <br>
+      <div class="col-sm-6"> <img alt="promo-banner3" src="{{asset('frontend/images/pembayaran.jpg')}}"></div>
+    </div>
     </div>
   </div>
 </section>  
