@@ -89,21 +89,27 @@
                 <p class="availability in-stock">Stok Product : <span>{{ $products->quantity }}</span></p>
                 <div class="price-block">
                   <div class="price-box">
-                    <p class="special-price"> <span class="price-label">Regular Price:</span> <span class="price"> Rp {{ $products->price }} </span> </p>
+                    <p class="special-price"> 
+                      <span class="price-label">Regular Price:</span> 
+                      <span class="price"> Rp {{ $products->price }} </span> 
+                    </p>
                   </div>
                 </div>
                 <div class="short-description">
                   <h2>Deskripsi Barang</h2>
-                  <p>{{ $products->description }}</p>
+                  <p>{!! $products->description !!}</p>
                 </div>
                 <div class="add-to-box">
                   <div class="add-to-cart">
-                    <div class="pull-left">
+
+                    {{-- <div class="pull-left">
                       <div class="custom pull-left">
                         <button 
                         onClick="var result = document.getElementById('qty'); 
-                        var qty = result.value; if( !isNaN( qty ) &amp;&amp; 
-                        qty &gt; 0 ) result.value--;return false;" 
+                        var qty = result.value; 
+                        if( !isNaN( qty ) &amp;&amp; 
+                        qty &gt; 0 ) result.value--;
+                        return false;" 
                         class="reduced items-count" type="button">
                         <i class="icon-minus">&nbsp;</i>
                         </button>
@@ -116,6 +122,25 @@
                         </button>
                       </div>
                     </div>
+                      <form action="{{ url('cart/add') }}" method="POST">
+                        {{ csrf_field() }}
+                        <select type="text" name="qty" class="quantity pull-left">
+                          <option class="disable selected">{{ $products->qty=1 }}</option>
+                            <option value="{{ $products->qty=1 }}">1</option>
+                            <option value="{{ $products->qty=2 }}">2</option>
+                            <option value="{{ $products->qty=3 }}">3</option>
+                            <option value="{{ $products->qty=4 }}">4</option>
+                            <option value="{{ $products->qty=5 }}">5</option>
+                            <option value="{{ $products->qty=6 }}">6</option>
+                            <option value="{{ $products->qty=7 }}">7</option>
+                            <option value="{{ $products->qty=8 }}">8</option>
+                            <option value="{{ $products->qty=9 }}">9</option>
+                            <option value="{{ $products->qty=10 }}">10</option>
+                        </select>
+                        <input type="hidden" name="id" value="{{$products->id}}">
+                        <input type="submit" class="button btn-cart" title="Tambah Keranjang">
+                      </form> --}}
+
                     <a href="{{ url('/cart/add') }}/{{ $products->id }}" class="button btn-cart" title="Tambah Keranjang">
                       <span><i class="icon-basket"></i>Tambah Keranjang</span>
                     </a>
@@ -132,13 +157,6 @@
             </form>
           </div>
           <div class="product-collateral">
-{{--             <div class="col-sm-12 wow bounceInUp animated">
-              <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
-                <li class="active"> <a href="#product_tabs_description" data-toggle="tab"> Product Description </a> </li>
-                <li> <a href="#product_tabs_custom" data-toggle="tab">Custom Tab</a> </li>
-                <li> <a href="#product_tabs_custom1" data-toggle="tab">Custom Tab1</a> </li>
-              </ul>
-            </div> --}}
             <div class="col-sm-12">
               <div class="box-additional">
                 <div class="related-pro wow bounceInUp animated">
@@ -149,24 +167,39 @@
                     <div id="related-products-slider" class="product-flexslider hidden-buttons">
                       <div class="slider-items slider-width-col4"> 
                         @foreach (\App\Product::where('status',1)->inRandomOrder()->limit(10)->get() as $product)
-
-                        {{-- 
-                        @foreach (\App\Product::where('category_id',1)->inRandomOrder()->limit(10)->get() as $product) --}}
-                        <!-- Item -->
                         <div class="item">
                           <div class="col-item">
                             <div class="sale-label sale-top-right">Sale</div>
-                            <div class="product-image-area"> <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> <img src="{{ $product->cover }}" class="img-responsive" alt="a" /> </a>
+                            <div class="product-image-area"> 
+                              <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> 
+                                <img src="{{ $product->cover }}" class="img-responsive" alt="a" /> 
+                              </a>
                               <div class="hover_fly"> 
-                                <a class="exclusive ajax_add_to_cart_button" href="#" title="Add to cart">
-                                <div><i class="icon-shopping-cart"></i><span>Add to cart</span></div>
-                                </a> <a class="quick-view" href="#">
-                                <div><i class="icon-eye-open"></i><span>Quick view</span></div>
-                                </a> <a class="add_to_compare" href="#">
-                                <div><i class="icon-random"></i><span>Add to compare</span></div>
-                                </a> <a class="addToWishlist wishlistProd_5" href="#" >
-                                <div><i class="icon-heart"></i><span>Add to Wishlist</span></div>
-                                </a> </div>
+                                <a class="exclusive ajax_add_to_cart_button" href="{{ url('/cart/add') }}/{{ $products->id }}" title="Add to cart">
+                                  <div>
+                                    <i class="icon-shopping-cart"></i>
+                                    <span>Add to cart</span>
+                                  </div>
+                                </a> 
+                                <a class="quick-view" href="#">
+                                  <div>
+                                    <i class="icon-eye-open"></i>
+                                    <span>Quick view</span>
+                                  </div>
+                                </a> 
+                                <a class="add_to_compare" href="#">
+                                  <div>
+                                    <i class="icon-random"></i>
+                                    <span>Add to compare</span>
+                                  </div>
+                                </a> 
+                                <a class="addToWishlist wishlistProd_5" href="#" >
+                                  <div>
+                                    <i class="icon-heart"></i>
+                                    <span>Add to Wishlist</span>
+                                  </div>
+                                </a> 
+                              </div>
                             </div>
                             <div class="info">
                               <div class="info-inner">

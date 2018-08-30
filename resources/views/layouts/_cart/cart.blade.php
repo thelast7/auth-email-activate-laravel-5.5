@@ -55,30 +55,40 @@ $(document).ready(function(){
                     </td>
                     <td><h2 class="product-name"> <span class="price">{{ $product->name }}</span> </h2></td>
                     {{-- <td class="a-center"><a href="#configure/id/15945/"></a></td> --}}
-                    <td class="a-right"><span class="cart-price"> <span class="price">Rp {{ $product->price }}</span> </span></td>
+                    <td class="a-right">
+                      <span class="cart-price"> 
+                        <span class="price">Rp {{ $product->price }}</span> 
+                      </span>
+                    </td>
                     <td class="a-center">
                       <form action="{{ url('cart/update') }}" method="POST">
                         {{ csrf_field() }}
                         <select type="text" name="qty" class="quantity">
-                          <option value="{{ $product->qty }}" class="disable selected"> {{ $product->qty }}</option>
+                          <option value="{{ $product->qty }}" class="disable selected">{{ $product->qty }}</option>
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
                             <option value="4">4</option>
                             <option value="5">5</option>
-                            <option value="5">6</option>
-                            <option value="5">7</option>
-                            <option value="5">8</option>
-                            <option value="5">9</option>
-                            <option value="5">10</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
                         </select>
                         <input type="hidden" name="rowId" value="{{$product->rowId}}">
                         <input type="submit" class="btn btn-info">
                         {{-- <a href="{{ url('cart/update') }}/{{ $product->rowId }}" class="btn btn-info">tambah</a> --}}
                       </form>
                     </td>
-                    <td class="a-right movewishlist"><span class="cart-price"> <span class="price">Rp {{ $product->subtotal }}</span> </span></td>
-                    <td class="a-center last"><a class="button remove-item" title="Hapus Product" href="{{ url('cart/remove') }}/{{ $product->rowId }}"><span><span>Hapus Product</span></span></a></td>
+                    <td class="a-right movewishlist">
+                      <span class="cart-price"> <span class="price">Rp {{ $product->subtotal }}</span> </span>
+                    </td>
+                    <td class="a-center last">
+                      <a class="button remove-item" title="Hapus Product" href="{{ url('cart/remove') }}/{{ $product->rowId }}">
+                        <span><span>Hapus Product</span></span>
+                      </a>
+                    </td>
                   </tr>
                   @endforeach
                   @else
