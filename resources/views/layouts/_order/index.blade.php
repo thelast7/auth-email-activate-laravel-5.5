@@ -14,54 +14,45 @@
       <legend>DETAIL PEMBELI</legend>
       <div class="col-1 new-users">
         <form class="content" method="POST" action="#">
-              <ul class="form-list">
-                <li>
-                  <label for="name">Nama Lengkap</label>
-                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nama Lengkap">
-                    @if ($errors->has('name'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('name') }}</strong>
-                        </span>
-                    @endif
-                </li>
-                <li>
-                  <label for="email">Email </label>
-                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email Anda">
-                    @if ($errors->has('email'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('email') }}</strong>
-                        </span>
-                    @endif
-                </li>
-                <li>
-                  <label for="no_hp">Nomor HP </label>
-                    <input id="no_hp" type="number" class="form-control" name="no_hp" value="{{ old('no_hp') }}" placeholder="Nomor HP yang Aktif">
-                    @if ($errors->has('no_hp'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('no_hp') }}</strong>
-                        </span>
-                    @endif
-                </li>
-              <li>
-                  <label for="kota">Kota </label>
-                    <input id="kota" type="text" class="form-control" name="kota" value="{{ old('kota') }}" placeholder="Kota Anda">
-                    @if ($errors->has('kota'))
-                        <span class="help-block">
-                            <strong>{{ $errors->first('kota') }}</strong>
-                        </span>
-                    @endif
-              </li>
-              <li>
-                  <label for="alamat">Alamat Lengkap <span class="required">*</span></label>
-                    <textarea class="form-control" id="alamat" name="alamat" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamat') }}"></textarea>
-                    @if ($errors->has('alamat'))
-                        <span class="help-block">
-                          <strong>{{ $errors->first('alamat') }}</strong>
-                        </span>
-                    @endif
-                </li>
-                </ul>
-              <br>
+          <ul class="form-list">
+            <li>
+              <label for="name">Nama Lengkap</label>
+                <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nama Lengkap">
+                @if ($errors->has('name'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('name') }}</strong>
+                    </span>
+                @endif
+            </li>
+            <li>
+              <label for="no_hp">Nomor HP </label>
+                <input id="no_hp" type="number" class="form-control" name="no_hp" value="{{ old('no_hp') }}" placeholder="Nomor HP yang Aktif">
+                @if ($errors->has('no_hp'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('no_hp') }}</strong>
+                    </span>
+                @endif
+            </li>
+            <li>
+                <label for="kota">Kota </label>
+                  <input id="kota" type="text" class="form-control" name="kota" value="{{ old('kota') }}" placeholder="Kota Anda">
+                  @if ($errors->has('kota'))
+                      <span class="help-block">
+                          <strong>{{ $errors->first('kota') }}</strong>
+                      </span>
+                  @endif
+            </li>
+            <li>
+                <label for="alamat">Alamat Lengkap <span class="required">*</span></label>
+                  <textarea class="form-control" id="alamat" name="alamat" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamat') }}"></textarea>
+                  @if ($errors->has('alamat'))
+                      <span class="help-block">
+                        <strong>{{ $errors->first('alamat') }}</strong>
+                      </span>
+                  @endif
+            </li>
+            </ul>
+          <br>
         </form>
       </div>
     </fieldset>
@@ -93,7 +84,7 @@
               </table>
               <ul class="checkout">
                 <li>
-                  <a href="{{route('howtopay')}}" title="Bayar Belanjaan" class="button btn-proceed-checkout" ><span>LANJUTKAN PEMBAYARAN</span></button></a>
+                  <a href="{{route('rekening')}}" title="Bayar Belanjaan" class="button btn-proceed-checkout" ><span>LANJUTKAN PEMBAYARAN</span></button></a>
                 </li>
                 <br>
               </ul>

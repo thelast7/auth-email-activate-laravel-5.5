@@ -29,73 +29,76 @@ $(document).ready(function(){
           <h2>Keranjang Belanja</h2>
         </div>
         <div class="table-responsive">
-              <table class="data-table cart-table" id="shopping-cart-table">
-                <thead>
-                  <tr class="first last">
-                    <th rowspan="1">List Belanja</th>
-                    <th rowspan="1"><span class="nobr">Nama Product</span></th>
-                    <th colspan="1" class="a-center"><span class="nobr">Harga Product</span></th>
-                    <th class="a-center" rowspan="1">Qty</th>
-                    <th colspan="1" class="a-center">Subtotal</th>
-                    <th class="a-center" rowspan="1">&nbsp;</th>
-                  </tr>
-                </thead>
-                <tfoot>
-                  <tr class="first last">
-                    <td class="a-right last" colspan="7"><a href="{{ url('all_product') }}" class="button btn-continue" title="Continue Shopping" type="button"><span><span>Lanjut Berbelanja</span></span></a>
-                    </td>
-                  </tr>
-                </tfoot>
-                <tbody>
-                  @if(Cart::count()!="0")
-                  @foreach($data as $product)
-                  <tr class="first odd">
-                    <td class="cart_product">
-                        <span><img src="{{ $product->options->img }}" height="50px" width="50px" alt=""></span>
-                    </td>
-                    <td><h2 class="product-name"> <span class="price">{{ $product->name }}</span> </h2></td>
-                    {{-- <td class="a-center"><a href="#configure/id/15945/"></a></td> --}}
-                    <td class="a-right">
-                      <span class="cart-price"> 
-                        <span class="price">Rp {{ $product->price }}</span> 
-                      </span>
-                    </td>
-                    <td class="a-center">
-                      <form action="{{ url('cart/update') }}" method="POST">
-                        {{ csrf_field() }}
-                        <select type="text" name="qty" class="quantity">
-                          <option value="{{ $product->qty }}" class="disable selected">{{ $product->qty }}</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                        <input type="hidden" name="rowId" value="{{$product->rowId}}">
-                        <input type="submit" class="btn btn-info">
-                        {{-- <a href="{{ url('cart/update') }}/{{ $product->rowId }}" class="btn btn-info">tambah</a> --}}
-                      </form>
-                    </td>
-                    <td class="a-right movewishlist">
-                      <span class="cart-price"> <span class="price">Rp {{ $product->subtotal }}</span> </span>
-                    </td>
-                    <td class="a-center last">
-                      <a class="button remove-item" title="Hapus Product" href="{{ url('cart/remove') }}/{{ $product->rowId }}">
-                        <span><span>Hapus Product</span></span>
-                      </a>
-                    </td>
-                  </tr>
-                  @endforeach
-                  @else
-                  <div class="container"><h3>Keranjang Kosong</h3></div>
-                  @endif
-                </tbody>
-              </table>
+          <table class="data-table cart-table" id="shopping-cart-table">
+            <thead>
+              <tr class="first last">
+                <th rowspan="1">List Belanja</th>
+                <th rowspan="1"><span class="nobr">Nama Product</span></th>
+                <th colspan="1" class="a-center"><span class="nobr">Harga Product</span></th>
+                <th class="a-center" rowspan="1">Qty</th>
+                <th colspan="1" class="a-center">Subtotal</th>
+                <th class="a-center" rowspan="1">&nbsp;</th>
+              </tr>
+            </thead>
+            <tfoot>
+              <tr class="first last">
+                <td class="a-right last" colspan="7">
+                  <a href="{{ url('all_product') }}" class="button btn-continue" title="Continue Shopping" type="button">
+                    <span>Lanjut Berbelanja</span>
+                  </a>
+                </td>
+              </tr>
+            </tfoot>
+            <tbody>
+              @if(Cart::count()!="0")
+              @foreach($data as $product)
+              <tr class="first odd">
+                <td class="cart_product">
+                    <span><img src="{{ $product->options->img }}" height="50px" width="50px" alt=""></span>
+                </td>
+                <td><h2 class="product-name"> <span class="price">{{ $product->name }}</span> </h2></td>
+                {{-- <td class="a-center"><a href="#configure/id/15945/"></a></td> --}}
+                <td class="a-right">
+                  <span class="cart-price"> 
+                    <span class="price">Rp {{ $product->price }}</span> 
+                  </span>
+                </td>
+                <td class="a-center">
+                  <form action="{{ url('cart/update') }}" method="POST">
+                    {{ csrf_field() }}
+                    <select type="text" name="qty" class="quantity">
+                      <option value="{{ $product->qty }}" class="disable selected">{{ $product->qty }}</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                    <input type="hidden" name="rowId" value="{{$product->rowId}}">
+                    <input type="submit" class="btn btn-info">
+                    {{-- <a href="{{ url('cart/update') }}/{{ $product->rowId }}" class="btn btn-info">tambah</a> --}}
+                  </form>
+                </td>
+                <td class="a-right movewishlist">
+                  <span class="cart-price"> <span class="price">Rp {{ $product->subtotal }}</span> </span>
+                </td>
+                <td class="a-center last">
+                  <a class="button remove-item" title="Hapus Product" href="{{ url('cart/remove') }}/{{ $product->rowId }}">
+                    <span><span>Hapus Product</span></span>
+                  </a>
+                </td>
+              </tr>
+              @endforeach
+              @else
+              <div class="container"><h3>Keranjang Kosong</h3></div>
+              @endif
+            </tbody>
+          </table>
         </div>
       </div>
       <!-- BEGIN CART COLLATERALS -->
@@ -124,7 +127,9 @@ $(document).ready(function(){
               </table>
               <ul class="checkout">
                 <li>
-                  <button type="button" title="Bayar Belanjaan" class="button btn-proceed-checkout" onclick="#"><span>Bayar Belanjaan</span></button>
+                  <a href="{{ route('checkout') }}" title="Bayar Belanjaan" class="button btn-proceed-checkout" onclick="#">
+                    <span>Lanjut Checkout</span>
+                  </a>
                 </li>
                 <br>
               </ul>

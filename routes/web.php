@@ -63,7 +63,7 @@ Route::get('/contactus', 'ContactusController@index')->name('contactus');
 Route::get('checkout', 'CheckoutController@index')->name('checkout');
 
 
-Route::get('/rekening', 'RekeningController@index')->name('Rekening');
+Route::get('/rekening', 'RekeningController@index')->name('rekening');
 
 
 //routes yang menangani cart
