@@ -57,7 +57,14 @@ Route::get('/recipe', 'RecipeController@index')->name('recipe');
 Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
 Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
 Route::get('/contactus', 'ContactusController@index')->name('contactus');
+<<<<<<< HEAD
+
+
+||||||| merged common ancestors
+
+=======
 Route::get('/rekening', 'RekeningController@index')->name('Rekening');
+>>>>>>> e01ffc46d4582596eae029905f7512113297caea
 /*
 routes yang menangani cart
 Route::resource('/show/{id}/cart', 'CartController');
