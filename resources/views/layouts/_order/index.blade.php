@@ -93,7 +93,7 @@
               </table>
               <ul class="checkout">
                 <li>
-                  <a href="{{route('howtopay')}}" type="button" title="Bayar Belanjaan" class="button btn-proceed-checkout" ><span>Lanjutkan Pembayaran</span></button></a>
+                  <a href="{{route('howtopay')}}" title="Bayar Belanjaan" class="button btn-proceed-checkout" ><span>LANJUTKAN PEMBAYARAN</span></button></a>
                 </li>
                 <br>
               </ul>

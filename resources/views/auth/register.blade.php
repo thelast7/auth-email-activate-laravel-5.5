@@ -6,11 +6,11 @@
 <div class="main container">
   <div class="account-login">
     <div class="page-title">
-      <h2>Login or Create an Account</h2>
+      <h2>Buat akunmu</h2>
     </div>
 
     <fieldset class="col2-set">
-      <legend>Login or Create an Account</legend>
+      
       <div class="col-1 new-users"><strong>Daftar Akun Baru</strong>
 
         <form class="form-horizontal" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">

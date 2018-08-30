@@ -57,7 +57,7 @@ Route::get('/recipe', 'RecipeController@index')->name('recipe');
 Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
 Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
 Route::get('/contactus', 'ContactusController@index')->name('contactus');
-
+Route::get('/rekening', 'RekeningController@index')->name('Rekening');
 /*
 routes yang menangani cart
 Route::resource('/show/{id}/cart', 'CartController');
