@@ -5865,13 +5865,13 @@ button.button.view-all:before {
 .button {
 	font-family: 'Open Sans', sans-serif;
 	border: 1px #ddd solid;
-	background: #fff;
-	padding: 7px 12px;
+	background: #04a081;
+	padding: 15px 27px;
 	transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
 }
 .button:hover {
 	border: 1px solid #04a081;
-	background: #04a081;
+	background: #1D2530;
 	padding: 7px 12px;
 	color: #FFF;
 }
@@ -7417,8 +7417,7 @@ input#coupon_code {
 	vertical-align: middle;
 }
 .checkout a {
-	text-decoration: underline;
-	color: #33c5fb;
+	color: #fff;
 }
 .checkout {
 	color: #666666;
