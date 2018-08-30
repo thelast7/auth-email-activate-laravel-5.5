@@ -46,7 +46,7 @@ class CheckoutController extends Controller
             'alamatt' => 'required',
         ]);
         $shippings = New Shipping;
-        $shippings->shipping_id = Auth::user()->id;
+        $shippings->user_id = Auth::user()->id;
         $shippings->namee = $request->namee;
         $shippings->no_hpp = $request->no_hpp;
         $shippings->kotaa = $request->kotaa;

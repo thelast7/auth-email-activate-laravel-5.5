@@ -39,6 +39,7 @@ Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => 'role:a
     Route::resource('/categories', 'Backend\CategoriesController');
     Route::resource('/products', 'Backend\ProductsController');
     Route::resource('/recipes', 'Backend\RecipesController');
+    Route::resource('/orders', 'Backend\OrdersController');
 });
 
 
@@ -49,6 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/api/datatable/products', 'Backend\ProductsController@dataTable')->name('api.datatable.products');
     Route::get('/api/datatable/recipes', 'Backend\RecipesController@dataTable')->name('api.datatable.recipes');
     Route::get('/api/datatable/comments', 'Backend\CommentsController@dataTable')->name('api.datatable.comments');
+    Route::get('/api/datatable/orders', 'Backend\OrdersController@dataTable')->name('api.datatable.orders');
 });
 
 

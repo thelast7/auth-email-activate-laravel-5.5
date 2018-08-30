@@ -43,7 +43,22 @@
             </ul>
         </li>
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Recipe">
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Order">
+            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti3" data-parent="#exampleAccordion">
+            <i class="fa fa-fw fa-pencil"></i>
+            <span class="nav-link-text">Order</span>
+            </a>
+            <ul class="sidenav-second-level collapse" id="collapseMulti3">
+            <li>
+                <a href="{{ route('backend.orders.index') }}">Semua Order</a>
+            </li>
+            <li>
+                <a href="{{ route('backend.orders.create') }}">Tambahkan Order</a>
+            </li>
+            </ul>
+        </li>
+
+{{--         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Recipe">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti3" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-pencil"></i>
             <span class="nav-link-text">Recipe</span>
@@ -56,7 +71,7 @@
                 <a href="{{ route('backend.recipes.create') }}">Tambahkan Recipe</a>
             </li>
             </ul>
-        </li>
+        </li> --}}
         {{-- 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Comments">
             <a class="nav-link" href="#">
