@@ -12,128 +12,115 @@
           <div class="blog-wrapper" id="main">
             <div class="site-content" id="primary">
               <div role="main" id="content">
-                <article class="blog_entry clearfix wow bounceInUp animated">
+                <article class="blog_entry clearfix wow">
                   <header class="blog_entry-header clearfix">
                     <div class="blog_entry-header-inner">
-                      <h2 class="blog_entry-title"> <a rel="bookmark" href="blog_detail.html">Resep Telur Puyuh Bumbu Cabe Hijau</a> </h2>
+                      <h2 class="blog_entry-title">Resep Omurice</a> </h2>
                     </div>
                     <!--blog_entry-header-inner--> 
                   </header>
                   <div class="entry-content">
-                    <div class="featured-thumb"><a href="blog_detail.html"><img alt="blog-img4" src="{{ asset('frontend/images/telurbaladohijau.png') }}"></a></div>
+                    <div class="featured-thumb"><a href="#"><img alt="blog-img4" src="{{ asset('frontend/images/omurice.jpg') }}"></a></div>
+                    <br>
                     <div class="entry-content">
-                      <p>Fusce ac pharetra urna. Duis non lacus sit amet lacus interdum facilisis sed non est. Ut mi metus, semper eu dictum nec, condimentum sed sapien. Nullam lobortis nunc semper ipsum luctus ut viverra ante eleifend. Nunc pretium velit sed augue luctus accumsan.</p>
-                      <p>Aliquam laoreet consequat malesuada. Integer vitae diam sed dolor euismod laoreet eget ac felis. Donec non erat sed elit bibendum sodales. Donec eu cursus velit. Proin nunc lacus, gravida mollis dictum ut, vulputate eu turpis. Sed felis sapien, commodo in iaculis in, feugiat sed enim. Sed nunc ipsum, fermentum varius dignissim vitae, blandit et ante.Maecenas sagittis, lorem sed congue egestas, lectus purus congue nisl, ac molestie enim ligula nec eros. Sed leo tortor, tincidunt sit amet elementum vel, eleifend at orci. Maecenas ut turpis felis. Donec sit amet quam sem, et aliquet est.</p>
+                      <p><strong>Omurice (オムライス omurais)</strong> adalah makanan Jepang dan makanan Korea berupa nasi putih yang digoreng bersama saus tomat dan dibungkus oleh telur goreng omelet. Namanya berasal dari kata omelet dan rice, sebuah contoh wasei-eigo. Di atas omurice biasanya disiram sedikit saus tomat.
                     </div>
-                    <p> <a class="btn" href="blog_detail.html">Read More</a> </p>
+                    <button type="button" title="Tambahkan ke Keranjang" class="button btn-cart">
+                        <a href="#"><span>Selengkapnya</span></a>
+                      </button>
                   </div>
                   
                 </article>
-                <article class="blog_entry clearfix wow bounceInUp animated">
+                <article class="blog_entry clearfix wow">
                   <header class="blog_entry-header clearfix">
                     <div class="blog_entry-header-inner">
-                      <h2 class="blog_entry-title"> <a rel="bookmark" href="blog_detail.html">Resep Masakan Telur Masak Kuning </a> </h2>
+                      <h2 class="blog_entry-title">Resep Gulai Cumi Isi Tahu Telur </a> </h2>
                     </div>
                     <!--blog_entry-header-inner--> 
                   </header>
                   <div class="entry-content">
-                    <div class="featured-thumb"><a href="blog_detail.html"><img alt="blog-img3" src="{{ asset('frontend/images/telurkuning.png') }}"></a></div>
+                    <div class="featured-thumb"><a href="#"><img alt="blog-img3" src="{{ asset('frontend/images/cumisitahutelur.jpg') }}"></a></div>
+                    <br>
                     <div class="entry-content">
-                      <p>Fusce ac pharetra urna. Duis non lacus sit amet lacus interdum facilisis sed non est. Ut mi metus, semper eu dictum nec, condimentum sed sapien. Nullam lobortis nunc semper ipsum luctus ut viverra ante eleifend. Nunc pretium velit sed augue luctus accumsan.</p>
-                      <p>Aliquam laoreet consequat malesuada. Integer vitae diam sed dolor euismod laoreet eget ac felis. Donec non erat sed elit bibendum sodales. Donec eu cursus velit. Proin nunc lacus, gravida mollis dictum ut, vulputate eu turpis. Sed felis sapien, commodo in iaculis in, feugiat sed enim. Sed nunc ipsum, fermentum varius dignissim vitae, blandit et ante.Maecenas sagittis, lorem sed congue egestas, lectus purus congue nisl, ac molestie enim ligula nec eros. Sed leo tortor, tincidunt sit amet elementum vel, eleifend at orci. Maecenas ut turpis felis. Donec sit amet quam sem, et aliquet est.</p>
-                      <p>Quisque nisl lectus, accumsan et euismod eu, sollicitudin ac augue. In sit amet urna magna. Curabitur imperdiet urna nec purus egestas eget aliquet purus iaculis. Nunc porttitor blandit imperdiet. Nulla facilisi. Cras odio ipsum, vehicula nec vehicula sed, convallis scelerisque quam. Phasellus ut odio dui, ut fermentum neque.</p>
+                      <p><strong>Gulai Cumi Isi Tahu Telur</strong> adalah masakan berbahan baku cumi, tahu, dan telur yang diolah dalam kuah bumbu rempah yang bercitarasa gurih. Ciri khas gulai isi tahu telur adalah bumbunya yang kaya rempah antara lain kunyit, ketumbar, lada, lengkuas, jahe, cabai merah, bawang merah, bawang putih, adas, pala, serai, kayu manis dan jintan yang dihaluskan, dicampur, kemudian dimasak dalam santan</p>
+                    
                     </div>
-                    <p> <a class="btn" href="blog_detail.html">Read More</a> </p>
+                    <button type="button" title="Tambahkan ke Keranjang" class="button btn-cart">
+                        <a href="#"><span>Selengkapnya</span></a>
+                      </button>
                   </div>
                   
                 </article>
-                <article class="blog_entry clearfix wow bounceInUp animated">
+                <article class="blog_entry clearfix wow ">
                   <header class="blog_entry-header clearfix">
                     <div class="blog_entry-header-inner">
-                      <h2 class="blog_entry-title"> <a rel="bookmark" href="blog_detail.html"> Resep Orak Arik Telur Bakso</a> </h2>
+                      <h2 class="blog_entry-title"> Resep Teh Telur</a> </h2>
                     </div>
                     <!--blog_entry-header-inner--> 
                   </header>
                   <div class="entry-content">
-                    <div class="featured-thumb"><a href="blog_detail.html"><img alt="blog-img2" src="{{ asset('frontend/images/telururakarik.png') }}"></a></div>
+                    <div class="featured-thumb"><a href="#"><img alt="blog-img2" src="{{ asset('frontend/images/tehtelur.jpg') }}"></a></div>
+                    <br>
                     <div class="entry-content">
-                      <p>Fusce ac pharetra urna. Duis non lacus sit amet lacus interdum facilisis sed non est. Ut mi metus, semper eu dictum nec, condimentum sed sapien. Nullam lobortis nunc semper ipsum luctus ut viverra ante eleifend. Nunc pretium velit sed augue luctus accumsan.</p>
-                      <p>Aliquam laoreet consequat malesuada. Integer vitae diam sed dolor euismod laoreet eget ac felis. Donec non erat sed elit bibendum sodales. Donec eu cursus velit. Proin nunc lacus, gravida mollis dictum ut, vulputate eu turpis. Sed felis sapien, commodo in iaculis in, feugiat sed enim. Sed nunc ipsum, fermentum varius dignissim vitae, blandit et ante.Maecenas sagittis, lorem sed congue egestas, lectus purus congue nisl, ac molestie enim ligula nec eros. Sed leo tortor, tincidunt sit amet elementum vel, eleifend at orci. Maecenas ut turpis felis. Donec sit amet quam sem, et aliquet est.</p>
+                      <p><strong>Teh Talua atau teh telur</strong> adalah minuman khas Sumatera Barat yang merupakan menu wajib di warung tradisional maupun restoran Padang. Minuman ini terdiri dari campuran teh, gula dan telur dan sedikit perasan jeruk nipis. Telur yang digunakan biasanya adalah telur ayam kampung. Teh talua biasanya diminum oleh para petani yang hendak meladang, sebagai penambah stamina kerja.</p>
                     </div>
-                    <p> <a class="btn" href="blog_detail.html">Read More</a> </p>
+                    <button type="button" title="Tambahkan ke Keranjang" class="button btn-cart">
+                        <a href="#"><span>Selengkapnya</span></a>
+                      </button>
                   </div>
                   
                 </article>
-                <article class="blog_entry clearfix wow bounceInUp animated">
+                <article class="blog_entry clearfix wow ">
                   <header class="blog_entry-header clearfix">
                     <div class="blog_entry-header-inner">
-                      <h2 class="blog_entry-title"> <a rel="bookmark" href="http://demo.magikthemes.com/index.php/Poloblue/pellentesque-posuere">Resep Pizza Telur Yummy</a> </h2>
+                      <h2 class="blog_entry-title"> Resep Pepes Telur Tahu</h2>
                     </div>
                     <!--blog_entry-header-inner--> 
                   </header>
                   <div class="entry-content">
-                    <div class="featured-thumb"><a href="blog_detail.html"><img alt="blog-img1" src="{{ asset('frontend/images/telurpizza.png') }}"></a></div>
+                    <div class="featured-thumb"><a href="#"><img alt="blog-img1" src="{{ asset('frontend/images/pepes.jpg') }}"></a></div>
+                    <br>
                     <div class="entry-content">
-                      <p>Fusce ac pharetra urna. Duis non lacus sit amet lacus interdum facilisis sed non est. Ut mi metus, semper eu dictum nec, condimentum sed sapien. Nullam lobortis nunc semper ipsum luctus ut viverra ante eleifend. Nunc pretium velit sed augue luctus accumsan.</p>
-                      <p>Aliquam laoreet consequat malesuada. Integer vitae diam sed dolor euismod laoreet eget ac felis. Donec non erat sed elit bibendum sodales. Donec eu cursus velit. Proin nunc lacus, gravida mollis dictum ut, vulputate eu turpis. Sed felis sapien, commodo in iaculis in, feugiat sed enim. Sed nunc ipsum, fermentum varius dignissim vitae, blandit et ante.Maecenas sagittis, lorem sed congue egestas, lectus purus congue nisl, ac molestie enim ligula nec eros. Sed leo tortor, tincidunt sit amet elementum vel, eleifend at orci. Maecenas ut turpis felis. Donec sit amet quam sem, et aliquet est.</p>
+                      <p>Woku adalah bumbu makanan ala Manado, provinsi Sulawesi Utara, Indonesia, yang terbuat dari berbagai macam bumbu dan biasa digunakan untuk memasak ayam. Di Minahasa, Sulawesi Utara, terdapat dua jenis woku, yaitu woku balanga (dimasak dengan belangga), dan woku daun (dimasak dalam daun).</p>
                     </div>
-                    <p> <a class="btn" href="http://demo.magikthemes.com/index.php/Poloblue/pellentesque-posuere">Read More</a> </p>
+                    <button type="button" title="Tambahkan ke Keranjang" class="button btn-cart">
+                        <a href="#"><span>Selengkapnya</span></a>
+                      </button>
                   </div>
                   
                 </article>
               </div>
             </div>
-            <div class="pager">
-              <p class="amount"> <strong>4 Item(s)</strong> </p>
-              <div class="limiter">
-                <label>Show</label>
-                <select onChange="setLocation(this.value)">
-                  <option selected="selected" value="http://demo.magikthemes.com/index.php/Poloblue/blog/?limit=5"> 5 </option>
-                  <option value="http://demo.magikthemes.com/index.php/Poloblue/blog/?limit=10"> 10 </option>
-                  <option value="http://demo.magikthemes.com/index.php/Poloblue/blog/?limit=15"> 15 </option>
-                  <option value="http://demo.magikthemes.com/index.php/Poloblue/blog/?limit=20"> 20 </option>
-                  <option value="http://demo.magikthemes.com/index.php/Poloblue/blog/?limit=all"> All </option>
-                </select>
-                per page </div>
-            </div>
           </div>
         </div>
         <div class="col-right sidebar col-sm-3">
           <div role="complementary" class="widget_wrapper13" id="secondary">
-            <div class="popular-posts widget widget__sidebar wow bounceInUp animated" id="recent-posts-4">
-              <h3 class="widget-title">Most Popular Post</h3>
+            <div class="popular-posts widget widget__sidebar " id="recent-posts-4">
+              <h3 class="widget-title">Resep Popular</h3>
               <div class="widget-content">
                 <ul class="posts-list unstyled clearfix">
                   <li>
-                    <figure class="featured-thumb"> <a href="blog_detail.html"> <img width="80" height="53" alt="blog image" src="{{ asset('frontend/images/blog-img1.jpg') }}"> </a> </figure>
+                    <figure class="featured-thumb"> <a href="#"> <img width="80" height="53" alt="blog image" src="{{ asset('frontend/images/pepes.jpg') }}"> </a> </figure>
                     <!--featured-thumb-->
-                    <h4><a title="Pellentesque posuere" href="http://demo.magikthemes.com/index.php/Poloblue/pellentesque-posuere">Pellentesque posuere</a></h4>
+                    <h4><a title="Pellentesque posuere" href="http://demo.magikthemes.com/index.php/Poloblue/pellentesque-posuere">Pepes Tahu Telur</a></h4>
                     <p class="post-meta"><i class="icon-calendar"></i>
-                      <time datetime="2014-07-10T07:09:31+00:00" class="entry-date">Jul 10, 2014</time>
+                      <time datetime="2018-07-10T07:09:31+00:00" class="entry-date">Jul 10, 2018</time>
                       .</p>
                   </li>
                   <li>
-                    <figure class="featured-thumb"> <a href="blog_detail.html"> <img width="80" height="53" alt="blog image" src="{{ asset('frontend/images/blog-img1.jpg') }}"> </a> </figure>
+                    <figure class="featured-thumb"> <a href="#"> <img width="80" height="53" alt="blog image" src="{{ asset('frontend/images/omurice.jpg') }}"> </a> </figure>
                     <!--featured-thumb-->
-                    <h4><a title="Dolor lorem ipsum" href="blog_detail.html">Dolor lorem ipsum</a></h4>
+                    <h4><a title="Dolor lorem ipsum" href="#">Omurice</a></h4>
                     <p class="post-meta"><i class="icon-calendar"></i>
-                      <time datetime="2014-07-10T07:01:18+00:00" class="entry-date">Jul 10, 2014</time>
+                      <time datetime="2018-07-10T07:01:18+00:00" class="entry-date">Jul 10, 2018</time>
                       .</p>
                   </li>
                   <li>
-                    <figure class="featured-thumb"> <a href="blog_detail.html"> <img width="80" height="53" alt="blog image" src="{{ asset('frontend/images/blog-img1.jpg') }}"> </a> </figure>
+                    <figure class="featured-thumb"> <a href="#"> <img width="80" height="53" alt="blog image" src="{{ asset('frontend/images/cumisitahutelur.jpg') }}"> </a> </figure>
                     <!--featured-thumb-->
-                    <h4><a title="Aliquam eget sapien placerat" href="blog_detail.html">Aliquam eget sapien placerat</a></h4>
+                    <h4><a title="Aliquam eget sapien placerat" href="#">Cumi Isi Tahu Telur</a></h4>
                     <p class="post-meta"><i class="icon-calendar"></i>
-                      <time datetime="2014-07-10T06:59:14+00:00" class="entry-date">Jul 10, 2014</time>
-                      .</p>
-                  </li>
-                  <li>
-                    <figure class="featured-thumb"> <a href="blog_detail.html"> <img width="80" height="53" alt="blog image" src="{{ asset('frontend/images/blog-img1.jpg') }}"> </a> </figure>
-                    <!--featured-thumb-->
-                    <h4><a title="Pellentesque habitant morbi" href="blog_detail.html">Pellentesque habitant morbi</a></h4>
-                    <p class="post-meta"><i class="icon-calendar"></i>
-                      <time datetime="2014-07-10T06:53:43+00:00" class="entry-date">Jul 10, 2014</time>
+                      <time datetime="2014-07-10T06:59:14+00:00" class="entry-date">Jul 10, 2018</time>
                       .</p>
                   </li>
                 </ul>
@@ -142,8 +129,8 @@
             </div>
             
             <!-- Banner Ad Block -->
-            <div class="ad-spots widget widget__sidebar wow bounceInUp animated">
-              <h3 class="widget-title">Ad Spots</h3>
+            <div class="ad-spots widget widget__sidebar">
+              <h3 class="widget-title">Ads Spots</h3>
               <div class="widget-content"><a target="_self" href="#" title=""><img alt="offer banner" src="{{ asset('frontend/images/rhs-banner.jp') }}g"></a></div>
             </div>
             <!-- Banner Text Block -->

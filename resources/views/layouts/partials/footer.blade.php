@@ -1,4 +1,4 @@
-<footer class="footer wow bounceInUp animated">
+<footer class="footer">
 
   <div class="footer-top">
     <div class="container">

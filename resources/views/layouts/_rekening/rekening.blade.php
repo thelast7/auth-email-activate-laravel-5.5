@@ -67,10 +67,9 @@
             </li>
         </div>
 
-        <br>
         <p class="clear-b">
             Setelah melakukan transfer, kamu
-            <strong>HARUS</strong> melakukan konfirmasi pembayaran melalui email kami di <a href="mailto:cs@sembapur.com">cs@sembapur.com</a> agar pembayaran kamu bisa segera diverifikasi
+            <strong>HARUS</strong> melakukan konfirmasi pembayaran melalui email kami di <strong>cs@sembapur.com</strong> agar pembayaran kamu bisa segera diverifikasi
             dan pesanan langsung diteruskan ke penjual.
         </p>
 

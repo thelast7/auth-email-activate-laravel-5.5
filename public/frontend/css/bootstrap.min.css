@@ -2387,7 +2387,7 @@ textarea.input-lg, textarea.form-group-lg .form-control, select[multiple].input-
 }
 .btn {
 	display: inline-block;
-	padding: 6px 12px;
+	padding: 7px 20px;
 	margin-bottom: 0;
 	font-size: 14px;
 	font-weight: 400;
@@ -2494,7 +2494,7 @@ textarea.input-lg, textarea.form-group-lg .form-control, select[multiple].input-
 }
 .btn-info {
 	color: #fff;
-	background-color: #5bc0de;
+	background-color: #1abc9c;
 	border-color: #46b8da
 }
 .btn-info:hover, .btn-info:focus, .btn-info.focus, .btn-info:active, .btn-info.active, .open>.dropdown-toggle.btn-info {

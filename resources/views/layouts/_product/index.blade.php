@@ -19,7 +19,7 @@
   <div class="main-container col2-left-layout">
     <div class="main container">
       <div class="row">
-        <section class="col-main col-sm-12 wow bounceInUp animated">
+        <section class="col-main col-sm-12 wow">
           <div class="category-description std">
             <div class="slider-items-products">
               <div id="category-desc-slider" class="product-flexslider hidden-buttons">
@@ -131,7 +131,7 @@
           </div>
         </section>
 
-        {{-- <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9 wow bounceInUp animated">
+        {{-- <aside class="col-left sidebar col-sm-3 col-xs-12 col-sm-pull-9">
           <div class="side-nav-categories">
             <div class="block-title"> Categories </div> --}}
             <!--block-title--> 

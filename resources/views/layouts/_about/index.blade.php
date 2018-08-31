@@ -16,7 +16,7 @@
   <div class="main-container col2-right-layout">
     <div class="main container">
       <div class="row">
-        <section class="col-main col-sm-14 wow bounceInUp animated">
+        <section class="col-main col-sm-14">
           <div class="page-title" id="myDIV">
             <h2>BACKGROUND STORIES</h2>
           </div>
@@ -107,12 +107,12 @@ p { text-align: justify; }
             Memberikan efisiensi waktu dalam berbelanja
           </div>     
       </div>
-                 <div class="offer-banner-section wow bounceInUp animated">
-    <div class="promo-banner-section container wow bounceInUp animated">
+  <div class="offer-banner-section">
+    <div class="promo-banner-section container">
     <div class="row">
       <div class="col-lg-12"> <img alt="promo-banner3" src="{{asset('frontend/images/thevalues2.png')}}"></div>
     </div>
-  </div>
+   </div>
   </div>
                 
             </div>

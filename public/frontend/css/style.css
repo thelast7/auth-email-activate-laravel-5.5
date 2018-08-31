@@ -70,7 +70,7 @@ Text Domain:  Polo
 
 /*----------- 1. Body --------------*/
 body {
-	font-size: 12px;
+	font-size: 14px;
 }
 a {
 	color: #fff;
@@ -4097,10 +4097,10 @@ small {
 	color: #999999;
 }
 .actions button.button.btn-cart {
-	background: #fff;
-	border: 1px solid #ddd;
+	background: #1abc9c;
+	border: 1px solid #fff;
 	margin: 10px 8px 0 8px;
-	padding: 7px 11px 7px 11px;
+	padding: 15px 27px 15px 27px;
 	color: #333;
 	line-height: 14px;
 	transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
@@ -4109,7 +4109,7 @@ small {
 	background: #04a081;
 	border: 1px solid #04a081;
 	margin: 10px 8px 0 8px;
-	padding: 7px 11px 7px 11px;
+	padding:15px 27px 15px 27px ;
 	color: #FFFFFF;
 }
 .actions button.button.btn-cart span {
@@ -5867,12 +5867,13 @@ button.button.view-all:before {
 	border: 1px #ddd solid;
 	background: #04a081;
 	padding: 15px 27px;
+	border-radius: 6px;
 	transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
 }
 .button:hover {
 	border: 1px solid #04a081;
-	background: #1D2530;
-	padding: 7px 12px;
+	background: #04a081;
+	padding: 15px 27px;
 	color: #FFF;
 }
 button.button span {
