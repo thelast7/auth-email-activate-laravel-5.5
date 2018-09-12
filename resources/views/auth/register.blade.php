@@ -97,6 +97,16 @@
                 </li>
 
                 <li>
+                  <label for="ktp">KTP </label>
+                    <input id="ktp" type="number" class="form-control" name="ktp" value="{{ old('ktp') }}" placeholder="Masukkan Nomor KTP">
+                    @if ($errors->has('ktp'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('ktp') }}</strong>
+                        </span>
+                    @endif
+                </li>
+
+                <li>
                   <label for="kota">Kota </label>
                     <input id="kota" type="text" class="form-control" name="kota" value="{{ old('kota') }}" placeholder="Kota Anda">
                     @if ($errors->has('kota'))

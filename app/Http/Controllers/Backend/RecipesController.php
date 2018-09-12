@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers\Backend;
 
+use App\Recipe;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Yajra\Datatables\Datatables;
 
-class RecipesController extends Controller
+class RecipesController extends BackendController
 {
     /**
      * Display a listing of the resource.
@@ -35,7 +37,17 @@ class RecipesController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|string|min:5|unique:recipes',
+            'description' => 'required',
+            'status' => 'required',
+        ]);
+        $request['slug'] = str_slug($request->get('name'), '-');
+        $request['user_id'] = $request->user()->id;
+
+        Recipe::create($request->all());
+
+        return redirect()->route('backend.recipes.index');
     }
 
     /**
@@ -46,8 +58,8 @@ class RecipesController extends Controller
      */
     public function show($id)
     {
-        $recipes = Recipe::findOrFail($id);
-        return view('backend.recipes.show', compact('recipes'));
+        $recipe = Recipe::findOrFail($id);
+        return view('backend.recipes.show', compact('recipe'));
     }
 
     /**
@@ -58,7 +70,8 @@ class RecipesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $recipe = Recipe::findOrFail($id);
+        return view('backend.recipes.edit', compact('recipe'));
     }
 
     /**
@@ -70,7 +83,17 @@ class RecipesController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $this->validate($request, [
+            'name' => 'required|string|min:5|unique:recipes',
+            'description' => 'required',
+            'status' => 'required',
+        ]);
+        $request['slug'] = str_slug($request->get('name'), '-');
+
+        $recipe = Recipe::findOrFail($id);
+        $recipe->update($request->all());
+
+        return redirect()->route('backend.recipes.index');
     }
 
     /**

@@ -7,7 +7,7 @@
 <div class="main container">
   <div class="account-login">
     <div class="page-title">
-      <h2>DETAIL PEMBELI</h2>
+      <h2>CHECKOUT</h2>
     </div>
     
     <fieldset class="col-md-6">
@@ -17,8 +17,8 @@
           {{ csrf_field() }}
           <ul class="form-list">
             <li>
-              <label for="namee">Nama Lengkap</label>
-                <input id="namee" type="text" class="form-control" name="namee" value="{{ old('namee') }}" placeholder="Nama Lengkap">
+              <label for="namee">Nama Penerima</label>
+                <input id="namee" type="text" class="form-control" name="namee" value="{{ old('namee') }}" placeholder="Masukan Nama Penerima">
                 @if ($errors->has('namee'))
                     <span class="help-block">
                         <strong>{{ $errors->first('namee') }}</strong>
@@ -27,7 +27,7 @@
             </li>
             <li>
               <label for="no_hpp">Nomor HP </label>
-                <input id="no_hpp" type="number" class="form-control" name="no_hpp" value="{{ old('no_hpp') }}" placeholder="Nomor HP yang Aktif">
+                <input id="no_hpp" type="number" class="form-control" name="no_hpp" value="{{ old('no_hpp') }}" placeholder="Nomor HP Penerima">
                 @if ($errors->has('no_hpp'))
                     <span class="help-block">
                         <strong>{{ $errors->first('no_hpp') }}</strong>
@@ -44,7 +44,7 @@
                   @endif
             </li>
             <li>
-                <label for="alamatt">Alamat Lengkap <span class="required">*</span></label>
+                <label for="alamatt">Alamat Lengkap </label>
                   <textarea class="form-control" id="alamatt" name="alamatt" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamatt') }}"></textarea>
                   @if ($errors->has('alamatt'))
                       <span class="help-block">
@@ -54,7 +54,7 @@
             </li>
             <li>
                   <input id="totall" type="hidden" class="form-control" name="totall" value="{{ Cart::total() }}">
-                  <input id="user_id" type="hidden" class="form-control" name="user_id" value="{{ Auth::user()->id }}">
+                  <input id="product_id" type="hidden" class="form-control" name="totall" value="{{ Cart->id() }}">
             </li>
           </ul>
           <br>
@@ -83,12 +83,14 @@
                 <col>
                 <col width="1">
                 </colgroup>
+                @foreach($data as $product)
                 <tbody>
                   <tr>
-                    <td class="a-left" colspan="1"> Subtotal </td>
-                    <td class="a-right"><span class="price">Rp {{ Cart::subtotal() }}</span></td>
+                    <td class="a-left" colspan="1">{{ $product->name }}</td>
+                    <td class="a-right"><span class="price"></span>Rp {{ $product->price }}</td>
                   </tr>
                 </tbody>
+                @endforeach
                 <tfoot>
                   <tr>
                     <td class="a-left" colspan="1"><strong>Grand Total</strong></td>

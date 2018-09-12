@@ -34,6 +34,7 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->string('gender');
+            $table->integer('ktp');
             $table->string('no_hp');
             $table->string('kota');
             $table->date('tanggal_lahir')->nullable();

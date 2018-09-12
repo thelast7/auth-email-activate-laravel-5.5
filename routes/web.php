@@ -49,26 +49,36 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/api/datatable/categories', 'Backend\CategoriesController@dataTable')->name('api.datatable.categories');
     Route::get('/api/datatable/products', 'Backend\ProductsController@dataTable')->name('api.datatable.products');
     Route::get('/api/datatable/recipes', 'Backend\RecipesController@dataTable')->name('api.datatable.recipes');
-    Route::get('/api/datatable/comments', 'Backend\CommentsController@dataTable')->name('api.datatable.comments');
+    //Route::get('/api/datatable/comments', 'Backend\CommentsController@dataTable')->name('api.datatable.comments');
     Route::get('/api/datatable/orders', 'Backend\OrdersController@dataTable')->name('api.datatable.orders');
 });
 
 
+//routes yang menangani recipe
+Route::get('/recipe', 'RecipeController@index')->name('recipe.index');
+Route::get('/recipe/show/{slug}', 'RecipeController@show')->name('recipe.show');
+
+
 //routes yang menangani layouts
-Route::get('/recipe', 'RecipeController@index')->name('recipe');
 Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
 Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
 Route::get('/contactus', 'ContactusController@index')->name('contactus');
-Route::get('/account', 'AccountController@index')->name('account');
+//Route::get('/account', 'AccountController@index')->name('account');
 Route::get('/confirmationpay', 'ConfirmationpayController@index')->name('confirmationpay');
 
 
 //routes yang menangani checkout
-Route::get('checkout', 'CheckoutController@index')->name('checkout');
-Route::post('checkout/add', 'CheckoutController@store')->name('checkout.add');
+Route::resource('checkout', 'CheckoutController');
+//Route::get('confirmation', 'CheckoutController@rekening')->name('rekening');
+
+//Route::get('checkout', 'CheckoutController@index')->name('checkout');
+//Route::post('checkout/add', 'CheckoutController@store')->name('checkout.add');
+//Route::get('rekening/{id}', 'CheckoutController@rekening')->name('rekening');
+//Route::post('checkout/confrim/{id}', 'CheckoutController@confrim')->name('checkout.confrim');
+//Route::post('checkout/edit/{id}', 'CheckoutController@confrim')->name('checkout.confrim');
 
 
-Route::get('/rekening', 'RekeningController@index')->name('rekening');
+//Route::get('/rekening', 'RekeningController@index')->name('rekening');
 
 
 //routes yang menangani cart

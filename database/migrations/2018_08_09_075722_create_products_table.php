@@ -26,7 +26,6 @@ class CreateProductsTable extends Migration
             $table->integer('quantity');
             $table->integer('price');
             $table->boolean('status');
-            $table->boolean('active')->default(false);
             $table->integer('review')->default(0);
             $table->timestamps();
         });

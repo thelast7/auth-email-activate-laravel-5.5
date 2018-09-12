@@ -13,28 +13,28 @@
       
       <div class="col-1 new-users">
 
-        <form class="form-horizontal" method="POST" action="{{ route('register') }}" enctype="multipart/form-data">
+        <form class="form-horizontal" method="POST" action="#" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="content">
           <div class="buttons-set">
               <ul class="form-list">
 
                 <li>
-                  <label for="name">Nama </label>
-                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nama Anda">
-                    @if ($errors->has('name'))
+                  <label for="nama_rek">Atas Nama</label>
+                    <input id="nama_rek" type="text" class="form-control" name="nama_rek" value="{{ old('nama_rek') }}" placeholder="Nama Pemilik Rekening">
+                    @if ($errors->has('nama_rek'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('name') }}</strong>
+                            <strong>{{ $errors->first('nama_rek') }}</strong>
                         </span>
                     @endif
                 </li>
 
                 <li>
-                  <label for"tanggal_pembayaran">Tanggal Pembayaran</label>
-                    <input id="tanggal_pembayaran" type="date" class="form-control" name="tanggal_pembayaran" value="{{ old('tanggal_pembayaran') }}">
-                    @if ($errors->has('tanggal_pembayaran'))
+                  <label for"tgl_pay">Tanggal Pembayaran</label>
+                    <input id="tgl_pay" type="date" class="form-control" name="tgl_pay" value="{{ old('tgl_pay') }}">
+                    @if ($errors->has('tgl_pay'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('tanggal_pembayaran') }}</strong>
+                            <strong>{{ $errors->first('tgl_pay') }}</strong>
                         </span>
                     @endif
                 </li>
@@ -42,15 +42,15 @@
                 <label><b>Bank Tujuan</b></label>
                 <div class="select relative">
                     <i class="fa fa-angle-down"></i>
-                    {!! Form::select('kota', ['BNI' => 'BNI', 'BCA' => 'BCA','MANDIRI' => 'MANDIRI','BRI' => 'BRI']) !!}
+                    {!! Form::select('bank', ['BNI' => 'BNI', 'BCA' => 'BCA','MANDIRI' => 'MANDIRI','BRI' => 'BRI']) !!}
                 </div>
 
                 <li>
-                  <label for="avatar">Upload Bukti Pembayaran (Max:3MB)</label>
-                    <input id="avatar" type="file" name="avatar">
-                    @if ($errors->has('avatar'))
+                  <label for="bukti">Upload Bukti Pembayaran</label>
+                    <input id="bukti" type="file" name="bukti">
+                    @if ($errors->has('bukti'))
                         <span class="help-block">
-                            <strong>{{ $errors->first('avatar') }}</strong>
+                            <strong>{{ $errors->first('bukti') }}</strong>
                         </span>
                     @endif
                 </li>

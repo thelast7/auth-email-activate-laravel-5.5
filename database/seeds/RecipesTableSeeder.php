@@ -11,13 +11,14 @@ class RecipesTableSeeder extends Seeder
      */
     public function run()
     {
-                'user_id' => 1,
-                'category_id' => 1,
-                'name' => 'Telur Semur',
-                'slug' => 'telur-semur',
+        $recipes = [
+            [
+                'user_id'     => 1,
+                'name'        => 'Telur Semur',
+                'slug'        => 'telur-semur',
                 'description' => 'Telur SemurTelur SemurTelur SemurTelur SemurTelur SemurTelur SemurTelur SemurTelur SemurTelur SemurTelur Semur',
-                'cover' => 'backend/images/featured-image.jpg',
-                'status' => true
+                'cover'       => 'backend/images/featured-image.jpg',
+                'status'      => true
             ],
         ];
         DB::table('recipes')->insert($recipes);

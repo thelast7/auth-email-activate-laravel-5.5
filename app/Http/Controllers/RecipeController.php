@@ -3,12 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Recipe;
 
 class RecipeController extends Controller
 {
     public function index()
     {
-        return view('layouts._recipe.index');
+        $recipes = Recipe::where('status', 1)->paginate(1);
+        return view('layouts._recipe.index', compact('recipes'));
+    }
+
+    public function show($slug)
+    {
+        $recipes = Recipe::where('slug', $slug)->first();
+        return view('layouts._recipe.show', compact('recipes'));
     }
 }
 

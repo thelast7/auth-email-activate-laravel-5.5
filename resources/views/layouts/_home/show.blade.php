@@ -166,7 +166,7 @@
                     </div>
                     <div id="related-products-slider" class="product-flexslider hidden-buttons">
                       <div class="slider-items slider-width-col4"> 
-                        @foreach (\App\Product::where('status',1)->inRandomOrder()->limit(10)->get() as $product)
+                        @foreach ($products->inRandomOrder()->limit(10)->get() as $product)
                         <div class="item">
                           <div class="col-item">
                             <div class="sale-label sale-top-right">Sale</div>

@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\User;
 use App\Shipping;
+use App\Product;
 use Auth;
 use Cart;
-
+use Intervention\Image\Facades\Image;
 
 class CheckoutController extends Controller
 {
@@ -18,7 +19,8 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        return view('layouts._order.index');
+        $shippings = Shipping::where('namee', $namee)->first();
+        return view('layouts._account.account', compact('shippings'));
     }
 
     /**
@@ -28,7 +30,10 @@ class CheckoutController extends Controller
      */
     public function create()
     {
-        //
+        $cart = Cart::content();
+        return view('layouts._order.create', [
+            'data' => $cart 
+        ]);
     }
 
     /**
@@ -45,15 +50,36 @@ class CheckoutController extends Controller
             'kotaa' => 'required',
             'alamatt' => 'required',
         ]);
-        $shippings = New Shipping;
-        $shippings->user_id = Auth::user()->id;
-        $shippings->namee = $request->namee;
-        $shippings->no_hpp = $request->no_hpp;
-        $shippings->kotaa = $request->kotaa;
-        $shippings->alamatt = $request->alamatt;
-        $shippings->totall = Cart::total();
+        $request['user_id'] = $request->user()->id;
+        $request['product_id'] = $request->cart()->id;
+
+        Shipping::create($request->all());
+        return redirect()->route('checkout');
+        //return redirect()->route('checkout.show', $shippings->id);        
+    }
+
+    public function confrim(Request $request)
+    {
+        $this->validate($request, [
+            'nama_rek' => 'required',
+            'tgl_pay' => 'required',
+            'bank' => 'required',
+            'bukti' => 'required',
+        ]);
+        dd($id);
+        $product = Product::findOrFail($id);
+            if ($request->file('bukti')) {
+                $file           = $request->file('bukti');
+                $filename       = time().'.'.$file->getClientOriginalExtension();
+                $location       = public_path('/photos/bukti');
+                $file->resize(800, 500);
+                $file->move($location, $filename);
+                $shippings->bukti  = $filename;
+            }
+        $product->update($request->all());
+        Cart::destroy();
         $shippings->save();
-        return redirect()->route('rekening');        
+        return view('layouts._account.account');
     }
 
     /**
@@ -62,9 +88,10 @@ class CheckoutController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+
+    public function rekening()
     {
-        //
+        return view('layouts._account.account');        
     }
 
     /**
@@ -75,7 +102,8 @@ class CheckoutController extends Controller
      */
     public function edit($id)
     {
-        //
+        $shippings = Shipping::find($id);
+        return view('layouts._rekening.rekening');
     }
 
     /**

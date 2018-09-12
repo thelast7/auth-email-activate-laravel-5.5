@@ -14,38 +14,37 @@
               <div class="welcome-msg"> <strong>Hello, {{ Auth::user()->name }}!</strong>
                 <p>Terima Kasih telah memesan dan membeli produk - produk dari kami, Berikut adalah history order kamu :</p>
               </div>
+              @foreach($shippings as $shipping)
               <div class="recent-orders">
                 <div class="title-buttons">
                 <div class="table-responsive">
                   <table class="data-table" id="my-orders-table">
-                    
                     <thead>
-                      <strong>Recent Orders</strong>
+                      <strong></strong>
                       <tr class="first last">
-                        <th>Order #</th>
-                        <th>Date</th>
-                        <th>Ship to</th>
-                        <th><span class="nobr">Order Total</span></th>
+                        <th>Nomor Order</th>
+                        <th>Tanggal Order</th>
+                        <th>Penerima</th>
+                        <th><span class="nobr">Total Order</span></th>
+                        <th>Konfirmasi</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr class="first odd">
-                        <td>500000002</td>
-                        <td>9/9/10 </td>
-                        <td>Iqbal Buchori</td>
-                        <td><span class="price">Rp25.000</span></td>
-                      </tr>
-                      <tr class="last even">
-                        <td>500000001</td>
-                        <td>9/9/10 </td>
-                        <td>Iqbal Buchori</td>
-                        <td><span class="price">Rp1.397.99</span></td>
+                        <td>{{ $shipping->id }}</td>
+                        <td>{{ $shipping->updated_at }}</td>
+                        <td>{{ $shipping->namee }}</td>
+                        <td><span class="price">Rp {{ $shipping->totall }}</span></td>
+                        <th>
+                          <a href="{{ route('checkout.edit') }}" class="btn btn-sm btn-info">Konfirmasi</a>
+                        </th>
                       </tr>
                     </tbody>
                   </table>
                 </div>
               </div>
             </div>
+            @endforeach
           </div>
         </section>
       </div>

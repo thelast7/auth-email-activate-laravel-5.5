@@ -127,7 +127,7 @@ $(document).ready(function(){
               </table>
               <ul class="checkout">
                 <li>
-                  <a href="{{ route('checkout') }}" title="Bayar Belanjaan" class="button btn-proceed-checkout" onclick="#">
+                  <a href="{{ route('checkout.create') }}" title="Bayar Belanjaan" class="button btn-proceed-checkout" onclick="#">
                     <span>PROSES CHECKOUT</span>
                   </a>
                 </li>
