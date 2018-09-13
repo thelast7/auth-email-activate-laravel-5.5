@@ -24,7 +24,7 @@ $(document).ready(function(){
 <section class="main-container col1-layout">
   <div class="main container">
     <div class="col-main">
-      <div class="cart wow bounceInUp animated">
+      <div class="cart">
         <div class="page-title">
           <h2>Keranjang Belanja</h2>
         </div>
@@ -102,7 +102,7 @@ $(document).ready(function(){
         </div>
       </div>
       <!-- BEGIN CART COLLATERALS -->
-      <div class="cart-collaterals row wow bounceInUp animated">
+      <div class="cart-collaterals row">
         <div class="col-md-12">
           <div class="totals">
             <h3>Total Belanja Anda</h3>

@@ -73,7 +73,7 @@
 
     <fieldset class="col-md-6">
       <legend>DETAIL PEMBELI</legend>
-      <div class="cart-collaterals row wow bounceInUp animated">
+      <div class="cart-collaterals row">
         <div class="col-1">
           <div class="totals">
             <h3>Total Belanja Anda</h3>

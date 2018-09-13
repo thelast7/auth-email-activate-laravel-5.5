@@ -22,14 +22,14 @@
                 <!--blog_entry-header clearfix-->
                 <div class="entry-content">
                   <div class="featured-thumb">
-                    <a href="#"><img src="{{ $recipes->cover }}"></a>
-                  </div>
+                    <a href="#"><img width="500" height="300" class="img-responsive" src="{{ asset($recipes->cover) }}"></a>
+                  </div><br>
                   <div class="entry-content">
-                    {{ $recipes->description }}
+                    {!! $recipes->description !!}
                   </div>
                 </div>
                 <footer class="entry-meta">
-                  <time datetime="2014-07-10T06:53:43+00:00" class="entry-date">{{ $recipes->created_at }}</time>
+                  <time datetime="{{ $recipes->created_at }}" class="entry-date">{{ $recipes->created_at }}</time>
                 </footer>
               </article><br>
 {{--               <div class="comment-content">
@@ -95,8 +95,8 @@
               <ul class="posts-list unstyled clearfix">
                 <li>
                   <figure class="featured-thumb"> 
-                    <a href="blog_detail.html"> 
-                      <img width="80" height="53" alt="blog image" src="images/blog-img1.jpg"> 
+                    <a href="#"> 
+                      <img width="80" height="53" alt="blog image" src="{{ asset($recipes->cover) }}"> 
                     </a> 
                   </figure>
                   <!--featured-thumb-->
@@ -118,11 +118,10 @@
             <h3 class="widget-title">Ad Spots</h3>
             <div class="widget-content">
               <a target="_self" href="#" title="">
-                <img alt="offer banner" src="{{ asset('frontend/images/rhs-banner.jp') }}">
+                <img alt="offer banner" src="{{ asset('frontend/images/rhs-banner.jpg') }}">
               </a>
             </div>
-          </div>
-
+          </div><br>
         </div>
       </div>
     </div>

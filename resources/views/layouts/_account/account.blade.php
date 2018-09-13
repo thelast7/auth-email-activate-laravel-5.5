@@ -5,7 +5,7 @@
 <div class="main-container col2-right-layout">
     <div class="main container">
       <div class="row">
-        <section class="col-main col-sm-9 wow bounceInUp animated">
+        <section class="col-main col-sm-9">
           <div class="my-account">
             <div class="page-title">
               <h2>My Dashboard</h2>

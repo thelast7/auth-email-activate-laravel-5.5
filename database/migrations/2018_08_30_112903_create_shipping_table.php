@@ -22,6 +22,8 @@ class CreateShippingTable extends Migration
             $table->string('namee');
             $table->string('no_hpp');
             $table->string('kotaa');
+            $table->string('kecamatan');
+            $table->integer('kode_pos');
             $table->string('alamatt');
             $table->string('totall')->nullable();
             $table->boolean('statuss')->default(false);

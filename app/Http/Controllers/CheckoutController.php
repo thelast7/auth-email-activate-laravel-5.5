@@ -48,6 +48,8 @@ class CheckoutController extends Controller
             'namee' => 'required',
             'no_hpp' => 'required',
             'kotaa' => 'required',
+            'kecamatan' => 'required',
+            'kode_pos' => 'required',
             'alamatt' => 'required',
         ]);
         $request['user_id'] = $request->user()->id;

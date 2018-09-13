@@ -45,31 +45,8 @@
           </div>
           <div class="category-products">
             <div class="toolbar">
-              <div id="sort-by">
-                <label class="left">Sort By: </label>
-                <ul>
-                  <li><a href="#">Position<span class="right-arrow"></span></a>
-                    <ul>
-                      <li><a href="#">Name</a></li>
-                      <li><a href="#">Price</a></li>
-                      <li><a href="#">Position</a></li>
-                    </ul>
-                  </li>
-                </ul>
-                <a class="button-asc left" href="#" title="Set Descending Direction"><span class="glyphicon glyphicon-arrow-up"></span></a> </div>
+
               <div class="pager">
-                <div id="limiter">
-                  <label>View: </label>
-                  <ul>
-                    <li><a href="#">15<span class="right-arrow"></span></a>
-                      <ul>
-                        <li><a href="#">20</a></li>
-                        <li><a href="#">30</a></li>
-                        <li><a href="#">35</a></li>
-                      </ul>
-                    </li>
-                  </ul>
-                </div>
                 <div class="pages">
                   <label>Page:</label>
                   <ul class="pagination">

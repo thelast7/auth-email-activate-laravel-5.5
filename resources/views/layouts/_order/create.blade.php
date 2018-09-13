@@ -3,7 +3,7 @@
 @section('content')
 
   <!-- main-container -->
- <section class="main-container col1-layout">
+<section class="main-container col1-layout">
 <div class="main container">
   <div class="account-login">
     <div class="page-title">
@@ -35,26 +35,43 @@
                 @endif
             </li>
             <li>
-                <label for="kotaa">Kota </label>
-                  <input id="kotaa" type="text" class="form-control" name="kotaa" value="{{ old('kotaa') }}" placeholder="Kota Anda">
-                  @if ($errors->has('kotaa'))
-                      <span class="help-block">
-                          <strong>{{ $errors->first('kotaa') }}</strong>
-                      </span>
-                  @endif
+              <label for="kotaa">Kota </label>
+                <input id="kotaa" type="text" class="form-control" name="kotaa" value="{{ old('kotaa') }}" placeholder="Kota Anda">
+                @if ($errors->has('kotaa'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('kotaa') }}</strong>
+                    </span>
+                @endif
             </li>
             <li>
-                <label for="alamatt">Alamat Lengkap </label>
-                  <textarea class="form-control" id="alamatt" name="alamatt" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamatt') }}"></textarea>
-                  @if ($errors->has('alamatt'))
-                      <span class="help-block">
-                        <strong>{{ $errors->first('alamatt') }}</strong>
-                      </span>
-                  @endif
+              <label for="kecamatan">Kecamatan </label>
+                <input id="kecamatan" type="text" class="form-control" name="kecamatan" value="{{ old('kecamatan') }}" placeholder="Kecamatan Anda">
+                @if ($errors->has('kecamatan'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('kecamatan') }}</strong>
+                    </span>
+                @endif
             </li>
             <li>
-                  <input id="totall" type="hidden" class="form-control" name="totall" value="{{ Cart::total() }}">
-                  <input id="product_id" type="hidden" class="form-control" name="totall" value="{{ Cart->id() }}">
+              <label for="kode_pos">Kode Pos </label>
+                <input id="kode_pos" type="number" class="form-control" name="kode_pos" value="{{ old('kode_pos') }}" placeholder="Kode Pos Penerima">
+                @if ($errors->has('kode_pos'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('kode_pos') }}</strong>
+                    </span>
+                @endif
+            </li>
+            <li>
+              <label for="alamatt">Alamat Lengkap </label>
+                <textarea class="form-control" id="alamatt" name="alamatt" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamatt') }}"></textarea>
+                @if ($errors->has('alamatt'))
+                    <span class="help-block">
+                      <strong>{{ $errors->first('alamatt') }}</strong>
+                    </span>
+                @endif
+            </li>
+            <li>
+                <input id="totall" type="hidden" class="form-control" name="totall" value="{{ Cart::total() }}">
             </li>
           </ul>
           <br>
@@ -63,6 +80,7 @@
               <button type="submit" class="button btn-proceed-checkout">
                   <span>LANJUTKAN PEMBAYARAN</span>
               </button>
+              {{$data}}
             </li>
             <br>
             <br>
@@ -73,7 +91,7 @@
 
     <fieldset class="col-md-6">
       <legend>DETAIL PEMBELI</legend>
-      <div class="cart-collaterals row wow bounceInUp animated">
+      <div class="cart-collaterals row">
         <div class="col-1">
           <div class="totals">
             <h3>Total Belanja Anda</h3>
