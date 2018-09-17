@@ -12,6 +12,7 @@ use Intervention\Image\Facades\Image;
 
 class CheckoutController extends Controller
 {
+    public $items = [];
     /**
      * Display a listing of the resource.
      *
@@ -52,12 +53,50 @@ class CheckoutController extends Controller
             'kode_pos' => 'required',
             'alamatt' => 'required',
         ]);
-        $request['user_id'] = $request->user()->id;
-        $request['product_id'] = $request->cart()->id;
+        $shippings = new Shipping();
+        $shippings->user_id = $request->user()->id;
+        $shippings->namee = $request->namee;
+        $shippings->no_hpp = $request->no_hpp;
+        $shippings->kotaa = $request->kotaa;
+        $shippings->kecamatan = $request->kecamatan;
+        $shippings->kode_pos = $request->kode_pos;
+        $shippings->alamatt = $request->alamatt;
+        $shippings->items = $this->getItemsArray();
 
+        $shippings->save();
+        dd($shippings);
+    }
+
+    protected function getItemsArray()
+    {
+        $cart = Cart::content();
+        $items = [];
+        foreach ($this->items as $item) {
+            $items[] = [
+                'id'                     => $cart->product->id,
+                'name'                   => $cart->name,
+                'price'                  => $cart->price,
+                'qty'                    => $cart->qty,
+            ];
+        }
+
+        return $items;
+    }
+/**
+    public function store(Request $request)
+    {
+        $this->validate($request, [
+            'namee' => 'required',
+            'no_hpp' => 'required',
+            'kotaa' => 'required',
+            'kecamatan' => 'required',
+            'kode_pos' => 'required',
+            'alamatt' => 'required',
+        ]);
+        $request['user_id'] = $request->user()->id;
         Shipping::create($request->all());
-        return redirect()->route('checkout');
-        //return redirect()->route('checkout.show', $shippings->id);        
+
+        return redirect()->route('rekening');
     }
 
     public function confrim(Request $request)
@@ -83,7 +122,7 @@ class CheckoutController extends Controller
         $shippings->save();
         return view('layouts._account.account');
     }
-
+*/
     /**
      * Display the specified resource.
      *
@@ -93,7 +132,7 @@ class CheckoutController extends Controller
 
     public function rekening()
     {
-        return view('layouts._account.account');        
+        return view('layouts._rekening.rekening');        
     }
 
     /**

@@ -8,6 +8,7 @@
   <div class="account-login">
     <div class="page-title">
       <h2>CHECKOUT</h2>
+      {{$data}}
     </div>
     
     <fieldset class="col-md-6">
@@ -70,9 +71,9 @@
                     </span>
                 @endif
             </li>
-            <li>
-                <input id="totall" type="hidden" class="form-control" name="totall" value="{{ Cart::total() }}">
-            </li>
+{{--             <li>
+              <input id="totall" type="hidden" class="form-control" name="totall" value="{{ Cart::total() }}">
+            </li> --}}
           </ul>
           <br>
           <ul class="checkout">
@@ -80,7 +81,6 @@
               <button type="submit" class="button btn-proceed-checkout">
                   <span>LANJUTKAN PEMBAYARAN</span>
               </button>
-              {{$data}}
             </li>
             <br>
             <br>

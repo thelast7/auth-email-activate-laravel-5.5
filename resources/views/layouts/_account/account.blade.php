@@ -14,7 +14,7 @@
               <div class="welcome-msg"> <strong>Hello, {{ Auth::user()->name }}!</strong>
                 <p>Terima Kasih telah memesan dan membeli produk - produk dari kami, Berikut adalah history order kamu :</p>
               </div>
-              @foreach($shippings as $shipping)
+              {{-- @foreach($shippings as $shipping) --}}
               <div class="recent-orders">
                 <div class="title-buttons">
                 <div class="table-responsive">
@@ -31,12 +31,30 @@
                     </thead>
                     <tbody>
                       <tr class="first odd">
-                        <td>{{ $shipping->id }}</td>
-                        <td>{{ $shipping->updated_at }}</td>
-                        <td>{{ $shipping->namee }}</td>
-                        <td><span class="price">Rp {{ $shipping->totall }}</span></td>
+                        <td>123123</td>
+                        <td>11/11/2018</td>
+                        <td>Iqbal Buchori</td>
+                        <td><span class="price">Rp 105.000</span></td>
                         <th>
-                          <a href="{{ route('checkout.edit') }}" class="btn btn-sm btn-info">Konfirmasi</a>
+                          <a href="#" class="btn btn-sm btn-info">Konfirmasi</a>
+                        </th>
+                      </tr>
+                      <tr class="first odd">
+                        <td>123123</td>
+                        <td>11/11/2018</td>
+                        <td>Iqbal Buchori</td>
+                        <td><span class="price">Rp 105.000</span></td>
+                        <th>
+                          <a href="#" class="btn btn-sm btn-info">Konfirmasi</a>
+                        </th>
+                      </tr>
+                      <tr class="first odd">
+                        <td>123123</td>
+                        <td>11/11/2018</td>
+                        <td>Iqbal Buchori</td>
+                        <td><span class="price">Rp 105.000</span></td>
+                        <th>
+                          <a href="#" class="btn btn-sm btn-info">Konfirmasi</a>
                         </th>
                       </tr>
                     </tbody>
@@ -44,7 +62,7 @@
                 </div>
               </div>
             </div>
-            @endforeach
+            {{-- @endforeach --}}
           </div>
         </section>
       </div>

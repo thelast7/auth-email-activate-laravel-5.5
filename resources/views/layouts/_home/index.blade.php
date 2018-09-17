@@ -9,7 +9,8 @@
         <div id='rev_slider_4_wrapper' class='rev_slider_wrapper fullwidthbanner-container' >
           <div id='rev_slider_4' class='rev_slider fullwidthabanner'>
             <ul>
-              <li data-transition='random' data-slotamount='7' data-masterspeed='1000'><img src="{{ ('frontend/images/slide-img1.jpg') }}" data-bgposition='right top' data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
+              <li data-transition='random' data-slotamount='7' data-masterspeed='1000'>
+                <img src="{{ ('frontend/images/slide-img1.jpg') }}" data-bgposition='right top' data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
                 
                 <div class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-x='45'  data-y='30'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'>
                 </div>
@@ -29,7 +30,8 @@
 
               </li>
 
-              <li data-transition='random' data-slotamount='7' data-masterspeed='1000' class="black-text"><img src="{{ asset('frontend/images/slide-img2.jpg') }}"  data-bgposition='left top'  data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
+              <li data-transition='random' data-slotamount='7' data-masterspeed='1000' class="black-text">
+                <img src="{{ asset('frontend/images/slide-img2.jpg') }}"  data-bgposition='left top'  data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
 
                 <div class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-x='45'  data-y='30'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'>
                 </div>
@@ -49,7 +51,8 @@
 
               </li>
 
-              <li data-transition='random' data-slotamount='7' data-masterspeed='1000' class="black-text"><img src="{{ asset('frontend/images/slide-img3.jpg') }}"  data-bgposition='left top'  data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
+              <li data-transition='random' data-slotamount='7' data-masterspeed='1000' class="black-text">
+                <img src="{{ asset('frontend/images/slide-img3.jpg') }}"  data-bgposition='left top'  data-bgfit='cover' data-bgrepeat='no-repeat' alt="banner"/>
 
                 <div class='tp-caption ExtraLargeTitle sft  tp-resizeme ' data-x='45'  data-y='30'  data-endspeed='500'  data-speed='500' data-start='1100' data-easing='Linear.easeNone' data-splitin='none' data-splitout='none' data-elementdelay='0.1' data-endelementdelay='0.1' style='z-index:2; white-space:nowrap;'>
                 </div>
@@ -92,29 +95,28 @@
 
 <!-- header service -->
 <div class="container">
-  <div class="header-service">
+  <div class="header-service wow bounceInUp animated">
     <div class="col-lg-3 col-sm-6 col-xs-3">
       <div class="content">
-        <div class="icon-sitemap">&nbsp;</div>
-          <span class="hidden-xs"><strong>FREE SHIPPING</strong> on order over Rp99</span>
+        <div class="icon-truck">&nbsp;</div>
+        <span class="hidden-xs"><strong>FREE SHIPPING</strong> on order over $99</span>
       </div>
     </div>
     <div class="col-lg-3 col-sm-6 col-xs-3">
       <div class="content">
         <div class="icon-support">&nbsp;</div>
-          <span class="hidden-xs"><strong>Customer Support</strong> Service</span>
-      </div>
+        <span class="hidden-xs"><strong>Customer Support</strong> Service</span></div>
     </div>
     <div class="col-lg-3 col-sm-6 col-xs-3">
       <div class="content">
         <div class="icon-money">&nbsp;</div>
-          <span class="hidden-xs">3 days <strong>Money Back</strong> Guarantee</span>
-      </div>
+        <span class="hidden-xs">3 days <strong>Money Back</strong> Guarantee</span></div>
     </div>
     <div class="col-lg-3 col-sm-6 col-xs-3">
       <div class="content">
         <div class="icon-dis">&nbsp;</div>
-          <span class="hidden-xs"><strong>5% discount</strong></span>
+        <span class="hidden-xs"><strong>5% discount</strong> on order over $199</span>
+      </div>
     </div>
   </div>
 </div>
@@ -265,8 +267,8 @@
         </div>
       </div>
     </div>
-    </div> {{-- End box item category sisi kanan--}}
-    </div><br>
+  </div> {{-- End box item category sisi kanan--}}
+  <br>
 </section>
 @endforeach
 <br>
