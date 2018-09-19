@@ -86,7 +86,7 @@
     </div>
 
     <div>
-      <a href="#" title="Bayar Belanjaan" class="button btn-proceed-checkout" onclick="#"> 
+      <a href="{{ route('confirmationpay') }}" title="Bayar Belanjaan" class="button btn-proceed-checkout" onclick="#"> 
         <span>KONFIRMASI PEMBAYARAN</span>
       </a>
     </div>

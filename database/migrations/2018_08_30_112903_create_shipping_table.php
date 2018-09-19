@@ -23,8 +23,9 @@ class CreateShippingTable extends Migration
             $table->string('kecamatan');
             $table->integer('kode_pos');
             $table->string('alamatt');
-            $table->string('statuss')->default('belum_bayar');
             $table->text('items');
+            $table->string('totall');
+            $table->string('statuss');
             $table->timestamps();
         });
     }

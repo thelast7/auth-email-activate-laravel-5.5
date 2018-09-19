@@ -13,7 +13,7 @@
       
       <div class="col-1 new-users">
 
-        <form class="form-horizontal" method="POST" action="#" enctype="multipart/form-data">
+        <form class="form-horizontal" method="POST" action="{{ route('save.order') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="content">
           <div class="buttons-set">
@@ -38,12 +38,20 @@
                         </span>
                     @endif
                 </li>
-
-                <label><b>Bank Tujuan</b></label>
+{{--                 <label><b>Bank Tujuan</b></label>
                 <div class="select relative">
                     <i class="fa fa-angle-down"></i>
                     {!! Form::select('bank', ['BNI' => 'BNI', 'BCA' => 'BCA','MANDIRI' => 'MANDIRI','BRI' => 'BRI']) !!}
-                </div>
+                </div> --}}
+                <li>
+                  <label for="bank">Bank</label>
+                    <input id="bank" type="text" class="form-control" name="bank" value="{{ old('bank') }}" placeholder="Nama Bank">
+                    @if ($errors->has('bank'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('bank') }}</strong>
+                        </span>
+                    @endif
+                </li>
 
                 <li>
                   <label for="bukti">Upload Bukti Pembayaran</label>
@@ -59,9 +67,9 @@
               <br>
             <tr class="first last">
                 <td class="a-right last" colspan="7">
-                  <a href="{{route('account')}}" class="button btn-continue" title="Continue Confirmation" type="button">
+                  <button type="submit" class="button btn-continue">
                     <span>SUBMIT</span>
-                  </a>
+                  </button>
                 </td>
               </tr>
           </div>
