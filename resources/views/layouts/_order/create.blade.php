@@ -2,13 +2,12 @@
 
 @section('content')
 
-  <!-- main-container -->
+<!-- main-container -->
 <section class="main-container col1-layout">
 <div class="main container">
   <div class="account-login">
     <div class="page-title">
       <h2>CHECKOUT</h2>
-      {{$data}}
     </div>
     
     <fieldset class="col-md-6">
@@ -71,8 +70,18 @@
                     </span>
                 @endif
             </li>
-{{--             <li>
-              <input id="totall" type="hidden" class="form-control" name="totall" value="{{ Cart::total() }}">
+            {{-- <li>
+              <select name="country" class="countries" id="countryId">
+                <option value="">Select Country</option>
+              </select>
+              <select name="state" class="states" id="stateId">
+                <option value="">Select State</option>
+              </select>
+              <select name="city" class="cities" id="cityId">
+                <option value="">Select City</option>
+              </select>
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+              <script src="{{ asset('frontend/js/locationv1.js') }}"></script>
             </li> --}}
           </ul>
           <br>
@@ -128,6 +137,6 @@
   </div>
 </div>
 </section>
-  <!--End main-container --> 
+<!--End main-container --> 
 
 @endsection
