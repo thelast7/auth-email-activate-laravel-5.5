@@ -26,38 +26,33 @@
                         <th>Tanggal Order</th>
                         <th>Penerima</th>
                         <th><span class="nobr">Total Order</span></th>
-                        <th>Konfirmasi</th>
+                        <th>Pembayaran</th>
+                        <th>Status Order</th>
                       </tr>
                     </thead>
+                    @foreach($shippings as $shipping)
                     <tbody>
                       <tr class="first odd">
-                        <td>123123</td>
-                        <td>11/11/2018</td>
-                        <td>Iqbal Buchori</td>
-                        <td><span class="price">Rp 105.000</span></td>
+                        <td>{{ $shipping->id }}</td>
+                        <td>{{ $shipping->created_at }}</td>
+                        <td>{{ $shipping->namee }}</td>
+                        <td><span class="price">Rp {{ $shipping->totall }}</span></td>
+                        @if (optional($shipping->order())->count() != 0)
+                        <td>{{ $shipping->order->status_bayar }}</td>
+                        <th>
+                          <span>Selesai</span>
+                        </th>
+                        @else
+                        <th>
+                          <span>Kosong</span>
+                        </th>
                         <th>
                           <a href="#" class="btn btn-sm btn-info">Konfirmasi</a>
                         </th>
-                      </tr>
-                      <tr class="first odd">
-                        <td>123123</td>
-                        <td>11/11/2018</td>
-                        <td>Iqbal Buchori</td>
-                        <td><span class="price">Rp 105.000</span></td>
-                        <th>
-                          <a href="#" class="btn btn-sm btn-info">Konfirmasi</a>
-                        </th>
-                      </tr>
-                      <tr class="first odd">
-                        <td>123123</td>
-                        <td>11/11/2018</td>
-                        <td>Iqbal Buchori</td>
-                        <td><span class="price">Rp 105.000</span></td>
-                        <th>
-                          <a href="#" class="btn btn-sm btn-info">Konfirmasi</a>
-                        </th>
+                        @endif
                       </tr>
                     </tbody>
+                    @endforeach
                   </table>
                 </div>
               </div>

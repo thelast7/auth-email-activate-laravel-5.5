@@ -21,8 +21,8 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        $shippings = Shipping::where('namee', $namee)->first();
-        return view('layouts._account.index', compact('shippings'));
+        $shippings = Shipping::with('order')->get()->all();
+        return view('layouts._account.index', compact('shippings', 'order'));
     }
 
     /**
@@ -75,7 +75,7 @@ class CheckoutController extends Controller
         }
         $shipping->items = $items;
         $shipping->totall = Cart::total();
-        $shipping->statuss = 'belum_bayar';
+        $shipping->statuss = 'Belum';
         $shipping->save();
         //$request->session()->put('shipping_id', $shipping);
         $request->session()->put('shipping_id', $shipping->id);
