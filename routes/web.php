@@ -15,7 +15,7 @@
 
 //routes yang memnangani halaman awal
 Route::get('/', 'IndexController@index')->name('home');
-Route::get('/home', 'IndexController@index')->name('home');
+//Route::get('/home', 'IndexController@index')->name('home');
 Route::get('/show/{slug}', 'IndexController@show')->name('show');
 Route::get('/all_product', 'IndexController@all_product')->name('all_product');
 
@@ -63,13 +63,14 @@ Route::get('/recipe/show/{slug}', 'RecipeController@show')->name('recipe.show');
 Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
 Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
 Route::get('/contactus', 'ContactusController@index')->name('contactus');
-//Route::get('/account', 'AccountController@index')->name('account');
-Route::get('/confirmationpay', 'ConfirmationpayController@index')->name('confirmationpay');
+Route::get('/account', 'CheckoutController@index')->name('account');
 
 
 //routes yang menangani checkout
 Route::resource('checkout', 'CheckoutController');
-//Route::get('confirmation', 'CheckoutController@rekening')->name('rekening');
+Route::get('rekening', 'CheckoutController@rekening')->name('rekening');
+Route::get('/konfirmasi-pembayaran', 'CheckoutController@confirmation')->name('confirmationpay');
+Route::post('/konfirmasi-pembayaran', 'CheckoutController@saveOrder')->name('save.order');
 
 //Route::get('checkout', 'CheckoutController@index')->name('checkout');
 //Route::post('checkout/add', 'CheckoutController@store')->name('checkout.add');

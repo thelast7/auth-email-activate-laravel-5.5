@@ -19,9 +19,4 @@ class Product extends Model
     {
         return $this->belongsTo(Category::class);
     }
-
-    public function shipping()
-    {
-        return $this->belongsTo(Shipping::class);
-    }
 }

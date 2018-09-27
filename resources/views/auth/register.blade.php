@@ -21,7 +21,7 @@
 
                 <li>
                   <label for="username">Username </label>
-                    <input id="username" type="text" class="form-control" name="username" value="{{ old('username') }}" placeholder="Username Anda" required autofocus>
+                    {{ Form::text('username', null, ['placeholder' => 'Username Anda', 'class' => 'form-control', 'value' => old('username'), 'required autofocus' ]) }}
                     @if ($errors->has('username'))
                         <span class="help-block">
                             <strong>{{ $errors->first('username') }}</strong>
@@ -31,7 +31,7 @@
 
                 <li>
                   <label for="name">Nama </label>
-                    <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" placeholder="Nama Anda">
+                    {{ Form::text('name', null, ['placeholder' => 'Nama Anda', 'class' => 'form-control', 'value' => old('name') ]) }}
                     @if ($errors->has('name'))
                         <span class="help-block">
                             <strong>{{ $errors->first('name') }}</strong>
@@ -41,7 +41,7 @@
 
                 <li>
                   <label for="email">Email </label>
-                    <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" placeholder="Email Anda">
+                    {{ Form::email('email', null, ['placeholder' => 'Email Anda', 'class' => 'form-control', 'value' => old('email') ]) }}
                     @if ($errors->has('email'))
                         <span class="help-block">
                             <strong>{{ $errors->first('email') }}</strong>
@@ -88,7 +88,7 @@
 
                 <li>
                   <label for="no_hp">Nomor HP </label>
-                    <input id="no_hp" type="number" class="form-control" name="no_hp" value="{{ old('no_hp') }}" placeholder="Nomor HP yang Aktif">
+                    {{ Form::number('no_hp', null, ['placeholder' => 'Nomor Anda', 'class' => 'form-control', 'value' => old('no_hp') ]) }}
                     @if ($errors->has('no_hp'))
                         <span class="help-block">
                             <strong>{{ $errors->first('no_hp') }}</strong>
@@ -98,7 +98,7 @@
 
                 <li>
                   <label for="ktp">KTP </label>
-                    <input id="ktp" type="number" class="form-control" name="ktp" value="{{ old('ktp') }}" placeholder="Masukkan Nomor KTP">
+                    {{ Form::number('ktp', null, ['placeholder' => 'KTP Anda', 'class' => 'form-control', 'value' => old('ktp') ]) }}
                     @if ($errors->has('ktp'))
                         <span class="help-block">
                             <strong>{{ $errors->first('ktp') }}</strong>
@@ -108,7 +108,7 @@
 
                 <li>
                   <label for="kota">Kota </label>
-                    <input id="kota" type="text" class="form-control" name="kota" value="{{ old('kota') }}" placeholder="Kota Anda">
+                    {{ Form::select('kota', ['Ambon' => 'Ambon', 'Balikpapan' => 'Balikpapan', 'Banda Aceh' => 'Banda Aceh', 'Bandar Lampung' => 'Bandar Lampung', 'Banjar' => 'Banjar', 'Banjarbaru' => 'Banjarbaru', 'Banjarmasin' => 'Banjarmasin', 'Batam' => 'Batam', 'Batu' => 'Batu', 'Bau-Bau' => 'Bau-Bau', 'Bekasi' => 'Bekasi', 'Bekasi' => 'Bekasi', 'Bima' => 'Bima', 'Binjai' => 'Binjai', 'Bitung' => 'Bitung', 'Blitar' => 'Blitar', 'Bogor' => 'Bogor', 'Bontang' => 'Bontang', 'Bukit Tinggi' => 'Bukit Tinggi', 'Cilegon' => 'Cilegon', 'Cimahi' => 'Cimahi', 'Cirebon' => 'Cirebon', 'Denpasar' => 'Denpasar', 'Depok' => 'Depok', 'Dumai' => 'Dumai', 'Gorontalo' => 'Gorontalo', 'Gunungsitoli' => 'Gunungsitoli', 'Jakarta' => 'Jakarta', 'Jambi' => 'Jambi', 'Jayapura' => 'Jayapura', 'Kediri' => 'Kediri', 'Kotamubagu' => 'Kotamubagu', 'Kupang<' => 'Kupang', 'Langsa' => 'Langsa', 'Lhokseumawe' => 'Lhokseumawe', 'Lubuklinggau' => 'Lubuklinggau', 'Madiun' => 'Madiun', 'Magelang' => 'Magelang', 'Makassar' => 'Makassar', 'Malang' => 'Malang', 'Manado' => 'Manado', 'Mataram' => 'Mataram', 'Medan' => 'Medan', 'Metro' => 'Metro', 'Mojokerto' => 'Mojokerto', 'Padang' => 'Padang', 'Pagaralam' => 'Pagaralam', 'Palangkaraya' => 'Palangkaraya', 'Palembang' => 'Palembang', 'Palopo' => 'Palopo', 'Palu' => 'Palu', 'Pangkal Pinang' => 'Pangkal Pinang', 'Parepare' => 'Parepare', 'Pariaman' => 'Pariaman', 'Pasuruan' => 'Pasuruan', 'Payakumbuh' => 'Payakumbuh', 'Pekalongan' => 'Pekalongan', 'Pekanbaru' => 'Pekanbaru', 'Pematangsiantar' => 'Pematangsiantar', 'Pontianak' => 'Pontianak', 'Prabumulih' => 'Prabumulih', 'Probolinggo' => 'Probolinggo', 'Sabang' => 'Sabang', 'Salatiga' => 'Salatiga', 'Sawahlunto' => 'Sawahlunto', 'Semarang' => 'Semarang', 'Serang' => 'Serang', 'Sibloga' => 'Sibloga', 'Singkawang' => 'Singkawang','Solok' => 'Solok', 'Subulussalam' => 'Subulussalam', 'Sukabumi' => 'Sukabumi', 'Surabaya' => 'Surabaya', 'Surakarta' => 'Surakarta', 'Tangerang' => 'Tangerang', 'Tanjungpinang' => 'Tanjungpinang', 'Tanjungbalai' => 'Tanjungbalai','Tarakan' => 'Tarakan', 'Tasikmalaya' => 'Tasikmalaya', 'Tebing Tinggi' => 'Tebing Tinggi', 'Tegal' => 'Tegal', 'Ternate' => 'Ternate', 'Tidore' => 'Tidore', 'Tual' => 'Tual', 'Yogyakarta' => 'Yogyakarta'], null, ['placeholder' => 'Pilih Kota', 'class' => 'form-control']) }}
                     @if ($errors->has('kota'))
                         <span class="help-block">
                             <strong>{{ $errors->first('kota') }}</strong>
@@ -128,7 +128,7 @@
 
                 <li>
                   <label for="alamat">Alamat Lengkap <span class="required">*</span></label>
-                    <textarea class="form-control" id="alamat" name="alamat" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamat') }}"></textarea>
+                    {{ Form::textarea('alamat', null, ['placeholder' => 'Alamat Anda', 'class' => 'form-control', 'rows' => '4', 'value' => old('alamat') ]) }}
                     @if ($errors->has('alamat'))
                         <span class="help-block">
                           <strong>{{ $errors->first('alamat') }}</strong>
@@ -138,7 +138,7 @@
 
                 <li>
                   <label for="avatar">Foto Profil (Max:3MB) <span class="required">*</span></label>
-                    <input id="avatar" type="file" class="form-control" name="avatar">
+                    {{ Form::file('avatar', [ 'class' => 'form-control']) }}
                     @if ($errors->has('avatar'))
                         <span class="help-block">
                             <strong>{{ $errors->first('avatar') }}</strong>

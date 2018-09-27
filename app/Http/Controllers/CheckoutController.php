@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Shipping;
 use App\Product;
+use App\Order;
+use Session;
 use Auth;
 use Cart;
 use Intervention\Image\Facades\Image;
@@ -19,8 +21,8 @@ class CheckoutController extends Controller
      */
     public function index()
     {
-        $shippings = Shipping::where('namee', $namee)->first();
-        return view('layouts._account.account', compact('shippings'));
+        $shippings = Shipping::with('order')->get()->all();
+        return view('layouts._account.index', compact('shippings', 'order'));
     }
 
     /**
@@ -44,42 +46,78 @@ class CheckoutController extends Controller
      */
     public function store(Request $request)
     {
+        $cart = Cart::content();
         $this->validate($request, [
             'namee' => 'required',
             'no_hpp' => 'required',
             'kotaa' => 'required',
+            'kecamatan' => 'required',
+            'kode_pos' => 'required',
             'alamatt' => 'required',
         ]);
-        $request['user_id'] = $request->user()->id;
-        $request['product_id'] = $request->cart()->id;
+        $shipping = new Shipping();
+        $shipping->user_id = $request->user()->id;
+        $shipping->namee = $request->namee;
+        $shipping->no_hpp = $request->no_hpp;
+        $shipping->kotaa = $request->kotaa;
+        $shipping->kecamatan = $request->kecamatan;
+        $shipping->kode_pos = $request->kode_pos;
+        $shipping->alamatt = $request->alamatt;
+        //dd($request);
+        foreach ($cart as $item)
+        {
+            $items[] = [
+                'id' => $item->id,
+                'name' => $item->name,
+                'qty' => $item->qty,
+                'price' => $item->price, 
+            ];
+        }
+        $shipping->items = $items;
+        $shipping->totall = Cart::total();
+        $shipping->statuss = 'Belum';
+        $shipping->save();
+        //$request->session()->put('shipping_id', $shipping);
+        $request->session()->put('shipping_id', $shipping->id);
+        Cart::destroy();
 
-        Shipping::create($request->all());
-        return redirect()->route('checkout');
-        //return redirect()->route('checkout.show', $shippings->id);        
+        return redirect()->route('rekening');
     }
 
-    public function confrim(Request $request)
+
+    public function confirmation()
+    {
+        return view('layouts._confirmation.create');
+    }
+
+    public function saveOrder(Request $request, Shipping $shipping_id)
     {
         $this->validate($request, [
             'nama_rek' => 'required',
             'tgl_pay' => 'required',
             'bank' => 'required',
-            'bukti' => 'required',
+            'bukti' => 'image|mimes:jpg,jpeg,png|required',
         ]);
-        dd($id);
-        $product = Product::findOrFail($id);
+        $order = new Order();
+        $order->shipping_id = $request->session()->get('shipping_id');
+        //dd($request->session()->get('shipping_id'));
+        //$order->shipping_id = Session::get('shipping_id', $shipping);
+
+        $order->nama_rek = $request->nama_rek;
+        $order->tgl_pay = $request->tgl_pay;
+        $order->bank = $request->bank;
+        $order->bukti = $request->bukti;
             if ($request->file('bukti')) {
                 $file           = $request->file('bukti');
                 $filename       = time().'.'.$file->getClientOriginalExtension();
-                $location       = public_path('/photos/bukti');
-                $file->resize(800, 500);
+                $location       = public_path('/bukti-pembayaran');
                 $file->move($location, $filename);
-                $shippings->bukti  = $filename;
+                $order->bukti  = $filename;
             }
-        $product->update($request->all());
-        Cart::destroy();
-        $shippings->save();
-        return view('layouts._account.account');
+        $order->status_bayar = true;
+        $order->save();
+
+        return redirect()->route('account');
     }
 
     /**
@@ -91,7 +129,7 @@ class CheckoutController extends Controller
 
     public function rekening()
     {
-        return view('layouts._account.account');        
+        return view('layouts._rekening.index');        
     }
 
     /**
@@ -103,7 +141,7 @@ class CheckoutController extends Controller
     public function edit($id)
     {
         $shippings = Shipping::find($id);
-        return view('layouts._rekening.rekening');
+        return view('layouts._rekening.index');
     }
 
     /**

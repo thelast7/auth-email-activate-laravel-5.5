@@ -37,7 +37,7 @@
             </div>
             <div class="pages">
               {!! $recipes->links() !!}
-            </div> 
+            </div><br>
           </div>
         </div>
       </div>
@@ -72,7 +72,7 @@
             <h3 class="widget-title">Ads Spots</h3>
             <div class="widget-content">
               <a target="_self" href="#" title="">
-                <img alt="offer banner" src="{{ asset('frontend/images/rhs-banner.jp') }}">
+                <img alt="offer banner" src="{{ asset('frontend/images/rhs-banner.jpg') }}">
               </a>
             </div>
           </div><br>

@@ -8,6 +8,6 @@ class RekeningController extends Controller
 {
     public function index()
     {
-     return view('layouts._rekening.rekening');
+        return view('layouts._rekening.rekening');
     }
 }

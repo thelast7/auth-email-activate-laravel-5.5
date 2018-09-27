@@ -13,7 +13,7 @@
       
       <div class="col-1 new-users">
 
-        <form class="form-horizontal" method="POST" action="#" enctype="multipart/form-data">
+        <form class="form-horizontal" method="POST" action="{{ route('save.order') }}" enctype="multipart/form-data">
         {{ csrf_field() }}
         <div class="content">
           <div class="buttons-set">
@@ -21,7 +21,7 @@
 
                 <li>
                   <label for="nama_rek">Atas Nama</label>
-                    <input id="nama_rek" type="text" class="form-control" name="nama_rek" value="{{ old('nama_rek') }}" placeholder="Nama Pemilik Rekening">
+                  {{ Form::text('nama_rek', null, ['placeholder' => 'Nama Pemilik Rekening', 'class' => 'form-control', 'value' => old('nama_rek') ]) }}
                     @if ($errors->has('nama_rek'))
                         <span class="help-block">
                             <strong>{{ $errors->first('nama_rek') }}</strong>
@@ -30,8 +30,8 @@
                 </li>
 
                 <li>
-                  <label for"tgl_pay">Tanggal Pembayaran</label>
-                    <input id="tgl_pay" type="date" class="form-control" name="tgl_pay" value="{{ old('tgl_pay') }}">
+                  <label for="tgl_pay">Tanggal Pembayaran</label>
+                  {{ Form::date('tgl_pay', \Carbon\Carbon::now(), ['class' => 'form-control', 'value' => old('tgl_pay') ]) }}
                     @if ($errors->has('tgl_pay'))
                         <span class="help-block">
                             <strong>{{ $errors->first('tgl_pay') }}</strong>
@@ -39,15 +39,19 @@
                     @endif
                 </li>
 
-                <label><b>Bank Tujuan</b></label>
-                <div class="select relative">
-                    <i class="fa fa-angle-down"></i>
-                    {!! Form::select('bank', ['BNI' => 'BNI', 'BCA' => 'BCA','MANDIRI' => 'MANDIRI','BRI' => 'BRI']) !!}
-                </div>
+                <li>
+                  <label for="bank">Bank</label>
+                  {{ Form::select('bank', ['BCA' => 'BCA', 'BRI' => 'BRI', 'BNI' => 'BNI', 'MANDIRI' => 'MANDIRI' ], null, ['placeholder' => 'Pilih Bank', 'class' => 'form-control'] )}}
+                    @if ($errors->has('bank'))
+                        <span class="help-block">
+                            <strong>{{ $errors->first('bank') }}</strong>
+                        </span>
+                    @endif
+                </li>
 
                 <li>
                   <label for="bukti">Upload Bukti Pembayaran</label>
-                    <input id="bukti" type="file" name="bukti">
+                  {{ Form::file('bukti', [ 'class' => 'form-control']) }}
                     @if ($errors->has('bukti'))
                         <span class="help-block">
                             <strong>{{ $errors->first('bukti') }}</strong>
@@ -59,9 +63,10 @@
               <br>
             <tr class="first last">
                 <td class="a-right last" colspan="7">
-                  <a href="{{route('account')}}" class="button btn-continue" title="Continue Confirmation" type="button">
+                  {{-- {{ Form::submit('SUBMIT', ['type' => 'submit', 'class' => 'button btn-continue']) }} --}}
+                  <button type="submit" class="btn btn-md btn-info">
                     <span>SUBMIT</span>
-                  </a>
+                  </button>
                 </td>
               </tr>
           </div>

@@ -2,8 +2,8 @@
 
 @section('content')
 
-  <!-- main-container -->
- <section class="main-container col1-layout">
+<!-- main-container -->
+<section class="main-container col1-layout">
 <div class="main container">
   <div class="account-login">
     <div class="page-title">
@@ -35,27 +35,54 @@
                 @endif
             </li>
             <li>
-                <label for="kotaa">Kota </label>
-                  <input id="kotaa" type="text" class="form-control" name="kotaa" value="{{ old('kotaa') }}" placeholder="Kota Anda">
-                  @if ($errors->has('kotaa'))
-                      <span class="help-block">
-                          <strong>{{ $errors->first('kotaa') }}</strong>
-                      </span>
-                  @endif
+              <label for="kotaa">Kota </label>
+                <input id="kotaa" type="text" class="form-control" name="kotaa" value="{{ old('kotaa') }}" placeholder="Kota Anda">
+                @if ($errors->has('kotaa'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('kotaa') }}</strong>
+                    </span>
+                @endif
             </li>
             <li>
-                <label for="alamatt">Alamat Lengkap </label>
-                  <textarea class="form-control" id="alamatt" name="alamatt" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamatt') }}"></textarea>
-                  @if ($errors->has('alamatt'))
-                      <span class="help-block">
-                        <strong>{{ $errors->first('alamatt') }}</strong>
-                      </span>
-                  @endif
+              <label for="kecamatan">Kecamatan </label>
+                <input id="kecamatan" type="text" class="form-control" name="kecamatan" value="{{ old('kecamatan') }}" placeholder="Kecamatan Anda">
+                @if ($errors->has('kecamatan'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('kecamatan') }}</strong>
+                    </span>
+                @endif
             </li>
             <li>
-                  <input id="totall" type="hidden" class="form-control" name="totall" value="{{ Cart::total() }}">
-                  <input id="product_id" type="hidden" class="form-control" name="totall" value="{{ Cart->id() }}">
+              <label for="kode_pos">Kode Pos </label>
+                <input id="kode_pos" type="number" class="form-control" name="kode_pos" value="{{ old('kode_pos') }}" placeholder="Kode Pos Penerima">
+                @if ($errors->has('kode_pos'))
+                    <span class="help-block">
+                        <strong>{{ $errors->first('kode_pos') }}</strong>
+                    </span>
+                @endif
             </li>
+            <li>
+              <label for="alamatt">Alamat Lengkap </label>
+                <textarea class="form-control" id="alamatt" name="alamatt" placeholder="Masukan Alamat Lengkap" rows="4" value="{{ old('alamatt') }}"></textarea>
+                @if ($errors->has('alamatt'))
+                    <span class="help-block">
+                      <strong>{{ $errors->first('alamatt') }}</strong>
+                    </span>
+                @endif
+            </li>
+            {{-- <li>
+              <select name="country" class="countries" id="countryId">
+                <option value="">Select Country</option>
+              </select>
+              <select name="state" class="states" id="stateId">
+                <option value="">Select State</option>
+              </select>
+              <select name="city" class="cities" id="cityId">
+                <option value="">Select City</option>
+              </select>
+              <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+              <script src="{{ asset('frontend/js/locationv1.js') }}"></script>
+            </li> --}}
           </ul>
           <br>
           <ul class="checkout">
@@ -73,7 +100,7 @@
 
     <fieldset class="col-md-6">
       <legend>DETAIL PEMBELI</legend>
-      <div class="cart-collaterals row wow bounceInUp animated">
+      <div class="cart-collaterals row">
         <div class="col-1">
           <div class="totals">
             <h3>Total Belanja Anda</h3>
@@ -110,6 +137,6 @@
   </div>
 </div>
 </section>
-  <!--End main-container --> 
+<!--End main-container --> 
 
 @endsection

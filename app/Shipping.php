@@ -8,15 +8,20 @@ class Shipping extends Model
 {
     public $table = "Shipping";
 
-    protected $fillable = ['user_id', 'product_id', 'namee', 'no_hpp', 'kotaa', 'alamatt', 'totall', 'statuss'];
+    protected $casts = [
+        'items' => 'array',
+        'cart' => 'array',
+    ];
+
+    protected $fillable = ['user_id', 'namee', 'no_hpp', 'kotaa', 'kecamatan', 'kode_pos', 'alamatt', 'items', 'statuss'];
 
     public function user()
     {
         return $this->belongsTo(User::class);
     }
 
-    public function product()
+    public function order()
     {
-        return $this->hasMany(Product::class);
+        return $this->hasOne(Order::class);
     }
 }
