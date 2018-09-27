@@ -5,7 +5,7 @@
 <div id="magik-slideshow" class="magik-slideshow">
   <div class="container">
     <div class="row">
-      <div class="col-lg-8 col-sm-12 col-md-8 wow bounceInUp animated">
+      <div class="col-lg-8 col-sm-12 col-md-8">
         <div id='rev_slider_4_wrapper' class='rev_slider_wrapper fullwidthbanner-container' >
           <div id='rev_slider_4' class='rev_slider fullwidthabanner'>
             <ul>
@@ -73,7 +73,7 @@
           </div>
         </div>
       </div>
-      <aside class="col-xs-12 col-sm-12 col-md-4 wow bounceInUp animated">
+      <aside class="col-xs-12 col-sm-12 col-md-4">
         <div class="RHS-banner">
           <div class="add"><a href="#"><img alt="banner-img" src="{{ asset('frontend/images/rhs-banner.jpg') }}"></a>
             <div class="overlay"><a class="info" href="#"></a></div>
@@ -87,7 +87,7 @@
 
 <!-- header service -->
 <div class="container">
-  <div class="header-service wow bounceInUp animated">
+  <div class="header-service">
     <div class="col-lg-3 col-sm-6 col-xs-3">
       <div class="content">
         <div class="icon-sitemap">&nbsp;</div>
@@ -116,7 +116,6 @@
 <!-- end header service --> 
 
 <!--  brand logo -->
-<div class="wow bounceInUp animated">
 <div class="container">
   <div class="brand-logo ">
     <div class="container">
@@ -130,7 +129,7 @@
 <!-- end  brand logo -->
 
 <!-- All product -->
-<section class="featured-pro container wow bounceInUp animated">
+<section class="featured-pro container">
   <div class="slider-items-products">
     <div class="new_title center">
       <h2>All Products</h2>
@@ -192,7 +191,6 @@
         @endforeach
       </div>
     </div>
-  </div>
 </section>
 <!-- End All product --> 
 
@@ -202,7 +200,7 @@
 
 @foreach($categories as $category)
 <!-- batas row box category kiri dan kanan -->
-<section class="middle-slider container wow bounceInUp animated">
+<section class="middle-slider container">
   <div class="row">
 {{-- box category sisi kiri --}}
     <div class="col-md-12">

@@ -7320,7 +7320,7 @@ input.input-text, select, textarea {
 	border: 1px #f1f1f1 solid;
 	padding: 10px;
 	outline: none;
-	color: #aaa;
+	color: #000;
 }
 #wishlist-table textarea {
 	padding: 10px;
