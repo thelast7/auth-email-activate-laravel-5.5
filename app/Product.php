@@ -10,6 +10,11 @@ class Product extends Model
         'user_id', 'status', 'category_id', 'name', 'slug', 'description', 'cover', 'quantity', 'price', 'activate', 'review'
     ];
 
+    public function getImage()
+    {
+        return asset('/cover-product/' . $this->cover);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

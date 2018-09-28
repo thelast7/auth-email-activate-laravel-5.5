@@ -48,7 +48,7 @@
                       </tr>
                       <tr>
                           <th>Cover</th>
-                          <td><img src="{{ asset($product->cover) }}" alt="Cover" height="150" width="150"></td>
+                          <td><img src="{{ $product->getImage() }}" alt="Cover" height="150" width="150"></td>
                       </tr>
                   </table>
                 </div>

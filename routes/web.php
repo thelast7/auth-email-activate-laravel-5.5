@@ -64,10 +64,15 @@ Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
 Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
 Route::get('/contactus', 'ContactusController@index')->name('contactus');
 Route::get('/account', 'CheckoutController@index')->name('account');
+Route::get('/account/order/{id}', 'CheckoutController@show')->name('account.show');
 
 
 //routes yang menangani checkout
-Route::resource('checkout', 'CheckoutController');
+/*
+Route::resource('checkout', 'CheckoutController', ['only' =>
+    'index', 
+]);
+*/
 Route::get('rekening', 'CheckoutController@rekening')->name('rekening');
 Route::get('/konfirmasi-pembayaran', 'CheckoutController@confirmation')->name('confirmationpay');
 Route::post('/konfirmasi-pembayaran', 'CheckoutController@saveOrder')->name('save.order');
@@ -91,3 +96,5 @@ Route::post('cart/update', 'CartController@update');
 
 //routes yang menangani checkout
 Route::get('checkout', 'CheckoutController@index')->name('checkout');
+Route::get('checkout/list', 'CheckoutController@create')->name('checkout.create');
+Route::post('checkout/list', 'CheckoutController@store')->name('checkout.store');

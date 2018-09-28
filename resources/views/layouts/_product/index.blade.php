@@ -67,7 +67,7 @@
                 <div class="col-item">
                   <div class="product-image-area"> 
                     <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> 
-                      <img src="{{ $product->cover }}" height="300" width="360" class="img-responsive"> 
+                      <img src="{{ $product->getImage() }}" height="300" width="360" class="img-responsive"> 
                     </a>
                     <div class="hover_fly">
                       <a class="exclusive ajax_add_to_cart_button" href="{{ url('/cart/add') }}/{{ $product->id }}" title="Add to cart">

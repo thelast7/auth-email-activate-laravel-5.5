@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Backend;
 
 use App\Product;
 use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
+use File;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 
@@ -42,14 +44,36 @@ class ProductsController extends BackendController
             'name' => 'required|string|min:5|unique:products',
             'description' => 'required',
             'status' => 'required',
+            'cover' => 'image|mimes:jpg,jpeg,png|required',
             //'price' => 'required|string|min:4',
             //'quantity' => 'required|string|max:3',
             //'review' => 'required'
         ]);
-        $request['slug'] = str_slug($request->get('name'), '-');
-        $request['user_id'] = $request->user()->id;
 
-        Product::create($request->all());
+        $product = new Product();
+        $product->name = $request->name;
+        $product->slug = str_slug($request->get('name'), '-');
+        $product->user_id = $request->user()->id;
+        $product->category_id = $request->category_id;
+        $product->description = $request->description;
+        $product->quantity = $request->quantity;
+        $product->price = $request->price;
+        $product->status = $request->status;
+        $product->cover = $request->cover;
+
+        //save our image
+        if ($request->file('cover')) {
+            $file = $request->file('cover');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $location = public_path() . '/cover-product/' . $filename;
+            Image::make($file)->resize(500, 500)->save($location);
+            $product->cover = $filename;
+        }
+        //dd($product);
+        $product->save();
+        //SessionHandler
+        //For permanent session use Session::put
+        //Session::flash is for temporary session
 
         return redirect()->route('backend.products.index');
     }
@@ -85,20 +109,50 @@ class ProductsController extends BackendController
      * @param  \App\Product  $product
      * @return \Illuminate\Http\Response
      */
+
     public function update(Request $request, $id)
     {
+        //Grab the product and Save the data to database
+        $product = Product::find($id);
+        //Validate the data
         $this->validate($request, [
             'category_id' => 'required',
             'name' => 'required|string|min:5|unique:products,name,' . $id,
             'description' => 'required',
             'status' => 'required',
         ]);
-        $request['slug'] = str_slug($request->get('name'), '-');
+        $product->name = $request->name;
+        $product->slug  = str_slug($request->get('name'), '-');
+        $product->category_id = $request->category_id;
+        $product->description = $request->description;
+        $product->quantity = $request->quantity;
+        $product->price = $request->price;
+        $product->status = $request->status;
 
-        $product = Product::findOrFail($id);
-        $product->update($request->all());
+        //save our image
+        if ($request->file('cover')) {
+            //add new photo
+            $file = $request->file('cover');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $location = public_path() . '/cover-product/' . $filename;
+            Image::make($file)->resize(500, 400)->save($location);
+            $oldFileName = $product->cover;
 
-        return redirect()->route('backend.products.index');
+            //update the database
+            $product->cover = $filename;
+
+            //delete the old photo
+            $path = public_path() . '/cover-product/' . $oldFileName;
+            File::delete($path);
+            // Storage::delete($oldFileName);
+        }
+
+        $product->save();
+        //set flash data with success Message
+        //Session::flash('success', 'product successfully updated.');
+
+        //redirect with flash data to products.show
+        return redirect()->route('backend.products.show', $product->id);
     }
 
     /**
@@ -109,8 +163,17 @@ class ProductsController extends BackendController
      */
     public function destroy($id)
     {
-        if (! Product::destroy($id)) return redirect()->back();
-            return redirect()->route('backend.products.index');
+        //Find the Post
+        $product = Product::find($id);
+
+        // Storage::delete($product->cover);
+        $path = public_path() . '/cover-product/' . $product->cover;
+        File::delete($path);
+
+        //Delete the product
+        $product->delete();
+
+        return redirect()->route('backend.products.index');
     }
 
     public function dataTable()
