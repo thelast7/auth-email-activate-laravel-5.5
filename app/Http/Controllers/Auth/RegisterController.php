@@ -76,6 +76,7 @@ class RegisterController extends Controller
             'password' => bcrypt($data['password']),
             'gender' => $data['gender'],  
             'no_hp' => $data['no_hp'],
+            'ktp' => $data['ktp'],
             'tanggal_lahir' => $data['tanggal_lahir'],
             'kota' => $data['kota'],
             'alamat' => $data['alamat'],
