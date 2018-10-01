@@ -14,15 +14,21 @@ use Intervention\Image\Facades\Image;
 
 class CheckoutController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        $shippings = Shipping::with('order')->get()->all();
+        $shippings = Shipping::with('order')->get();
         return view('layouts._account.index', compact('shippings', 'order'));
+    }
+
+    public function show($id)
+    {
+        $shippings = Shipping::find($id);
+        return view('layouts._account.show', compact('shipping'));
     }
 
     /**
@@ -75,7 +81,7 @@ class CheckoutController extends Controller
         }
         $shipping->items = $items;
         $shipping->totall = Cart::total();
-        $shipping->statuss = 'Belum';
+        $shipping->statuss = 'Belum Bayar';
         $shipping->save();
         //$request->session()->put('shipping_id', $shipping);
         $request->session()->put('shipping_id', $shipping->id);
@@ -107,13 +113,13 @@ class CheckoutController extends Controller
         $order->tgl_pay = $request->tgl_pay;
         $order->bank = $request->bank;
         $order->bukti = $request->bukti;
-            if ($request->file('bukti')) {
-                $file           = $request->file('bukti');
-                $filename       = time().'.'.$file->getClientOriginalExtension();
-                $location       = public_path('/bukti-pembayaran');
-                $file->move($location, $filename);
-                $order->bukti  = $filename;
-            }
+        if ($request->file('bukti')) {
+            $file = $request->file('bukti');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $location = public_path() . '/bukti-pembayaran/' . $filename;
+            Image::make($file)->resize(700, 400)->save($location);
+            $order->bukti = $filename;
+        }
         $order->status_bayar = true;
         $order->save();
 

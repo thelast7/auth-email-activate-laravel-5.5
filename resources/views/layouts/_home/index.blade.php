@@ -151,7 +151,7 @@
             <div class="sale-label sale-top-right">Sale</div>
             <div class="product-image-area"> 
               <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> 
-                <img src="{{ $product->cover }}" class="img-responsive" alt="sembapur" /> 
+                <img src="{{ $product->getImage() }}" class="img-responsive" alt="sembapur" /> 
               </a>
               <div class="actions-links">
                 <span class="add-to-links"> 
@@ -225,7 +225,7 @@
                 <div class="col-item">
                   <div class="product-image-area"> 
                     <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> 
-                      <img src="{{ $product->cover }}" height="350" width="350" class="img-responsive" alt="a" /> 
+                      <img src="{{ $product->getImage() }}" height="350" width="350" class="img-responsive" alt="a" /> 
                     </a>
                     <div class="actions-links">
                       <span class="add-to-links"> 

@@ -95,6 +95,8 @@
             </div>
         </div>
         <br>
+
+
         <div class="card">
             <div class="card-header text-white bg-primary">
                 Gambar Produk
@@ -103,16 +105,19 @@
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-btn">
-                            <a id="lfm" data-input="cover" data-preview="holder" class="btn btn-primary text-white">
-                                <i class="fa fa-cloud-upload"></i> Upload
-                            </a>
+                          {{ Form::file('cover', ['class' => $errors->has('cover') ? 'form-control is-invalid' : 'form-control' ]) }}
+                            @if ($errors->has('cover'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('cover') }}</strong>
+                                </span>
+                            @endif
                         </span>
-                        {!! Form::text('cover', null, ['id' => 'cover', 'class' => 'form-control', 'readonly']) !!}
+
+{{--         @if (isset($product) && $product->cover !== '')
+            <img src="{{ asset('cover-product/'.$product->cover) }}">
+        @endif --}}
+
                     </div>
-                    <!-- if -->
-                    <!-- <img src="#" id="holder" style="margin-top:15px;max-height:254px;max-width: 152px;"> -->
-                    <!-- endif -->
-                    <img id="holder" style="margin-top:15px;max-height:254px;max-width: 152px;">
                 </div>
             </div>
         </div><br>
@@ -170,14 +175,4 @@
 
 @section('assets-bottom')
 <script src="{{ asset('backend/vendor/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js') }}"></script>
-<script src="{{ asset('vendor/laravel-filemanager/js/lfm.js') }}"></script>
-<script>
-    $(document).ready( function () {
-        $("#datetime").datetimepicker({
-            format: 'yyyy-mm-dd hh:ii:00',
-            autoclose: true
-        });
-        $('#lfm').filemanager('image');
-    });
-</script>
 @endsection

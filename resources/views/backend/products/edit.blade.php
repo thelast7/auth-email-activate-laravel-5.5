@@ -9,7 +9,7 @@
           </li>
           <li class="breadcrumb-item active">Edit</li>
         </ol>
-        {!! Form::model($product, ['route' => ['backend.products.update', $product->id], 'method' => 'PUT']) !!}
+        {!! Form::model($product, ['route' => ['backend.products.update', $product->id], 'method' => 'PUT', 'enctype' => 'multipart/form-data']) !!}
             @include('backend.products._form')
         {!! Form::close() !!}
     </div>

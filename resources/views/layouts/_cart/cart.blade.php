@@ -54,7 +54,7 @@ $(document).ready(function(){
               @foreach($data as $product)
               <tr class="first odd">
                 <td class="cart_product">
-                    <span><img src="{{ $product->options->img }}" height="50px" width="50px" alt=""></span>
+                    <span><img src="{{ asset('cover-product/'.$product->options->img) }}" height="50px" width="50px" alt=""></span>
                 </td>
                 <td><h2 class="product-name"> <span class="price">{{ $product->name }}</span> </h2></td>
                 {{-- <td class="a-center"><a href="#configure/id/15945/"></a></td> --}}

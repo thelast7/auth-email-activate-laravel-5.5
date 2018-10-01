@@ -15,10 +15,10 @@
             <!-- Header Top Links -->
             <div class="toplinks">
               <div class="links">
-                <div class="helpcall"><a title="call" href="{{ route('howtobuy') }}"><span class="hidden-xs">Need Help? Call 021-123-456</span></a></div>
-                <div class="howtobuy"><a title="howtobuy" href="{{ route('howtobuy') }}"><span class="hidden-xs">How To Buy</span></a></div>
-                <div class="howtopay"><a title="howtopay" href="{{ route('howtopay') }}"><span class="hidden-xs">How To Pay</span></a></div>
-                <div class="login"><a title="Login" href="{{ route('login') }}"><span  class="hidden-xs">Akun</span></a></div>
+                <div class="helpcall"><a title="Bantuan" href="{{ route('howtobuy') }}"><span class="hidden-xs">Need Help? Call 021-123-456</span></a></div>
+                <div class="howtobuy"><a title="Cara Berbelanja" href="{{ route('howtobuy') }}"><span class="hidden-xs">How To Buy</span></a></div>
+                <div class="howtopay"><a title="Cara Pembayaran" href="{{ route('howtopay') }}"><span class="hidden-xs">How To Pay</span></a></div>
+                <div class="profile"><a title="Akun" href="{{ route('account') }}"><span  class="hidden-xs">Akun</span></a></div>
                 @guest
                 @else
                 <div class="logout"><a href="{{ route('logout') }}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout

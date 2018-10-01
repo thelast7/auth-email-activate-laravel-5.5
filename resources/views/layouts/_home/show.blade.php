@@ -29,45 +29,45 @@
 
                 <ul class="moreview" id="moreview">
                   <li class="moreview_thumb thumb_1"> 
-                    <img class="moreview_thumb_image" src="{{ asset($products->cover) }}" alt=""> 
-                    <img class="moreview_source_image" src="{{ asset($products->cover) }}" alt=""> 
+                    <img class="moreview_thumb_image" src="{{ $products->getImage() }}" alt=""> 
+                    <img class="moreview_source_image" src="{{ $products->getImage() }}" alt=""> 
                     <span class="roll-over">Roll over image to zoom in</span> 
-                    <img  class="zoomImg" src="{{ asset($products->cover) }}" alt="">
+                    <img  class="zoomImg" src="{{ $products->getImage() }}" alt="">
                   </li>
 
                   <li class="moreview_thumb thumb_2 moreview_thumb_active"> 
-                    <img class="moreview_thumb_image" src="{{ asset($products->cover) }}" alt=""> 
-                    <img class="moreview_source_image" src="{{ asset($products->cover) }}" alt=""> 
+                    <img class="moreview_thumb_image" src="{{ $products->getImage() }}" alt=""> 
+                    <img class="moreview_source_image" src="{{ $products->getImage() }}" alt=""> 
                     <span class="roll-over">Roll over image to zoom in</span> 
-                    <img  class="zoomImg" src="{{ asset($products->cover) }}" alt="">
+                    <img  class="zoomImg" src="{{ $products->getImage() }}" alt="">
                   </li>
 
                   <li class="moreview_thumb thumb_3"> 
-                    <img class="moreview_thumb_image" src="{{ asset($products->cover) }}" alt=""> 
-                    <img class="moreview_source_image" src="{{ asset($products->cover) }}" alt=""> 
+                    <img class="moreview_thumb_image" src="{{ $products->getImage() }}" alt=""> 
+                    <img class="moreview_source_image" src="{{ $products->getImage() }}" alt=""> 
                     <span class="roll-over">Roll over image to zoom in</span> 
-                    <img  class="zoomImg" src="{{ asset($products->cover) }}" alt="">
+                    <img  class="zoomImg" src="{{ $products->getImage() }}" alt="">
                   </li>
 
                   <li class="moreview_thumb thumb_4"> 
-                    <img class="moreview_thumb_image" src="{{ asset($products->cover) }}" alt=""> 
-                    <img class="moreview_source_image" src="{{ asset($products->cover) }}" alt=""> 
+                    <img class="moreview_thumb_image" src="{{ $products->getImage() }}" alt=""> 
+                    <img class="moreview_source_image" src="{{ $products->getImage() }}" alt=""> 
                     <span class="roll-over">Roll over image to zoom in</span> 
-                    <img  class="zoomImg" src="{{ asset($products->cover) }}" alt="">
+                    <img  class="zoomImg" src="{{ $products->getImage() }}" alt="">
                   </li>
 
                   <li class="moreview_thumb thumb_5"> 
-                    <img class="moreview_thumb_image" src="{{ asset($products->cover) }}" alt=""> 
-                    <img class="moreview_source_image" src="{{ asset($products->cover) }}" alt=""> 
+                    <img class="moreview_thumb_image" src="{{ $products->getImage() }}" alt=""> 
+                    <img class="moreview_source_image" src="{{ $products->getImage() }}" alt=""> 
                     <span class="roll-over">Roll over image to zoom in</span> 
-                    <img  class="zoomImg" src="{{ asset($products->cover) }}" alt="">
+                    <img  class="zoomImg" src="{{ $products->getImage() }}" alt="">
                   </li>
 
                   <li class="moreview_thumb thumb_6"> 
-                    <img class="moreview_thumb_image" src="{{ asset($products->cover) }}" alt=""> 
-                    <img class="moreview_source_image" src="{{ asset($products->cover) }}" alt=""> 
+                    <img class="moreview_thumb_image" src="{{ $products->getImage() }}" alt=""> 
+                    <img class="moreview_source_image" src="{{ $products->getImage() }}" alt=""> 
                     <span class="roll-over">Roll over image to zoom in</span> 
-                    <img  class="zoomImg" src="{{ asset($products->cover) }}" alt="">
+                    <img  class="zoomImg" src="{{ $products->getImage() }}" alt="">
                   </li>
                 </ul>
 
@@ -172,7 +172,7 @@
                             <div class="sale-label sale-top-right">Sale</div>
                             <div class="product-image-area"> 
                               <a class="product-image" title="{{ $product->name }}" href="{{ route('show', $product->slug) }}"> 
-                                <img src="{{ $product->cover }}" class="img-responsive" alt="a" /> 
+                                <img src="{{ $product->getImage() }}" class="img-responsive" alt="a" /> 
                               </a>
                               <div class="hover_fly"> 
                                 <a class="exclusive ajax_add_to_cart_button" href="{{ url('/cart/add') }}/{{ $products->id }}" title="Add to cart">
