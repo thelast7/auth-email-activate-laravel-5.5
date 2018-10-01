@@ -28,7 +28,7 @@ class CheckoutController extends Controller
     public function show($id)
     {
         $shippings = Shipping::find($id);
-        return view('layouts._account.show', compact('shippings'));
+        return view('layouts._account.show', compact('shipping'));
     }
 
     /**
