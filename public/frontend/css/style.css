@@ -7320,7 +7320,7 @@ input.input-text, select, textarea {
 	border: 1px #f1f1f1 solid;
 	padding: 10px;
 	outline: none;
-	color: #aaa;
+	color: #000;
 }
 #wishlist-table textarea {
 	padding: 10px;
@@ -9690,4 +9690,15 @@ ol#compare-items li a.product-name {
 .cat-section .col-item .info .info-inner .item-title a:hover {
 	font-size: 13px;
 	color: #000;
+}
+
+
+.span9 {
+	width: 74.46808510638297%;
+}
+
+.text-left.user-info {
+    border-left: 2px solid #410606;
+    border-right: 2px solid #eee;
+    padding: 0 20px;
 }

@@ -95,7 +95,7 @@
 
 <!-- header service -->
 <div class="container">
-  <div class="header-service wow bounceInUp animated">
+  <div class="header-service">
     <div class="col-lg-3 col-sm-6 col-xs-3">
       <div class="content">
         <div class="icon-truck">&nbsp;</div>
@@ -198,7 +198,6 @@
         @endforeach
       </div>
     </div>
-  </div>
 </section>
 <!-- End All product --> 
 
