@@ -59,18 +59,20 @@
                 <col>
                 <col width="1">
                 </colgroup>
-                {{-- @foreach($shipping as $product) --}}
+                @foreach($shippings->items as $prod)
+                  {{-- @foreach($product->items as $prod) --}}
                 <tbody>
                   <tr>
-                    <td class="a-left" colspan="1">{{-- {{ $product->items->name }} --}}</td>
-                    <td class="a-right"><span class="price"></span>Rp {{-- {{ $product->price }} --}}</td>
+                    <td class="a-left" colspan="1">{{ $prod['name'] }}</td>
+                    <td class="a-right"><span class="price"></span>Rp </td>
                   </tr>
                 </tbody>
-                {{-- @endforeach --}}
+                  {{-- @endforeach --}}
+                @endforeach
                 <tfoot>
                   <tr>
                     <td class="a-left" colspan="1"><strong>Grand Total</strong></td>
-                    <td class="a-right"><strong><span class="price">Rp #</span></strong></td>
+                    <td class="a-right"><strong><span class="price">Rp {{ $shippings->totall }}</span></strong></td>
                   </tr>
                 </tfoot>
               </table>
@@ -89,7 +91,7 @@
       <div class="cart-collaterals row">
         <div class="col-1">
           <div class="totals">
-            <h3>Total Belanja Anda</h3>
+            <h3>Status Transaksi</h3>
             <div class="inner">
               <table id="shopping-cart-totals-table" class="table shopping-cart-table-total">
                 <colgroup>
@@ -100,16 +102,16 @@
                 <tbody>
                   <tr>
                     <td class="a-left" colspan="1">{{-- {{ $product->name }} --}}</td>
-                    <td class="a-right"><span class="price"></span>Rp {{-- {{ $product->price }} --}}</td>
+                    <td class="a-right"><span class="price"></span> {{-- {{ $product->price }} --}}</td>
                   </tr>
                 </tbody>
                 {{-- @endforeach --}}
-                <tfoot>
+{{--                 <tfoot>
                   <tr>
                     <td class="a-left" colspan="1"><strong>Grand Total</strong></td>
                     <td class="a-right"><strong><span class="price">Rp #</span></strong></td>
                   </tr>
-                </tfoot>
+                </tfoot> --}}
               </table>
             </div>
             <!--inner--> 
