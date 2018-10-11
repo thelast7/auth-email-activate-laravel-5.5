@@ -119,21 +119,8 @@
       </div>
     </div>
   </div>
-</div>
+</div><br>
 <!-- end header service --> 
-
-<!--  brand logo -->
-<div class="container">
-  <div class="brand-logo ">
-    <div class="container">
-      <div class="slider-items-products">
-        <div id="brand-logo-slider" class="product-flexslider hidden-buttons">
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-<!-- end  brand logo -->
 
 <!-- All product -->
 <section class="featured-pro container">

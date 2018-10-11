@@ -9,7 +9,7 @@ class RecipeController extends Controller
 {
     public function index()
     {
-        $recipes = Recipe::where('status', 1)->paginate(1);
+        $recipes = Recipe::where('status', 1)->paginate(2);
         return view('layouts._recipe.index', compact('recipes'));
     }
 

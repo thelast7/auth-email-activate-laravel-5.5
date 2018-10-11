@@ -23,7 +23,7 @@ class IndexController extends Controller
 
     public function all_product()
     {
-        $products = Product::where('status', 1)->get();
+        $products = Product::where('status', 1)->paginate(9);
         return view('layouts._product.index', compact('products'));
     }
 }

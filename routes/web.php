@@ -11,16 +11,16 @@
 |
 */
 
-//routes yang menangani tampilan user
-
 //routes yang memnangani halaman awal
 Route::get('/', 'IndexController@index')->name('home');
+
+
 //Route::get('/home', 'IndexController@index')->name('home');
-Route::get('/show/{slug}', 'IndexController@show')->name('show');
-Route::get('/all_product', 'IndexController@all_product')->name('all_product');
+Route::get('show/{slug}', 'IndexController@show')->name('show');
+Route::get('all_product', 'IndexController@all_product')->name('all_product');
 
 //routes yang menangani about
-Route::get('/abouts', 'AboutsController@index')->name('abouts');
+Route::get('abouts', 'AboutsController@index')->name('abouts');
 
 
 //routes yang menangani auth
@@ -43,7 +43,7 @@ Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => 'role:a
 });
 
 
-//routes yang menangani api
+//routes yang menangani api backend
 Route::group(['middleware' => 'auth'], function () {
     Route::get('/api/datatable/users', 'Backend\UsersController@dataTable')->name('api.datatable.users');
     Route::get('/api/datatable/categories', 'Backend\CategoriesController@dataTable')->name('api.datatable.categories');
@@ -55,36 +55,26 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 //routes yang menangani recipe
-Route::get('/recipe', 'RecipeController@index')->name('recipe.index');
-Route::get('/recipe/show/{slug}', 'RecipeController@show')->name('recipe.show');
+Route::get('recipe', 'RecipeController@index')->name('recipe.index');
+Route::get('recipe/show/{slug}', 'RecipeController@show')->name('recipe.show');
 
 
 //routes yang menangani layouts
-Route::get('/howtobuy', 'HowtobuyController@index')->name('howtobuy');
-Route::get('/howtopay', 'HowtopayController@index')->name('howtopay');
-Route::get('/contactus', 'ContactusController@index')->name('contactus');
-Route::get('/account', 'CheckoutController@index')->name('account');
-Route::get('/account/order/{id}', 'CheckoutController@show')->name('account.show');
+Route::get('howtobuy', 'HowtobuyController@index')->name('howtobuy');
+Route::get('howtopay', 'HowtopayController@index')->name('howtopay');
+Route::get('contactus', 'ContactusController@index')->name('contactus');
+
+//routes yang menangani account
+Route::get('account', 'CheckoutController@index')->name('account');
+Route::get('account/order/{id}', 'CheckoutController@show')->name('account.show');
+Route::get('account/order/{id}/confirm', 'CheckoutController@edit')->name('order.confirm');
+Route::post('account/order', 'CheckoutController@confirm')->name('save.confirm');
 
 
-//routes yang menangani checkout
-/*
-Route::resource('checkout', 'CheckoutController', ['only' =>
-    'index', 
-]);
-*/
+//routes yang menangani account
 Route::get('rekening', 'CheckoutController@rekening')->name('rekening');
-Route::get('/konfirmasi-pembayaran', 'CheckoutController@confirmation')->name('confirmationpay');
-Route::post('/konfirmasi-pembayaran', 'CheckoutController@saveOrder')->name('save.order');
-
-//Route::get('checkout', 'CheckoutController@index')->name('checkout');
-//Route::post('checkout/add', 'CheckoutController@store')->name('checkout.add');
-//Route::get('rekening/{id}', 'CheckoutController@rekening')->name('rekening');
-//Route::post('checkout/confrim/{id}', 'CheckoutController@confrim')->name('checkout.confrim');
-//Route::post('checkout/edit/{id}', 'CheckoutController@confrim')->name('checkout.confrim');
-
-
-//Route::get('/rekening', 'RekeningController@index')->name('rekening');
+Route::get('konfirmasi-pembayaran', 'CheckoutController@confirmation')->name('confirmationpay');
+Route::post('konfirmasi-pembayaran', 'CheckoutController@saveOrder')->name('save.order');
 
 
 //routes yang menangani cart
