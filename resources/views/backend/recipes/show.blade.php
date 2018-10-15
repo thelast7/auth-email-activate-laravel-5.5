@@ -14,7 +14,7 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header text-white bg-primary">
-                    Resep Detail : {{ $recipe->title }}
+                    Resep Detail : {{ $recipe->name }}
                 </div>
                 <div class="card-body">
                     <table class="table table-striped">
@@ -36,7 +36,7 @@
                       </tr>
                       <tr>
                           <th>Cover</th>
-                          <td><img src="{{ asset($recipe->cover) }}" alt="Cover" height="150" width="150"></td>
+                          <td><img src="{{ $recipe->getImage() }}" alt="Cover" height="150" width="150"></td>
                       </tr>
                   </table>
                 </div>

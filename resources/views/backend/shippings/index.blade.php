@@ -18,32 +18,28 @@
         </ol>
 
         <div class="card mb-3">
-            <div class="card-header">
-                <i class="fa fa-list"></i> Orders
-                <a href="{{ route('backend.orders.create') }}" class="btn btn-sm btn-primary">Tambahkan</a>
-            </div>
             <div class="card-body table-responsive">
                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                     <thead>
                     <tr>
-                        <th>ID_Order</th>
+                        <th>ID Order</th>
                         <th>Pembeli</th>
                         <th>Nama Penerima</th>
                         <th>No HP</th>
                         <th>Kota</th>
                         <th>Status</th>
-                        <th></th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tfoot>
                     <tr>
-                        <th>ID_Order</th>
+                        <th>ID Order</th>
                         <th>Pembeli</th>
                         <th>Nama Penerima</th>
                         <th>No HP</th>
                         <th>Kota</th>
                         <th>Status</th>
-                        <th></th>
+                        <th>Action</th>
                     </tr>
                     </tfoot>
                     <tbody>
@@ -67,7 +63,7 @@
         $("#dataTable").DataTable({
             processing: true,
             serverSide: true,
-            ajax: "{{ route('api.datatable.orders') }}",
+            ajax: "{{ route('api.datatable.shippings') }}",
             columns: [
                 {data: 'id', name: 'id'},
                 {data: 'namee', name: 'namee'},

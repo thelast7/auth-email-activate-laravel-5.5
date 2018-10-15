@@ -88,7 +88,7 @@ $(document).ready(function(){
                   <span class="cart-price"> <span class="price">Rp {{ $product->subtotal }}</span> </span>
                 </td>
                 <td class="a-center last">
-                  <a class="button remove-item" title="Hapus Product" href="{{ url('cart/remove') }}/{{ $product->rowId }}">
+                  <a type="submit" class="button remove-item" style="padding-bottom: 0px; padding-top: 0px;" onclick="return confirm('Yakin Ingin Menghapus?');" title="Hapus Product" href="{{ url('cart/remove') }}/{{ $product->rowId }}">
                     <span><span>Hapus Product</span></span>
                   </a>
                 </td>

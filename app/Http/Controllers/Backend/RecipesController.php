@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Backend;
 use App\Recipe;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Intervention\Image\Facades\Image;
+use File;
 use Yajra\Datatables\Datatables;
 
 class RecipesController extends BackendController
@@ -42,12 +44,29 @@ class RecipesController extends BackendController
             'description' => 'required',
             'status' => 'required',
         ]);
-        $request['slug'] = str_slug($request->get('name'), '-');
-        $request['user_id'] = $request->user()->id;
 
-        Recipe::create($request->all());
+        $recipes = new Recipe();
+        $recipes->name = $request->name;
+        $recipes->slug = str_slug($request->get('name'), '-');
+        $recipes->user_id = $request->user()->id;
+        $recipes->description = $request->description;
+        $recipes->status = $request->status;
 
-        return redirect()->route('backend.recipes.index');
+        //save our image
+        if ($request->file('cover')) {
+            $file = $request->file('cover');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $location = public_path() . '/foto-recipe/' . $filename;
+            Image::make($file)->resize(800, 500)->save($location);
+            $recipes->cover = $filename;
+        }
+        //dd($recipes);
+        $recipes->save();
+        //SessionHandler
+        //For permanent session use Session::put
+        //Session::flash is for temporary session
+
+        return redirect()->route('backend.recipes.index')->withSuccess('Konten Berhasil Ditambahkan!');
     }
 
     /**
@@ -83,17 +102,43 @@ class RecipesController extends BackendController
      */
     public function update(Request $request, $id)
     {
+        $recipes = Recipe::find($id);
         $this->validate($request, [
             'name' => 'required|string|min:5|unique:recipes',
             'description' => 'required',
             'status' => 'required',
         ]);
-        $request['slug'] = str_slug($request->get('name'), '-');
 
-        $recipe = Recipe::findOrFail($id);
-        $recipe->update($request->all());
+        $recipes->name = $request->name;
+        $recipes->slug = str_slug($request->get('name'), '-');
+        $recipes->user_id = $request->user()->id;
+        $recipes->description = $request->description;
+        $recipes->status = $request->status;
 
-        return redirect()->route('backend.recipes.index');
+        //save our image
+        if ($request->file('cover')) {
+            //add new photo
+            $file = $request->file('cover');
+            $filename = time() . '.' . $file->getClientOriginalExtension();
+            $location = public_path() . '/cover-product/' . $filename;
+            Image::make($file)->resize(800, 500)->save($location);
+            $oldFileName = $recipes->cover;
+
+            //update the database
+            $recipes->cover = $filename;
+
+            //delete the old photo
+            $path = public_path() . '/foto-recipe/' . $oldFileName;
+            File::delete($path);
+            // Storage::delete($oldFileName);
+        }
+        //dd($recipes);
+        $recipes->save();
+        //SessionHandler
+        //For permanent session use Session::put
+        //Session::flash is for temporary session
+
+        return redirect()->route('backend.recipes.show', $recipes->id)->withSuccess('Konten Berhasil Diupdate!');
     }
 
     /**
@@ -104,8 +149,17 @@ class RecipesController extends BackendController
      */
     public function destroy($id)
     {
-        if (! Recipe::destroy($id)) return redirect()->back();
-            return redirect()->route('backend.recipes.index');
+        //Find the Post
+        $recipe = Recipe::find($id);
+
+        // Storage::delete($recipe->cover);
+        $path = public_path() . '/foto-recipe/' . $recipe->cover;
+        File::delete($path);
+
+        //Delete the recipe
+        $recipe->delete();
+
+        return redirect()->route('backend.recipes.index')->withDanger('Konten Berhasil Dihapus!');
     }
 
     public function dataTable()

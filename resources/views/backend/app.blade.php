@@ -24,6 +24,9 @@
   @include('backend.partials._navbar')
   
   <div class="content-wrapper">
+    <div class="container-fluid">
+        @include('layouts.partials._alert')
+    </div>
     @yield('content')
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->

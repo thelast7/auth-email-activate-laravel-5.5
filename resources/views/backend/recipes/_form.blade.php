@@ -80,25 +80,24 @@
     <div class="col-md-3">
         <div class="card">
             <div class="card-header text-white bg-primary">
-                Gambar Resep
+                Gambar Produk
             </div>
             <div class="card-body">
                 <div class="form-group">
                     <div class="input-group">
                         <span class="input-group-btn">
-                            <a id="lfm" data-input="cover" data-preview="holder" class="btn btn-primary text-white">
-                                <i class="fa fa-cloud-upload"></i> Upload
-                            </a>
+                          {{ Form::file('cover', ['class' => $errors->has('cover') ? 'form-control is-invalid' : 'form-control' ]) }}
+                            @if ($errors->has('cover'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('cover') }}</strong>
+                                </span>
+                            @endif
                         </span>
-                        {!! Form::text('cover', null, ['id' => 'cover', 'class' => 'form-control', 'readonly']) !!}
                     </div>
-                    <!-- if -->
-                    <!-- <img src="#" id="holder" style="margin-top:15px;max-height:254px;max-width: 152px;"> -->
-                    <!-- endif -->
-                    <img id="holder" style="margin-top:15px;max-height:254px;max-width: 152px;">
                 </div>
             </div>
         </div><br>
+
         <div class="card">
             <div class="card-header text-white bg-primary">
                 Status Publish

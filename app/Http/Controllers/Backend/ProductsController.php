@@ -75,7 +75,7 @@ class ProductsController extends BackendController
         //For permanent session use Session::put
         //Session::flash is for temporary session
 
-        return redirect()->route('backend.products.index');
+        return redirect()->route('backend.products.index')->withSuccess('Produk Berhasil Ditambahkan!');
     }
 
     /**
@@ -152,7 +152,7 @@ class ProductsController extends BackendController
         //Session::flash('success', 'product successfully updated.');
 
         //redirect with flash data to products.show
-        return redirect()->route('backend.products.show', $product->id);
+        return redirect()->route('backend.products.show', $product->id)->withSuccess('Produk Berhasil Diedit!');
     }
 
     /**
@@ -173,7 +173,7 @@ class ProductsController extends BackendController
         //Delete the product
         $product->delete();
 
-        return redirect()->route('backend.products.index');
+        return redirect()->route('backend.products.index')->withDanger('Produk Berhasil Dihapus!');
     }
 
     public function dataTable()

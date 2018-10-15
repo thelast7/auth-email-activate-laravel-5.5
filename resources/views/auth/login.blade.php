@@ -38,11 +38,10 @@
               </ul>
             <div class="buttons-set">
                 <button type="submit" class="button login"><span>Login</span></button>
-                <a class="btn btn-link" href="{{ route('password.request') }}">Lupa Password Anda ?</a>
+                <strong>Belum Punya Akun ? </strong><a class="btn-link" href="{{ route('register') }}">klik disini.</a>
+                {{-- <a class="btn btn-link" href="{{ route('password.request') }}">Lupa Password Anda ?</a> --}}
             </div>
         </form>
-        <br>
-        <strong>Belum Punya Akun ? </strong><a class="btn-link" href="{{ route('register') }}">klik disini.</a>
       </div>
     </fieldset>
   </div>

@@ -63,7 +63,16 @@ class LoginController extends Controller
     public function validationError()
     {
         return [
-            $this->username() . '.exists' => 'Silahkan cek email anda untuk aktivasi akun'
+            $this->username() . '.exists' => 'Silahkan Cek Email Anda Untuk Aktivasi Akun'
         ];
+    }
+
+    public function logout(Request $request)
+    {
+        $this->guard()->logout();
+
+        $request->session()->invalidate();
+
+        return redirect('/')->withDanger('Anda Berhasil Log out!');
     }
 }

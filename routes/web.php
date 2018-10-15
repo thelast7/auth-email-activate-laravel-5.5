@@ -17,7 +17,7 @@ Route::get('/', 'IndexController@index')->name('home');
 
 //Route::get('/home', 'IndexController@index')->name('home');
 Route::get('show/{slug}', 'IndexController@show')->name('show');
-Route::get('all_product', 'IndexController@all_product')->name('all_product');
+Route::get('all-product', 'IndexController@all_product')->name('all_product');
 
 //routes yang menangani about
 Route::get('abouts', 'AboutsController@index')->name('abouts');
@@ -39,7 +39,7 @@ Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => 'role:a
     Route::resource('/categories', 'Backend\CategoriesController');
     Route::resource('/products', 'Backend\ProductsController');
     Route::resource('/recipes', 'Backend\RecipesController');
-    Route::resource('/orders', 'Backend\OrdersController');
+    Route::resource('/shippings', 'Backend\ShippingController', ['only' => ['index', 'show', 'destroy', 'update']]);
 });
 
 
@@ -50,7 +50,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('/api/datatable/products', 'Backend\ProductsController@dataTable')->name('api.datatable.products');
     Route::get('/api/datatable/recipes', 'Backend\RecipesController@dataTable')->name('api.datatable.recipes');
     //Route::get('/api/datatable/comments', 'Backend\CommentsController@dataTable')->name('api.datatable.comments');
-    Route::get('/api/datatable/orders', 'Backend\OrdersController@dataTable')->name('api.datatable.orders');
+    Route::get('/api/datatable/shippings', 'Backend\ShippingController@dataTable')->name('api.datatable.shippings');
 });
 
 
@@ -63,6 +63,7 @@ Route::get('recipe/show/{slug}', 'RecipeController@show')->name('recipe.show');
 Route::get('howtobuy', 'HowtobuyController@index')->name('howtobuy');
 Route::get('howtopay', 'HowtopayController@index')->name('howtopay');
 Route::get('contactus', 'ContactusController@index')->name('contactus');
+
 
 //routes yang menangani account
 Route::get('account', 'CheckoutController@index')->name('account');

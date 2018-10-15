@@ -9,7 +9,7 @@
             </li>
             <li class="breadcrumb-item active">Tambahkan Resep Baru</li>
         </ol>
-        {!! Form::open(['route' => 'backend.recipes.store', 'method' => 'POST']) !!}
+        {!! Form::open(['route' => 'backend.recipes.store', 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
             @include('backend.recipes._form')
         {!! Form::close() !!}
     </div>

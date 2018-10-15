@@ -10,6 +10,11 @@ class Recipe extends Model
         'user_id', 'status', 'name', 'slug', 'description', 'cover'
     ];
 
+    public function getImage()
+    {
+        return asset('/foto-recipe/' . $this->cover);
+    }
+
     public function user()
     {
         return $this->belongsTo(User::class);

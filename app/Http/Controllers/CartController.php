@@ -20,7 +20,7 @@ class CartController extends Controller
     {
         $products = Product::find($id);
         Cart::add(['id' => $products->id, 'name' => $products->name, 'qty' => 1, 'price' => $products->price, 'options' => ['img' => $products->cover]]);
-        return redirect()->route('cart');
+        return redirect()->route('cart')->withSuccess('Barang Berhasil Ditambahkan');
     }
 
     public function update(Request $request)
@@ -28,12 +28,12 @@ class CartController extends Controller
         $qty=$request->qty;
         $rowId=$request->rowId;
         Cart::update($rowId,$qty);
-        return back();
+        return back()->withSuccess('Keranjang Berhasil Diubah');
     }
 
     public function removeItem($id)
     {
         Cart::remove($id);
-        return back();
+        return back()->withDanger('Keranjang Berhasil Dihapus');
     }
 }

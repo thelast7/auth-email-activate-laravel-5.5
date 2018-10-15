@@ -93,9 +93,7 @@
                     @endif
                 </div>
             </div>
-        </div>
-        <br>
-
+        </div><br>
 
         <div class="card">
             <div class="card-header text-white bg-primary">
@@ -112,11 +110,6 @@
                                 </span>
                             @endif
                         </span>
-
-{{--         @if (isset($product) && $product->cover !== '')
-            <img src="{{ asset('cover-product/'.$product->cover) }}">
-        @endif --}}
-
                     </div>
                 </div>
             </div>

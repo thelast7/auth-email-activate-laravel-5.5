@@ -31,7 +31,7 @@
                                 <th>ID</th>
                                 <th>Nama</th>
                                 <th>Slug</th>
-                                <th></th>
+                                <th>Action</th>
                             </tr>
                         </thead>
                         <tfoot>
@@ -39,7 +39,7 @@
                                 <th>ID</th>
                                 <th>Nama</th>
                                 <th>Slug</th>
-                                <th></th>
+                                <th>Action</th>
                             </tr>
                         </tfoot>
                         <tbody>

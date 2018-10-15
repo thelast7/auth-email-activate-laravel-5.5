@@ -206,7 +206,7 @@
           <div id="bag-seller-slider" class="product-flexslider hidden-buttons">
             <div class="slider-items slider-width-col3"> 
               
-          @foreach($category->product as $product)
+              @foreach($category->product as $product)
               <!-- Item -->
               <div class="item">
                 <div class="col-item">
@@ -247,7 +247,7 @@
                 </div>
               </div>
               <!-- End Item --> 
-          @endforeach
+              @endforeach
             </div>
           </div>
         </div>
@@ -257,6 +257,5 @@
   <br>
 </section>
 @endforeach
-<br>
 <!-- End middle slider --> 
 @endsection

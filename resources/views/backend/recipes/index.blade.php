@@ -30,7 +30,7 @@
                         <th>Nama Resep</th>
                         <th>Slug</th>
                         <th>Penulis</th>
-                        <th></th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -39,7 +39,7 @@
                         <th>Nama Resep</th>
                         <th>Slug</th>
                         <th>Penulis</th>
-                        <th></th>
+                        <th>Action</th>
                     </tr>
                     </tfoot>
                     <tbody>

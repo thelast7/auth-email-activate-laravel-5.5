@@ -43,21 +43,6 @@
             </ul>
         </li>
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Order">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti3" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-pencil"></i>
-            <span class="nav-link-text">Order</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseMulti3">
-            <li>
-                <a href="{{ route('backend.orders.index') }}">Semua Order</a>
-            </li>
-            <li>
-                <a href="{{ route('backend.orders.create') }}">Tambahkan Order</a>
-            </li>
-            </ul>
-        </li>
-
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Recipe">
             <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti4" data-parent="#exampleAccordion">
             <i class="fa fa-fw fa-pencil"></i>
@@ -72,13 +57,14 @@
             </li>
             </ul>
         </li>
-        {{-- 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Comments">
-            <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-comments"></i>
-            <span class="nav-link-text">Comments</span>
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Shipping">
+            <a class="nav-link" href="{{ route('backend.shippings.index') }}">
+            <i class="fa fa-fw fa-pencil"></i>
+            <span class="nav-link-text">Shipping</span>
             </a>
-        </li> --}}
+        </li>
+
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
             <a class="nav-link" href="{{ route('backend.users.index') }}">
             <i class="fa fa-fw fa-users"></i>

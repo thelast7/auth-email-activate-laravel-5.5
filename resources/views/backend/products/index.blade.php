@@ -32,7 +32,7 @@
                         <th>Harga</th>
                         <th>Category</th>
                         <th>Penjual</th>
-                        <th></th>
+                        <th>Action</th>
                     </tr>
                     </thead>
                     <tfoot>
@@ -43,7 +43,7 @@
                         <th>Harga</th>
                         <th>Category</th>
                         <th>Penjual</th>
-                        <th></th>
+                        <th>Action</th>
                     </tr>
                     </tfoot>
                     <tbody>

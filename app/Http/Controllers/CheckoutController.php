@@ -27,7 +27,7 @@ class CheckoutController extends Controller
 
     public function show($id)
     {
-        $shippings = Shipping::with('order')->find($id);
+        $shippings = Shipping::with('order')->findOrFail($id);
         return view('layouts._account.show', compact('shippings'));
     }
 
@@ -77,7 +77,7 @@ class CheckoutController extends Controller
         $request->session()->put('shipping_id', $shipping->id);
         Cart::destroy();
 
-        return redirect()->route('rekening');
+        return redirect()->route('rekening')->withSuccess('Pesanan Berhasil Dibuat, Silahkan Lakukan Pembayaran dan Konfirmasi Pembayaran!');
     }
 
 
@@ -116,7 +116,7 @@ class CheckoutController extends Controller
 
         $request->session()->forget('shipping_id');
 
-        return redirect()->route('account');
+        return redirect()->route('account')->withSuccess('Terima Kasih Atas Kepercayaan Anda, Pembayaran Telah Dikonfirmasi, Pesanan Akan Segera di Proses!');
     }
 
     public function edit(Request $request, $id)
@@ -157,7 +157,7 @@ class CheckoutController extends Controller
 
         $request->session()->forget('shipping_id');
 
-        return redirect()->route('account');
+        return redirect()->route('account')->withSuccess('Terima Kasih Atas Kepercayaan Anda, Pembayaran Telah Dikonfirmasi, Pesanan Akan Segera di Proses!');
     }
 
     public function rekening()

@@ -33,7 +33,7 @@
                 <!-- End Item --> 
                 
                 <!-- Item -->
-                <div class="item"> <a href="#x"><img alt="" src="{{ asset('frontend/images/women_banner1.png')}}"></a> </div>
+                {{-- <div class="item"> <a href="#x"><img alt="" src="{{ asset('frontend/images/women_banner1.png')}}"></a> </div> --}}
                 <!-- End Item --> 
                 
               </div>
