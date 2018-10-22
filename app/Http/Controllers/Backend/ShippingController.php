@@ -11,6 +11,12 @@ use File;
 
 class ShippingController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:admin', ['only' => 'destroy']);
+        $this->middleware('role:admin,author,penjual', ['only' => ['index', 'show', 'update']]);
+    }
+
     /**
      * Display a listing of the resource.
      *

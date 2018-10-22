@@ -9,8 +9,13 @@ use File;
 use Illuminate\Http\Request;
 use Yajra\Datatables\Datatables;
 
-class ProductsController extends BackendController
+class ProductsController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('role:admin,penjual');
+    }
+
     /**
      * Display a listing of the resource.
      *

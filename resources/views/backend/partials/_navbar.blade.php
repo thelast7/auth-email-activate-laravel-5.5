@@ -6,80 +6,80 @@
 
     <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
-            <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-home"></i>
-            <span class="nav-link-text">Dashboard</span>
-            </a>
-        </li>
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Category">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-pencil"></i>
-            <span class="nav-link-text">Category</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseMulti">
-            <li>
-                <a href="{{ route('backend.categories.index') }}">Semua Category</a>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <a class="nav-link" href="#">
+                <i class="fa fa-fw fa-home"></i>
+                <span class="nav-link-text">Dashboard</span>
+                </a>
             </li>
-            <li>
-                <a href="{{ route('backend.categories.create') }}">Tambahkan Category</a>
-            </li>
-            </ul>
-        </li>
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Product">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-pencil"></i>
-            <span class="nav-link-text">Product</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseMulti2">
-            <li>
-                <a href="{{ route('backend.products.index') }}">Semua Product</a>
+            @if (Auth::user()->role == 'admin,penjual')
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Product">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti2" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-pencil"></i>
+                <span class="nav-link-text">Product</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti2">
+                <li>
+                    <a href="{{ route('backend.products.index') }}">Semua Product</a>
+                </li>
+                <li>
+                    <a href="{{ route('backend.products.create') }}">Tambahkan Product</a>
+                </li>
+                </ul>
             </li>
-            <li>
-                <a href="{{ route('backend.products.create') }}">Tambahkan Product</a>
+            @endif
+
+            @if (Auth::user()->role == 'admin')
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Recipe">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti4" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-pencil"></i>
+                <span class="nav-link-text">Recipe</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti4">
+                <li>
+                    <a href="{{ route('backend.recipes.index') }}">Semua Recipe</a>
+                </li>
+                <li>
+                    <a href="{{ route('backend.recipes.create') }}">Tambahkan Recipe</a>
+                </li>
+                </ul>
             </li>
-            </ul>
-        </li>
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Recipe">
-            <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti4" data-parent="#exampleAccordion">
-            <i class="fa fa-fw fa-pencil"></i>
-            <span class="nav-link-text">Recipe</span>
-            </a>
-            <ul class="sidenav-second-level collapse" id="collapseMulti4">
-            <li>
-                <a href="{{ route('backend.recipes.index') }}">Semua Recipe</a>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Category">
+                <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseMulti" data-parent="#exampleAccordion">
+                <i class="fa fa-fw fa-pencil"></i>
+                <span class="nav-link-text">Category</span>
+                </a>
+                <ul class="sidenav-second-level collapse" id="collapseMulti">
+                <li>
+                    <a href="{{ route('backend.categories.index') }}">Semua Category</a>
+                </li>
+                <li>
+                    <a href="{{ route('backend.categories.create') }}">Tambahkan Category</a>
+                </li>
+                </ul>
             </li>
-            <li>
-                <a href="{{ route('backend.recipes.create') }}">Tambahkan Recipe</a>
+
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
+                <a class="nav-link" href="{{ route('backend.users.index') }}">
+                <i class="fa fa-fw fa-users"></i>
+                <span class="nav-link-text">Users</span>
+                </a>
             </li>
-            </ul>
-        </li>
+            @endif
 
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Shipping">
-            <a class="nav-link" href="{{ route('backend.shippings.index') }}">
-            <i class="fa fa-fw fa-pencil"></i>
-            <span class="nav-link-text">Shipping</span>
-            </a>
-        </li>
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Users">
-            <a class="nav-link" href="{{ route('backend.users.index') }}">
-            <i class="fa fa-fw fa-users"></i>
-            <span class="nav-link-text">Users</span>
-            </a>
-        </li>
-
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Settings">
-            <a class="nav-link" href="#">
-            <i class="fa fa-fw fa-gears"></i>
-            <span class="nav-link-text">Settings</span>
-            </a>
-        </li>
+            @if (Auth::user()->role == 'admin,penjual,author')
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Shipping">
+                <a class="nav-link" href="{{ route('backend.shippings.index') }}">
+                <i class="fa fa-fw fa-pencil"></i>
+                <span class="nav-link-text">Shipping</span>
+                </a>
+            </li>
+            @endif
 
         </ul>
+
         <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
             <a class="nav-link text-center" id="sidenavToggler">

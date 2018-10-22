@@ -33,7 +33,7 @@ Route::post('auth/activate/resend', 'Auth\ActivationResendController@resend');
 
 
 //routes yang menangani backend
-Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => 'role:admin'], function () {
+Route::group(['prefix' => 'backend', 'as' => 'backend.', 'middleware' => 'role:admin,author,penjual'], function () {
     Route::get('/dashboard', 'Backend\HomeController@index')->name('backend.home');
     Route::resource('/users', 'Backend\UsersController');
     Route::resource('/categories', 'Backend\CategoriesController');

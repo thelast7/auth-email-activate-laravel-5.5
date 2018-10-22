@@ -41,7 +41,7 @@ class LoginController extends Controller
 
     protected function authendticated(Request $request, $user)
     {
-        if ($user->role === 'admin') {
+        if ($user->role === 'admin,author,penjual') {
             return redirect()->intented('backend/dashboard');
         }
         return redirect()->intented('/');

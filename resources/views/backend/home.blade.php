@@ -21,7 +21,7 @@
                             {{ session('status') }}
                         </div>
                     @endif
-                    <h5 class="card-title">Selamat Datang, Admin</h5>
+                    <h5 class="card-title">Selamat Datang, {{ Auth::user()->name }}</h5>
                 
                 <div class="row">
         <div class="col-xl-3 col-sm-6 mb-3">
