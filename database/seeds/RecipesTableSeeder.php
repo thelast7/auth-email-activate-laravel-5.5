@@ -17,7 +17,7 @@ class RecipesTableSeeder extends Seeder
                 'name'        => 'Telur Semur',
                 'slug'        => 'telur-semur',
                 'description' => 'Telur SemurTelur SemurTelur SemurTelur SemurTelur SemurTelur SemurTelur SemurTelur SemurTelur SemurTelur Semur',
-                'cover'       => 'backend/images/featured-image.jpg',
+                'cover'       => 'featured-image.jpg',
                 'status'      => true
             ],
         ];

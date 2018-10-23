@@ -23,7 +23,7 @@
                 <div class="entry-content">
                   <div class="featured-thumb">
                     <a href="{{ route('recipe.show', $recipe->slug) }}">
-                      <img width="500" height="300" src="{{ $recipe->cover }}" class="img-responsive">
+                      <img width="500" height="300" src="{{ $recipe->getImage() }}" class="img-responsive">
                     </a>
                   </div>
                   <br>
@@ -51,7 +51,7 @@
                 <li>
                   <figure class="featured-thumb"> 
                     <a href="#"> 
-                      <img width="80" height="53" src="{{ $recipe->cover }}"> 
+                      <img width="80" height="53" src="{{ $recipe->getImage() }}"> 
                     </a> 
                   </figure>
                   <h4>

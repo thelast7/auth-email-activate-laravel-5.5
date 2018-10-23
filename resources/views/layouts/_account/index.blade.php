@@ -14,7 +14,7 @@
           <div class="container">
             <div class="row">
               <div class="col-sm-2">
-                <img src="frontend/images/profil1.jpg" class="img-rounded img-responsive" alt="profil" width="400" height="200">
+                <img src="frontend/images/profil1.png" class="img-rounded img-responsive" alt="profil" width="400" height="200">
               </div>
 
               <div class="col-sm-10">

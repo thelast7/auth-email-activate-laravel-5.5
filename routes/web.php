@@ -25,11 +25,11 @@ Route::get('abouts', 'AboutsController@index')->name('abouts');
 
 //routes yang menangani auth
 Auth::routes();
-//routes yang menangani aktivasi
-Route::get('auth/activate', 'Auth\ActivationController@activate')->name('auth.activate');
 //routes yang menangani resend aktivasi email
 Route::get('auth/activate/resend', 'Auth\ActivationResendController@showResendForm')->name('auth.activate.resend');
 Route::post('auth/activate/resend', 'Auth\ActivationResendController@resend');
+//routes yang menangani aktivasi
+Route::get('auth/activate', 'Auth\ActivationController@activate')->name('auth.activate');
 
 
 //routes yang menangani backend
@@ -55,8 +55,8 @@ Route::group(['middleware' => 'auth'], function () {
 
 
 //routes yang menangani recipe
-Route::get('recipe', 'RecipeController@index')->name('recipe.index');
 Route::get('recipe/show/{slug}', 'RecipeController@show')->name('recipe.show');
+Route::get('recipe', 'RecipeController@index')->name('recipe.index');
 
 
 //routes yang menangani layouts
@@ -66,10 +66,10 @@ Route::get('contactus', 'ContactusController@index')->name('contactus');
 
 
 //routes yang menangani account
-Route::get('account', 'CheckoutController@index')->name('account');
-Route::get('account/order/{id}', 'CheckoutController@show')->name('account.show');
 Route::get('account/order/{id}/confirm', 'CheckoutController@edit')->name('order.confirm');
+Route::get('account/order/{id}', 'CheckoutController@show')->name('account.show');
 Route::post('account/order', 'CheckoutController@confirm')->name('save.confirm');
+Route::get('account', 'CheckoutController@index')->name('account');
 
 
 //routes yang menangani account
@@ -79,13 +79,13 @@ Route::post('konfirmasi-pembayaran', 'CheckoutController@saveOrder')->name('save
 
 
 //routes yang menangani cart
-Route::get('cart', 'CartController@index')->name('cart');
 Route::get('cart/add/{id}', 'CartController@addItem');
 Route::get('cart/remove/{id}', 'CartController@removeItem');
 Route::post('cart/update', 'CartController@update');
+Route::get('cart', 'CartController@index')->name('cart');
 
 
 //routes yang menangani checkout
-Route::get('checkout', 'CheckoutController@index')->name('checkout');
 Route::get('checkout/list', 'CheckoutController@create')->name('checkout.create');
 Route::post('checkout/list', 'CheckoutController@store')->name('checkout.store');
+Route::get('checkout', 'CheckoutController@index')->name('checkout');
